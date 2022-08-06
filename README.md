@@ -84,3 +84,7 @@ Plan a work timeline(Project Manager leads this process)
   complete, organized by each of the 5 remaining weeks until the presentation 
   (Sept 6).
 -->
+| Duration (WK)| MainTasks      | Sub Tasks     | Sub Task Items |
+| :----------- | :------------: | ------------: | ------------:  |
+| git status   |   git status   |    git status |   git status   |
+| git diff     |    git diff    |      git diff |   git status   |
