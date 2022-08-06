@@ -119,9 +119,4 @@ Plan a work timeline(Project Manager leads this process)
 | WK7          |                |               | POST           | Joe             |
 | WK7          |                |               | PUT            | Khanh           |
 | WK8          |                |               | DELETE         | Khanh           |
-| WK9          |  Prjt Present  |               |                | Team B          |          
-=======
-| Duration (WK)| MainTasks      | Sub Tasks     | Sub Task Items |
-| :----------- | :------------: | ------------: | ------------:  |
-| git status   |   git status   |    git status |   git status   |
-| git diff     |    git diff    |      git diff |   git status   |
+| WK9          |  Presentation  |               |                | Team B          |
