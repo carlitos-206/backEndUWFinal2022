@@ -86,7 +86,7 @@ Plan a work timeline(Project Manager leads this process)
 -->
 | Duration (WK)| MainTasks      | Sub Tasks     | Sub Task Items |Primary Resource |
 | :----------- | :------------: | :------------ | :------------  | :------------   |
-| WK6   	   |   DataBase     |               |                | Carlos          |
+| WK6   	      |   DataBase     |               |                | Carlos          |
 |              |                | Data Selection|                | Carlos          |
 |              |                | Data Download |                | Carlos          |
 |              |                | Data Transform|                | Carlos          |
@@ -102,15 +102,15 @@ Plan a work timeline(Project Manager leads this process)
 |              |                |               | POST           | Joe             |
 |              |                |               | PUT            | Khanh           |
 |              |                |               | DELETE         | Khanh           |
+| WK6 - WK7    |  Deploy        |               |                | Khanh\Joe       |
+| WK6          |                |  Web Hosting  |                | Khanh           |
+| WK7          |                |  Authenticate |                | Joe             |
 | WK6 - WK8    |   Front End    |               |                | Meghan/Carlos   |
 | WK6          |                | Template Desg |                | Meghan/Carlos   |
 | WK6          |                | Login         |                | Meghan/Carlos   |
 | WK6          |                | Fire Event Dis|                | Meghan/Carlos   |
 | WK6          |                | Balloon for   |                | Meghan/Carlos   |
 |              |                | Details       |                |                 |
-| WK6 - WK7    |  Deploy        |               |                | Khanh\Joe       |
-| WK6          |                |  Web Hosting  |                | Khanh           |
-| WK7          |                |  Authenticate |                | Joe             |
 | WK7          |                | Modify Btn    |                | Meghan/Carlos   |
 | WK7 - WK8    |                | Delete Btn    |                | Meghan/Carlos   |
 | WK7 - WK8    |                | Design Doc    |                | Meghan/Carlos   |
