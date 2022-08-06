@@ -84,3 +84,39 @@ Plan a work timeline(Project Manager leads this process)
   complete, organized by each of the 5 remaining weeks until the presentation 
   (Sept 6).
 -->
+| Duration (WK)| MainTasks      | Sub Tasks     | Sub Task Items |Primary Resource |
+| :----------- | :------------: | :------------ | :------------  | :------------   |
+| WK6   	      |   DataBase     |               |                | Carlos          |
+|              |                | Data Selection|                | Carlos          |
+|              |                | Data Download |                | Carlos          |
+|              |                | Data Transform|                | Carlos          |
+|              |                | Data Load MGg |                | Carlos          | 
+| WK6 - WK7    |   API          |               |                |                 |
+|              |                | Router        |                | Joe             |
+|              |                |               | GET            | Joe             |
+|              |                |               | POST           | Joe             |
+|              |                |               | PUT            | Khanh           |
+|              |                |               | DELETE         | Khanh           |
+|              |                | Interface     |                | Khanh           |
+|              |                |               | GET            | Joe             |
+|              |                |               | POST           | Joe             |
+|              |                |               | PUT            | Khanh           |
+|              |                |               | DELETE         | Khanh           |
+| WK6 - WK7    |  Deploy        |               |                | Khanh\Joe       |
+| WK6          |                |  Web Hosting  |                | Khanh           |
+| WK7          |                |  Authenticate |                | Joe             |
+| WK6 - WK8    |   Front End    |               |                | Meghan/Carlos   |
+| WK6          |                | Template Desg |                | Meghan/Carlos   |
+| WK6          |                | Login         |                | Meghan/Carlos   |
+| WK6          |                | Fire Event Dis|                | Meghan/Carlos   |
+| WK6          |                | Balloon for   |                | Meghan/Carlos   |
+|              |                | Details       |                |                 |
+| WK7          |                | Modify Btn    |                | Meghan/Carlos   |
+| WK7 - WK8    |                | Delete Btn    |                | Meghan/Carlos   |
+| WK7 - WK8    |                | Design Doc    |                | Meghan/Carlos   |
+| WK7 - WK8    |  Unit Test     |               |                | Joe/Khanh       |
+| WK7          |                |               | GET            | Joe             |
+| WK7          |                |               | POST           | Joe             |
+| WK7          |                |               | PUT            | Khanh           |
+| WK8          |                |               | DELETE         | Khanh           |
+| WK9          |  Presentation  |               |                | Team B          |
