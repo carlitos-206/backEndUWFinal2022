@@ -75,6 +75,36 @@ Design a solution (Database & Front End people lead this process)
   * Describe the functionality that the front end app will have
 -->
 
+**{APP_NAME}** is an interactive map of Washington State's historic wildfires 
+with data sourced from Wildland Fire Interagency Geospatial Services (WFIGS).
+We've filtered the data to make it leaner and more specific to Washington state.
+
+* 🔥 Features data on fires from the last 5 years, including dates, ignition 
+causes, cost of damages, location, and (maybe) more  
+* 🔎 Examine fires by response region
+* 📊 Sign up, log in, and modify regional fire data as a user
+
+### Technologies
+
+* *MongoDB* for fire data
+* *Firestore* for user authentication
+
+### Routes
+
+So far:
+
+`/signin`
+
+`/register`
+
+`/:fireID`
+
+`/:firestoreID/create`
+
+`/:firestoreID/update/:fireID`
+
+`/:firestoreID/delete/:fireID`
+
 ## Project Timeline
 
 <!--
@@ -92,19 +122,19 @@ Plan a work timeline(Project Manager leads this process)
 |              |                | Data Transform|                | Carlos          |
 |              |                | Data Load MGg |                | Carlos          | 
 | WK6 - WK7    |   API          |               |                |                 |
-|              |                | Router        |                | Joe             |
-|              |                |               | GET            | Joe             |
-|              |                |               | POST           | Joe             |
+|              |                | Router        |                | Joel            |
+|              |                |               | GET            | Joel            |
+|              |                |               | POST           | Joel            |
 |              |                |               | PUT            | Khanh           |
 |              |                |               | DELETE         | Khanh           |
 |              |                | Interface     |                | Khanh           |
-|              |                |               | GET            | Joe             |
-|              |                |               | POST           | Joe             |
+|              |                |               | GET            | Joel            |
+|              |                |               | POST           | Joel            |
 |              |                |               | PUT            | Khanh           |
 |              |                |               | DELETE         | Khanh           |
-| WK6 - WK7    |  Deploy        |               |                | Khanh\Joe       |
+| WK6 - WK7    |  Deploy        |               |                | Khanh\Joel      |
 | WK6          |                |  Web Hosting  |                | Khanh           |
-| WK7          |                |  Authenticate |                | Joe             |
+| WK7          |                |  Authenticate |                | Joel            |
 | WK6 - WK8    |   Front End    |               |                | Meghan/Carlos   |
 | WK6          |                | Template Desg |                | Meghan/Carlos   |
 | WK6          |                | Login         |                | Meghan/Carlos   |
@@ -114,9 +144,9 @@ Plan a work timeline(Project Manager leads this process)
 | WK7          |                | Modify Btn    |                | Meghan/Carlos   |
 | WK7 - WK8    |                | Delete Btn    |                | Meghan/Carlos   |
 | WK7 - WK8    |                | Design Doc    |                | Meghan/Carlos   |
-| WK7 - WK8    |  Unit Test     |               |                | Joe/Khanh       |
-| WK7          |                |               | GET            | Joe             |
-| WK7          |                |               | POST           | Joe             |
+| WK7 - WK8    |  Unit Test     |               |                | Joel/Khanh      |
+| WK7          |                |               | GET            | Joel            |
+| WK7          |                |               | POST           | Joel            |
 | WK7          |                |               | PUT            | Khanh           |
 | WK8          |                |               | DELETE         | Khanh           |
 | WK9          |  Presentation  |               |                | Team B          |
