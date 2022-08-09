@@ -92,18 +92,26 @@ causes, cost of damages, location, and (maybe) more
 ### Routes
 
 So far:
-
+"/GET "
 `/signin`
 
+"/POST "
 `/register`
 
+"/GET "
 `/:fireID`
 
-`/:firestoreID/create`
+"/GET"
+/allFires
 
-`/:firestoreID/update/:fireID`
+"/POST"
+`/:firestoreID/createComment/:fireID`
 
-`/:firestoreID/delete/:fireID`
+"/PUT"
+`/:firestoreID/update/:commentId/:fireID`
+
+"/DElETE"
+`/:firestoreID/delete/:commentID`
 
 ## Project Timeline
 
