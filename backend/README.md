@@ -156,7 +156,6 @@ Plan a work timeline(Project Manager leads this process)
 | WK7          |                | Modify Btn    |                | Meghan/Carlos   |
 | WK7 - WK8    |                | Delete Btn    |                | Meghan/Carlos   |
 | WK7 - WK8    |                | Design Doc    |                | Meghan/Carlos   |
-<<<<<<< HEAD
 | WK7 - WK8    |  Unit Test     |               |                | Joel/Khanh      |
 | WK7          |                |               | GET            | Joel            |
 | WK7          |                |               | POST           | Joel            |
