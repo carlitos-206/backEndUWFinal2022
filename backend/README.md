@@ -1,5 +1,6 @@
 # Washington Wildfires Community 
 
+
 ## Problem: Washington's Wildfires
 
 <!--
@@ -114,6 +115,7 @@ So far:
 "/DElETE"
 `/:firestoreID/delete/:commentID`
 
+
 ## Project Timeline
 
 <!--
@@ -131,6 +133,7 @@ Plan a work timeline(Project Manager leads this process)
 |              |                | Data Transform|                | Carlos          |
 |              |                | Data Load MGg |                | Carlos          | 
 | WK6 - WK7    |   API          |               |                |                 |
+
 |              |                | Router        |                | Joel            |
 |              |                |               | GET            | Joel            |
 |              |                |               | POST           | Joel            |
@@ -153,6 +156,7 @@ Plan a work timeline(Project Manager leads this process)
 | WK7          |                | Modify Btn    |                | Meghan/Carlos   |
 | WK7 - WK8    |                | Delete Btn    |                | Meghan/Carlos   |
 | WK7 - WK8    |                | Design Doc    |                | Meghan/Carlos   |
+<<<<<<< HEAD
 | WK7 - WK8    |  Unit Test     |               |                | Joel/Khanh      |
 | WK7          |                |               | GET            | Joel            |
 | WK7          |                |               | POST           | Joel            |
