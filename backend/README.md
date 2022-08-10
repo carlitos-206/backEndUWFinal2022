@@ -1,4 +1,5 @@
-# {APP_NAME}
+# Washington Wildfires Community 
+
 
 ## Problem: Washington's Wildfires
 
@@ -11,7 +12,7 @@ Determine your problem statement  (Product person leads this process)
     * Impact: How does this problem impact these potential customers?
     * Causes: What are some of the causes of this problem?
     * Other solutions: Are there other available solutions? Why are they not 
-    sufficient?
+    sufficient??
 -->
 
 The Washington state Deparment of Natural Resources responds to an average of 
@@ -75,9 +76,11 @@ Design a solution (Database & Front End people lead this process)
   * Describe the functionality that the front end app will have
 -->
 
-**{APP_NAME}** is an interactive map of Washington State's historic wildfires 
+
+**Washington Wildfires Community** is an interactive map of Washington State's historic wildfires 
 with data sourced from Wildland Fire Interagency Geospatial Services (WFIGS).
 We've filtered the data to make it leaner and more specific to Washington state.
+Registered users will be able to make comments on the data provided.
 
 * 🔥 Features data on fires from the last 5 years, including dates, ignition 
 causes, cost of damages, location, and (maybe) more  
