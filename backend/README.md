@@ -12,7 +12,7 @@ Determine your problem statement  (Product person leads this process)
     * Impact: How does this problem impact these potential customers?
     * Causes: What are some of the causes of this problem?
     * Other solutions: Are there other available solutions? Why are they not 
-    sufficient?
+    sufficient??
 -->
 
 The Washington state Deparment of Natural Resources responds to an average of 
