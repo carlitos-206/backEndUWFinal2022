@@ -76,6 +76,7 @@ Design a solution (Database & Front End people lead this process)
   * Describe the functionality that the front end app will have
 -->
 
+
 **Washington Wildfires Community** is an interactive map of Washington State's historic wildfires 
 with data sourced from Wildland Fire Interagency Geospatial Services (WFIGS).
 We've filtered the data to make it leaner and more specific to Washington state.
@@ -115,7 +116,6 @@ So far:
 "/DElETE"
 `/:firestoreID/delete/:commentID`
 
-
 ## Project Timeline
 
 <!--
@@ -133,7 +133,6 @@ Plan a work timeline(Project Manager leads this process)
 |              |                | Data Transform|                | Carlos          |
 |              |                | Data Load MGg |                | Carlos          | 
 | WK6 - WK7    |   API          |               |                |                 |
-
 |              |                | Router        |                | Joel            |
 |              |                |               | GET            | Joel            |
 |              |                |               | POST           | Joel            |
