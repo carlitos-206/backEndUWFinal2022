@@ -1,6 +1,7 @@
 const { MongoClient } = require("mongodb");
 const ObjectId = require('mongodb').ObjectId;
-
+const bcrypt = require('bcryptjs');
+const { use } = require("../routes");
 const uri =
   "mongodb+srv://carlitos206:SharedFakePass123@cluster0.lshmeod.mongodb.net/?retryWrites=true&w=majority";
 
@@ -80,6 +81,67 @@ module.exports.getFireCommentsByFire = async (id) => {
   }
 }
 
+
+module.exports.createUser = async (user) => {
+  try {
+    await client.connect();
+    const db = client.db(databaseName);
+    const collection = db.collection(users_Collection);
+    let emailExist = await collection.findOne({ email: user.email });
+    if (emailExist) {
+      return { Error: "Email already exists" };
+    }
+    else{
+      let hashedPassword = await bcrypt.hash(user.password, 10);
+      let vettedUser = {
+        username: user.username,
+        email: user.email,
+        password: hashedPassword,
+        firstName: user.firstName,
+        lastName: user.lastName
+      };
+      const result = await collection.insertOne(vettedUser);
+      return { newObjectId: result.insertedId, message: `User created! ID: ${result.insertedId}`, pass: hashedPassword };
+    }
+  } catch (err) {
+    return {Error: 'Failed to Create'};
+  } finally {
+    await client.close();
+  }
+}
+
+// 
+module.exports.signIn = async(user) =>{
+  try{
+    await client.connect();
+    const db = client.db(databaseName);
+    const collection = db.collection(users_Collection);
+    const userExistEmail = await collection.findOne({email: user.usernameOrEmail})
+    const userExistUsername = await collection.findOne({username: user.usernameOrEmail})
+    if(userExistEmail){
+      if(await bcrypt.compare(user.password, userExistEmail.password )){
+        return {username: userExistEmail.username, email: userExistEmail.email}
+      }
+    }
+    if(userExistUsername){
+      if(await bcrypt.compare(user.password, userExistUsername.password)){
+        return {username: userExistUsername.username, email: userExistUsername.email}
+      }
+    }
+  } catch (err) {
+    return {error: 'Failed to locate user'};
+  } finally {
+    await client.close();
+  }
+}
+
+
+
+
+
+
+
+// IGNORE BELOW THIS LINE BUT KEEP FOR REFERENCE
 
 // module.exports.getFireCommentsByUserAndFire = async (id, fire_id) => {
 //   try {
