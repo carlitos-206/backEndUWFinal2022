@@ -3,27 +3,45 @@ const router = Router();
 
 // Data interface
 const mongoConnection = require("../dataInterface/mongoDB")
-// curl http://localhost:5000/fires/
-router.get('/', async(req, res)=>{
-  const result = await mongoConnection.getAllFires()
-  if(result){
-    res.status(200).send(result)
-  }else{
-    res.status(200).send({message: 'Failed'})
-  }
-})
 
-// curl http://localhost:5000/fires/:id
-router.get('/:id', async(req, res)=>{
-  const result = await mongoConnection.getFireById(req.params.id)
-  if(result){
-    res.status(200).send(result)
-  }else{
-    res.status(200).send({message: 'Failed'})
-  }
-}),
+// "GET" requests --- READ
 
-// ...
+      // curl http://localhost:5000/fires/
+      router.get('/', async(req, res)=>{
+        const result = await mongoConnection.getAllFires()
+        if(result){
+          res.status(200).send(result)
+        }else{
+          res.status(200).send({message: 'Failed'})
+        }
+      })
+
+      // curl http://localhost:5000/fires/:id
+      router.get('/:id', async(req, res)=>{
+        const result = await mongoConnection.getFireById(req.params.id)
+        if(result){
+          res.status(200).send(result)
+        }else{
+          res.status(200).send({message: 'Failed'})
+        }
+      })
+
+
+
+module.exports = router;
+
+
+
+
+
+
+
+
+
+
+// IGNORE BELOW THIS LINE BUT KEEP FOR REFERENCE
+
+//  ***ENSURE TO MOVE module.exports = router TO ENCAPSULATE THE CODE***
 
 
 // // curl http://localhost:5000/fires/comments/:id
@@ -113,7 +131,6 @@ router.get('/:id', async(req, res)=>{
 //   }
 // })
 
-module.exports = router;
 
 // example:
 // { 
