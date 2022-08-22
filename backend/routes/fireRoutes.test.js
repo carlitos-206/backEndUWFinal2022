@@ -100,6 +100,24 @@ describe("/fires routes", () => {
     });
   });
 
+  describe("POST /fires", () =>{
+    it("should return a success message with the new fire's id on success", async () => {
+      mongoData.getFireById.mockResolvedValue({
+        newObjectId: "$#!&$#!&$#!",
+        message: "Fire created! ID: $#!&$#!&$#!"
+      });
+      const res = await request(server).post("/fires");
+      expect(res.statusCode).toEqual(200);
+      expect(res.body.error).not.toBeDefined();
+    });
+    it("should return a status code of 500 on failure", async () => {
+      mongoData.getFireById.mockResolvedValue();
+      const res = await request(server).post("/fires");
+      expect(res.statusCode).toEqual(500);
+      expect(res.body.error).toBeDefined();
+    });
+  });
+
   describe("GET /fires/comments/:id", () =>{
     it("should return a single comment's data on success", async () => {
       /* TODO */
