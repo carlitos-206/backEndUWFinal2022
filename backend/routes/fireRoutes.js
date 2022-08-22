@@ -12,7 +12,7 @@ const mongoConnection = require("../dataInterface/mongoDB")
         if(result){
           res.status(200).send(result)
         }else{
-          res.status(200).send({message: 'Failed'})
+          res.status(500).send({ error: "Something went wrong. Please try again." })
         }
       })
 
@@ -22,7 +22,7 @@ const mongoConnection = require("../dataInterface/mongoDB")
         if(result){
           res.status(200).send(result)
         }else{
-          res.status(200).send({message: 'Failed'})
+          res.status(500).send({ error: "Something went wrong. Please try again." })
         }
       })
 
