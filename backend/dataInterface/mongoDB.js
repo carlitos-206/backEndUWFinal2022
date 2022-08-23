@@ -144,7 +144,7 @@ module.exports.updateComment = async (commentId, newObj) => {
 
     if (result.modifiedCount != 1) {
       return {
-        error: `Something went wrong. ${result.modifiedCount} comment was not updated. Please try again.`,
+        error: `Something went wrong. ${result.modifiedCount} comment was updated. Please try again.`,
       };
     }
 
@@ -167,7 +167,7 @@ module.exports.deleteComment = async (commentId) => {
     const result = await collection.deleteOne(deletionRules);
     if (result.deletedCount != 1) {
       return {
-        error: `Something went wrong. ${result.deletedCount} comments were not deleted. Please try again.`,
+        error: `Something went wrong. ${result.deletedCount} comments were deleted. Please try again.`,
       };
     }
 
@@ -263,7 +263,7 @@ module.exports.deleteBookmark = async (id) => {
     const result = await collection.deleteOne(deletionRules);
     if (result.deletedCount != 1) {
       return {
-        error: `Something went wrong. ${result.deletedCount} Bookmarks were not deleted. Please try again.`,
+        error: `Something went wrong. ${result.deletedCount} Bookmarks were deleted. Please try again.`,
       };
     }
 
