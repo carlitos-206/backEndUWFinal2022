@@ -103,8 +103,8 @@ describe("/fires routes", () => {
   describe("POST /fires", () =>{
     it("should return a success message with the new fire's id on success", async () => {
       mongoData.getFireById.mockResolvedValue({
-        newObjectId: "$#!&$#!&$#!",
-        message: "Fire created! ID: $#!&$#!&$#!"
+        "newObjectId": "$#!&$#!&$#!",
+        "message": "Fire created! ID: $#!&$#!&$#!"
       });
       const res = await request(server).post("/fires");
       expect(res.statusCode).toEqual(200);
@@ -185,6 +185,26 @@ describe("/fires routes", () => {
       });
       const res = await request(server).get("/fires/abc/comments");
       expect(res.statusCode).toEqual(404);
+      expect(res.body.error).toBeDefined();
+    });
+  });
+
+  describe("POST /fires/:fireId/user/:userId/comments", () =>{
+    it("should return a success message with the new comment's id on success", async () => {
+      mongoData.createComment.mockResolvedValue({
+        "newObjectId":"63041c5a1f1480d6cecaa999",
+        "message":"Comment created! ID: 63041c5a1f1480d6cecaa999"
+      });
+      const res = await request(server).post("/fires/62fb42131c5b7ea309f7e0e0/user/User1/comments");
+      expect(res.statusCode).toEqual(200);
+      expect(res.body.error).not.toBeDefined();
+    });
+    it("should return status code 400 if input is valid", async () => {
+      mongoData.createComment.mockResolvedValue({
+        "error": "New comment insert failed."
+      });
+      const res = await request(server).post("/fires/62fb42131c5b7ea309f7e0e0/user/User1/comments");
+      expect(res.statusCode).toEqual(400);
       expect(res.body.error).toBeDefined();
     });
   });
