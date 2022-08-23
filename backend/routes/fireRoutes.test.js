@@ -120,46 +120,70 @@ describe("/fires routes", () => {
 
   describe("GET /fires/comments/:id", () =>{
     it("should return a single comment's data on success", async () => {
-      /* TODO */
-      expect(false).toEqual(true);
+      mongoData.getFireCommentByCommentId.mockResolvedValue({
+        "_id":"630250491f3d48c59da2eec7",
+        "username":"User1",
+        "text":"Khanh Test fire comments",
+        "fire_id":"62fb42131c5b7ea309f7e0e0",
+        "createdDate":"2022-08-22T07:00:00.000Z"
+      });
+      const res = await request(server).get("/fires/comments/630250491f3d48c59da2eec7");
+      expect(res.statusCode).toEqual(200);
+      expect(res.body.error).not.toBeDefined();
     });
     it("should return status code 404 if comment is not found", async () => {
-      /* TODO */
-      expect(false).toEqual(true);
-    });
-    it("should return a status code of 500 on failure", async () => {
-      /* TODO */
-      expect(false).toEqual(true);
+      mongoData.getFireCommentByCommentId.mockResolvedValue({
+        "error": "No comments found for commentId: abc"
+      });
+      const res = await request(server).get("/fires/comments/abc");
+      expect(res.statusCode).toEqual(404);
+      expect(res.body.error).toBeDefined();
     });
   });
 
   describe("GET /fires/comments/user/:id", () =>{
     it("should return an array of user's comments on success", async () => {
-      /* TODO */
-      expect(false).toEqual(true);
+      mongoData.getFireCommentsByUser.mockResolvedValue([{
+        "_id":"630250491f3d48c59da2eec7",
+        "username":"User1",
+        "text":"Khanh Test fire comments",
+        "fire_id":"62fb42131c5b7ea309f7e0e0",
+        "createdDate":"2022-08-22T07:00:00.000Z"
+      }]);
+      const res = await request(server).get("/fires/comments/user/User1");
+      expect(Array.isArray(res.body)).toEqual(true);
+      expect(res.statusCode).toEqual(200);
+      expect(res.body.error).not.toBeDefined();
     });
     it("should return status code 404 if user is not found", async () => {
-      /* TODO */
-      expect(false).toEqual(true);
-    });
-    it("should return a status code of 500 on failure", async () => {
-      /* TODO */
-      expect(false).toEqual(true);
+      mongoData.getFireCommentsByUser.mockResolvedValue();
+      const res = await request(server).get("/fires/comments/user/abc")
+      expect(res.statusCode).toEqual(200);
+      expect(res.body.error).not.toBeDefined();
     });
   });
 
   describe("GET /fires/comments/fire/:id", () =>{
     it("should return an array of fire's comments on success", async () => {
-      /* TODO */
-      expect(false).toEqual(true);
+      mongoData.getFireCommentsByFire.mockResolvedValue([{
+        "_id":"630250491f3d48c59da2eec7",
+        "username":"User1",
+        "text":"Khanh Test fire comments",
+        "fire_id":"62fb42131c5b7ea309f7e0e0",
+        "createdDate":"2022-08-22T07:00:00.000Z"
+      }]);
+      const res = await request(server).get("/fires/62fb42131c5b7ea309f7e0e0/comments");
+      expect(Array.isArray(res.body)).toEqual(true);
+      expect(res.statusCode).toEqual(200);
+      expect(res.body.error).not.toBeDefined();
     });
     it("should return status code 404 if fire is not found", async () => {
-      /* TODO */
-      expect(false).toEqual(true);
-    });
-    it("should return a status code of 500 on failure", async () => {
-      /* TODO */
-      expect(false).toEqual(true);
+      mongoData.getFireCommentsByFire.mockResolvedValue({
+        "error": "No comments found for commentId: abc"
+      });
+      const res = await request(server).get("/fires/abc/comments");
+      expect(res.statusCode).toEqual(404);
+      expect(res.body.error).toBeDefined();
     });
   });
 
