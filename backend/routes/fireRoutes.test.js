@@ -156,14 +156,16 @@ describe("/fires routes", () => {
       expect(res.body.error).not.toBeDefined();
     });
     it("should return status code 404 if user is not found", async () => {
-      mongoData.getFireCommentsByUser.mockResolvedValue();
+      mongoData.getFireCommentsByUser.mockResolvedValue({
+        "message": "No comments found for userId: ${req.params.id}"
+      });
       const res = await request(server).get("/fires/comments/user/abc")
-      expect(res.statusCode).toEqual(200);
-      expect(res.body.error).not.toBeDefined();
+      expect(res.statusCode).toEqual(404);
+      expect(res.body.error).toBeDefined();
     });
   });
 
-  describe("GET /fires/comments/fire/:id", () =>{
+  describe("GET /fires/:id/comments", () =>{
     it("should return an array of fire's comments on success", async () => {
       mongoData.getFireCommentsByFire.mockResolvedValue([{
         "_id":"630250491f3d48c59da2eec7",
@@ -179,7 +181,7 @@ describe("/fires routes", () => {
     });
     it("should return status code 404 if fire is not found", async () => {
       mongoData.getFireCommentsByFire.mockResolvedValue({
-        "error": "No comments found for commentId: abc"
+        "error": "No comments found for fireid: abc"
       });
       const res = await request(server).get("/fires/abc/comments");
       expect(res.statusCode).toEqual(404);
