@@ -5,6 +5,7 @@ import CreatePost from './components/CreatePost';
 import DeletePost from './components/DeletePost';
 import EditPost from './components/EditPost';
 import FireMapApp from './components/FireMapApp';
+import FireMapAppData from './components/FireMapAppData';
 import FireDetails from './components/FireDetails';
 import Banner from './components/Banner'
 import Footer from './components/Footer'
@@ -26,7 +27,8 @@ function App() {
                 <SigninButton />
               </nav>
             </div>
-            <FireMapApp />
+            {/* <FireMapApp /> */}
+            <FireMapAppData />
             <Footer />
           </main>
         </>
