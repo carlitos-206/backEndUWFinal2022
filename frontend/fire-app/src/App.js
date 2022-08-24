@@ -18,7 +18,7 @@ function App() {
       return (
         <>
           <main>
-            <div class="row">
+            <div className="row">
               <header  >
                 <Banner />
               </header>
