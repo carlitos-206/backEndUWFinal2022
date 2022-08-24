@@ -296,8 +296,7 @@ module.exports.createUser = async (user) => {
       const result = await collection.insertOne(vettedUser);
       return {
         newObjectId: result.insertedId,
-        message: `User created! ID: ${result.insertedId}`,
-        pass: hashedPassword,
+        message: `User created! ID: ${result.insertedId}`
       };
     }
   } catch (err) {
