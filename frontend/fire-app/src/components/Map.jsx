@@ -41,29 +41,27 @@ export class MapContainer extends Component {
                 >
                     {this.props.places.map((place, i) => {
                         return (
+
+                            //This code locates the pin on the map based on the latitude and longitude
                             <Marker
                                 onClick={this.onMarkerClick}
                                 key={place.id}
                                 place_={place}
-                                position={{ lat: place.lat, lng: place.lng }}
+                                position={{ lat: place.location.latitude, lng: place.location.longitude }}
                             />
                         );
                     })}
                     <InfoWindowEx
+
+                    // This code creates the pop up and inserts the div information into the pop up
                         marker={this.state.activeMarker}
                         visible={this.state.showingInfoWindow}
                     >
                         <div>
-                            <h3>{this.state.selectedPlace.name}</h3>
-                            <p>Cause: {this.state.selectedPlace.cause}</p>
+                            <h3>Name: {this.state.selectedPlace.name}</h3>
+                            <p>Cause: {this.state.selectedPlace.fire_origin.cause}</p>
                             <p>Total Acres: {this.state.selectedPlace.totalAcres}</p>
                             <p>Total Cost: {this.state.selectedPlace.totalCost}</p>
-                            {/* <button
-                                type="button"
-                                onClick={this.showDetails.bind(this, this.state.selectedPlace)}
-                            >
-                                Show details
-                            </button> */}
                         </div>
                     </InfoWindowEx>
                 </Map>

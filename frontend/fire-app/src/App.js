@@ -27,8 +27,8 @@ function App() {
                 <SigninButton />
               </nav>
             </div>
-            {/* <FireMapApp /> */}
-            <FireMapAppData />
+            <FireMapApp />
+            {/* <FireMapAppData /> */}
             <Footer />
           </main>
         </>
