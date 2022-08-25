@@ -27,7 +27,7 @@ function FireMapAppData() {
       );
 
 
-  }, [fires]);
+  }, []);
 
   if (isLoading) {
     return <p>Loading...</p>

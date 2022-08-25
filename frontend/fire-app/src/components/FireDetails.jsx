@@ -1,52 +1,62 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 // import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types'
-import Popup from 'reactjs-popup';
-import 'reactjs-popup/dist/index.css';
+import checkVal from './logic/checkVal';
+import readTheDate from './logic/readTheDate';
+import totalAcres from './logic/totalAcres';
+import convertToUSD from './logic/converToUSD';
+function FireDetails({ fireId  }) {
+    const [fire, setFire] = useState(undefined);
+    const [isLoading, setIsLoading] = useState(true);
+    const [hasError, setHasError] = useState(false);
 
-function FireDetails({ fire, _id  }) {
- 
-
-
+    useEffect(() => {
+        fetch(`http://localhost:5000/fires/${fireId}`)
+        .then(response => response.json())
+        .then(
+            data => {
+                setFire(data);
+                setIsLoading(false);
+            },
+            error => {
+                setHasError(true)
+                setIsLoading(false);
+            }
+        );
+    }, []);
+    if (isLoading) {
+        return <p>Loading...</p>
+    }
+    if (hasError) {
+        return <p>An error has occurred.  Please try again.</p>
+    }
     return (
         // return info for each fire
-        <div>
-            <Popup trigger={<button className="triangle">  </button>}
-                position="right center">
-                <article className="fire-container">
-                    <div className="fire-card" key="id">
-
-                        <section className="row card" key={_id} >
-                            <div className="list">
-                                <div className="column list-info">
-                                    <h2>Fire Name:{fire.incident_name}</h2>
-                                    <p>Lattitude:{fire.lattitude}</p>
-                                    <p>Longitude:{fire.longitude}</p>
-                                    <p>City:{fire.city}</p>
-                                    <p>County:{fire.county}</p>
-                                    <p>State:{fire.state}</p>
-                                    <p>Discovered:{fire.discovery_datetime}</p>
-                                    <p>Contained:{fire.containment_datetime}</p>
-                                    <p>Controlled:{fire.control_datetime}</p>
-                                    <p>Fire Out Date:{fire.fire_out_datetime}</p>
-                                    <p>Daily Acres:{fire.daily_acres}</p>
-                                    <p>Total Acres:{fire.total_acres}</p>
-                                    <p>Cause:{fire.fire_origin_cause}</p>
-                                    <p>Cost:{fire.estimated_cost_to_date}</p>
-
-                                </div>
-                            </div>
-                        </section>
-
-                    </div>
-                </article>
-            </Popup>
+        <div className="container">
+            <div className="column list-info">
+                <h2>Fire Name:{checkVal(fire.incident_name)}</h2>
+                <p>Lattitude:{checkVal(fire.location.latitude)}</p>
+                <p>Longitude:{checkVal(fire.location.longitude)}</p>
+                <p>City:{checkVal(fire.location.city)}</p>
+                <p>County: {checkVal(fire.location.county)}</p>
+                <p>State:{checkVal(fire.location.state)}</p>
+                <p>Discovered:{readTheDate(fire.fire_discovery_datetime)}</p>
+                <p>Contained:{readTheDate(fire.containment_datetime)}</p>
+                <p>Controlled:{readTheDate(fire.control_datetime)}</p>
+                <p>Fire Out Date:{readTheDate(fire.fire_out_datetime)}</p>
+                <p>Daily Acres:{checkVal(fire.daily_acres)}</p>
+                <p>Total Acres:{totalAcres(fire.containment_datetime, fire.control_datetime, fire.daily_acres, fire.total_acres)}</p>
+                <p>Cause:{checkVal(fire.fire_origin.cause)} Activity</p>
+                <p>Predominant Fuel: {checkVal(fire.predominant_fuel_group)} </p>
+                <p>Cost:{convertToUSD(fire.estimated_cost_to_date)}</p>
+                <p>Source: {checkVal(fire.source)}</p>
+            </div>
+            <a href="/">Return Home</a>
         </div>
-
     )
 }
 FireDetails.propTypes = {
-    fire: PropTypes.object.isRequired,
+    fireId: PropTypes.string.isRequired,
 
 }
 
