@@ -8,11 +8,28 @@ const mongoConnection = require("../dataInterface/mongoDB");
 
 // curl http://localhost:5000/fires/
 router.get("/", async (req, res) => {
+  let statusCode = 500
   const result = await mongoConnection.getAllFires();
-  if (result) {
-    res.status(200).send(result);
+  if (result.length >0) {
+    statusCode = 200
+    res.status(statusCode).send(result);
   } else {
-    res.status(200).send({ message: "Failed" });
+    res.status(statusCode).send({ error: "Failed to retrieve fire data." });
+  }
+});
+
+//get all fires by month and year
+// curl http://localhost:5000/fires/:month/:year
+// curl http://localhost:5000/fires/Jul/2014
+router.get("/:month/:year", async(req, res) => {
+  let statusCode = 500
+  const result = await mongoConnection.getFireByMonthYear(req.params.month, req.params.year);
+  if (result.length >0) {
+    statusCode = 200
+    console.log("arraylength: ",result.length);
+    res.status(statusCode).send(result);
+  } else {
+    res.status(statusCode).send({ error: "Failed to retrieve fire data." });
   }
 });
 

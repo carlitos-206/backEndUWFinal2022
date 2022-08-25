@@ -24,11 +24,54 @@ module.exports.getAllFires = async () => {
     const result = await collection.find({}).limit(10).toArray();
     return result;
   } catch (err) {
-    console.log(err);
+    return {error: 'Something is wrong. Not able to retrieve fire data.'}
   } finally {
     await client.close();
   }
 };
+// get all fires by month and year
+module.exports.getFireByMonthYear = async (month, year) => {
+  //array to find month number by month name
+  const monthsShort = {
+    Jan: '01',
+    Feb: '02',
+    Mar: '03',
+    Apr: '04',
+    May: '05',
+    Jun: '06',
+    Jul: '07',
+    Aug: '08',
+    Sep: '09',
+    Oct: '10',
+    Nov: '11',
+    Dec: '12',
+  };
+  try {
+    await client.connect();
+    const db = client.db(databaseName);
+    const collection = db.collection(fire_Collection);
+    //get month num
+    const monthNum = monthsShort[month];
+    //contruct frmDate
+    const frmDate = `${year}-${monthNum}-01`;
+    //get month end date
+    const endDt = new Date(year, monthNum, 0);
+    // construct toDate
+    const toDate = `${year}-${monthNum}-${endDt}`;
+    // get all fires between the start and end date of a given month
+    const result = await collection.find({ fire_discovery_datetime : { $gt: frmDate, $lt: toDate}});
+
+    return result
+    ? result.toArray()
+    : {
+      error: `We've encountered an error. Please try again later.`,
+    };
+  } catch (err) {
+    console.log(err);
+  } finally {
+    //await client.close();
+  }
+}
 //get fire by fire id
 module.exports.getFireById = async (id) => {
   try {

@@ -6,7 +6,7 @@ jest.mock("../dataInterface/mongoDB");
 const mongoData = require("../dataInterface/mongoDB");
 
 describe("/fires routes", () => {
-
+  // test get all fires
   describe("GET /fires", () =>{
     it("should return an array of fire data on success", async () => {
       mongoData.getAllFires.mockResolvedValue([{
@@ -46,14 +46,17 @@ describe("/fires routes", () => {
       expect(Array.isArray(res.body)).toEqual(true);
       expect(res.body.error).not.toBeDefined();
     });
+     
     it("should return a status code of 500 on failure", async () => {
-      mongoData.getAllFires.mockResolvedValue();
+      mongoData.getAllFires.mockResolvedValue({"error": "Failed to retrieve fire data."});
       const res = await request(server).get("/fires");
       expect(res.statusCode).toEqual(500);
       expect(res.body.error).toBeDefined();
     });
+    
   });
 
+<<<<<<< Updated upstream
   describe("GET /fires/:id", () =>{
     it("should return a fire's data on success", async () => {
       mongoData.getFireById.mockResolvedValue({
@@ -208,5 +211,34 @@ describe("/fires routes", () => {
       expect(res.body.error).toBeDefined();
     });
   });
+=======
+  // test get fire by id
+
+  // test  get all comments by fire id
+
+  // test get comment by comment id
+
+  // test get all comments by userid
+
+  // test create comment by fire id , username
+
+  // test modify comment by comment id
+
+  // test delete comment by comment id
+
+  // test get a bookmakr by a  bookmark id
+
+  // test get all bookmarks by username
+
+  // test get all bookmarks by fireid
+
+  // create a bookmark by fireid and username
+
+  // remove bookmark by bookmarkid
+
+
+
+  
+>>>>>>> Stashed changes
 
 });
