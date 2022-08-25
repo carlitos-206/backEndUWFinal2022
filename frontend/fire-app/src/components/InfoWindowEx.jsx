@@ -10,12 +10,19 @@ export default class InfoWindowEx extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (this.props.children !== prevProps.children) {
+    if (this.props.children !== prevProps.children && typeof this.props.children === 'object') {
       ReactDOM.render(
-        React.Children.only(this.props.children),
+        React.Children.toArray(this.props.children),
         this.contentElement
       );
       this.infoWindowRef.current.infowindow.setContent(this.contentElement);
+    }else{
+      ReactDOM.render(
+        React.Children.map(this.props.children, (child, index) => (
+          <div>{child}</div>
+      )),
+        this.contentElement
+      )
     }
   }
 
