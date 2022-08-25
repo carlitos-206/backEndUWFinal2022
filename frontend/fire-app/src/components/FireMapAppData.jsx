@@ -8,7 +8,7 @@ function FireMapAppData() {
   const [hasError, setHasError] = useState(false);
 
   useEffect(() => {
-    fetch('http://localhost:5001/fires/')
+    fetch('http://localhost:5000/fires/')
 
       .then(response => response.json())
 
