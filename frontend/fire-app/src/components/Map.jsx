@@ -24,11 +24,9 @@ export class MapContainer extends Component {
             showingInfoWindow: true
         });
     };
-
     showDetails = place => {
         console.log(place);
     };
-
     render() {
         return (
             <div className="map-container">
@@ -58,10 +56,10 @@ export class MapContainer extends Component {
                         visible={this.state.showingInfoWindow}
                     >
                         <div>
-                            <h3>Name: {this.state.selectedPlace.name}</h3>
-                            <p>Cause: {this.state.selectedPlace.fire_origin.cause}</p>
-                            <p>Total Acres: {this.state.selectedPlace.totalAcres}</p>
-                            <p>Total Cost: {this.state.selectedPlace.totalCost}</p>
+                            <h3>Name: {this.state.selectedPlace.incident_name}</h3>
+                            {/* <p>Cause: {this.state.selectedPlace.fire_origin.o}</p> */}
+                            <p>Total Acres: {this.state.selectedPlace.total_acres}</p>
+                            <p>Total Cost: {this.state.selectedPlace.estimated_cost_to_date}</p>
                         </div>
                     </InfoWindowEx>
                 </Map>
