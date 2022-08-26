@@ -1,7 +1,7 @@
 const { MongoClient } = require("mongodb");
 const ObjectId = require("mongodb").ObjectId;
 const bcrypt = require("bcryptjs");
-const { use } = require("../routes");
+//const { use } = require("../routes");
 const uri =
   "mongodb+srv://carlitos206:SharedFakePass123@cluster0.lshmeod.mongodb.net/?retryWrites=true&w=majority";
 
@@ -20,8 +20,8 @@ module.exports.getAllFires = async () => {
     await client.connect();
     const db = client.db(databaseName);
     const collection = db.collection(fire_Collection);
-    // Edit limit to get all fires when in prduction
-    const result = await collection.find({}).limit(10).toArray();
+    // Edit limit to get all fires when in production
+    const result = await collection.find({}).limit(1).toArray();
     return result;
   } catch (err) {
     return {error: 'Something is wrong. Not able to retrieve fire data.'}
@@ -67,9 +67,7 @@ module.exports.getFireByMonthYear = async (month, year) => {
       error: `We've encountered an error. Please try again later.`,
     };
   } catch (err) {
-    console.log(err);
-  } finally {
-    //await client.close();
+    return {error: 'Something is wrong. Not able to retrieve fire data.'}
   }
 }
 //get fire by fire id
@@ -81,7 +79,7 @@ module.exports.getFireById = async (id) => {
     const result = await collection.findOne({ _id: ObjectId(id) });
     return result;
   } catch (err) {
-    console.log(err);
+    return {error: 'Something is wrong. Not able to retrieve fire data.'}
   } finally {
     await client.close();
   }
@@ -96,7 +94,7 @@ module.exports.getFireComments = async (id) => {
     const result = await collection.find(query).toArray();
     return result;
   } catch (err) {
-    console.log(err);
+    return {error: 'Something is wrong. Not able to retrieve fire comments.'}
   } finally {
     await client.close();
   }
@@ -111,7 +109,7 @@ module.exports.getFireCommentByCommentId = async (commentId) => {
     const result = await collection.findOne(query);
     return result;
   } catch (err) {
-    console.log(err);
+    return {error: 'Something is wrong. Not able to retrieve fire comments.'}
   } finally {
     await client.close();
   }
@@ -125,21 +123,7 @@ module.exports.getFireCommentsByUser = async (id) => {
     const result = await collection.find({ username: id }).toArray();
     return result;
   } catch (err) {
-    console.log(err);
-  } finally {
-    await client.close();
-  }
-};
-//get all fire comment by fire id
-module.exports.getFireCommentsByFire = async (id) => {
-  try {
-    await client.connect();
-    const db = client.db(databaseName);
-    const collection = db.collection(comments_Collection);
-    const result = await collection.find({ fire_id: id }).toArray();
-    return result;
-  } catch (err) {
-    console.log(err);
+    return {error: 'Something is wrong. Not able to retrieve fire comments.'}
   } finally {
     await client.close();
   }
@@ -168,7 +152,7 @@ module.exports.createComment = async (paramObj, newObj) => {
       return { error: "New comment insert failed." };
     }
   } catch (err) {
-    console.log(err);
+    return {error: 'Something is wrong. Not able to insert comment.'}
   } finally {
     await client.close();
   }
@@ -258,13 +242,15 @@ module.exports.getAllBookmarksByFireId = async (id) => {
     await client.connect();
     const db = client.db(databaseName);
     const collection = db.collection(bookmarks_Collection);
-    const result = await collection.find({ fire_id: ObjectId(id) }).toArray();
-    return result;
+    const result = await collection.find({ fire_id: ObjectId(id) });
+    return result
+    ? result.toArray()
+    : {
+      error: `We've encountered an error. Please try again later.`,
+    };
 
   } catch (err) {
     return { error: "Failed to retrieve bookmarks for fire_id: ${id}" };
-  } finally {
-    await client.close();
   }
 }
 // create a bookmark by fireid and username

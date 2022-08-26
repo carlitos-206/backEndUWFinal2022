@@ -53,10 +53,114 @@ describe("/fires routes", () => {
       expect(res.statusCode).toEqual(500);
       expect(res.body.error).toBeDefined();
     });
-    
+    // test fires by fireid
+    describe("GET /fires/:id", () => {
+      it("should return a fire's data on success", async () => {
+        mongoData.getFireById.mockResolvedValue({
+          _id: "62fb42131c5b7ea309f7e0e0",
+          total_acres: null,
+          containment_datetime: "2014-08-24T18:59:59Z",
+          control_datetime: "2014-08-24T19:01:00Z",
+          daily_acres: 0.1,
+          discovery_acres: null,
+          estimated_cost_to_date: null,
+          final_fire_report_approved_date: null,
+          fire_origin: {
+            cause: "Natural",
+            general: null,
+            specific: null,
+          },
+          fire_discovery_datetime: "2014-07-17T20:07:59Z",
+          fire_out_datetime: "2014-08-28T18:59:59Z",
+          incident_name: "DUNCAN HILL 2-ENTIAT",
+          location: {
+            latitude: null,
+            longitude: null,
+            city: null,
+            county: "Chelan",
+            state: "US-WA",
+          },
+          predominant_fuel_group: null,
+          modified_by_system: "wfdss",
+          created_on_datetime: "2014-08-29T01:20:27Z",
+          modified_on_datetime: "2014-08-29T18:46:06Z",
+          source: "IRWIN",
+          admin: {
+            created: "2022-08-16T07:06:59.277Z",
+            modified: null,
+          },
+        });
+        const res = await request(server).get(
+          "/fires/62fb42131c5b7ea309f7e0e0"
+        );
+        expect(res.statusCode).toEqual(200);
+        expect(res.body.error).not.toBeDefined();
+      });
+      it("should return a status code of 404 on failure", async () => {
+        mongoData.getFireById.mockResolvedValue(null);
+        const res = await request(server).get("/fires/62fb42131c5b7ea309f7e0e0");
+        expect(res.statusCode).toEqual(404);
+        expect(res.body.error).toBeDefined();
+      });
+    });
   });
+  // test get a bookmark by a bookmark id
+describe("GET /fires/bookmarks/:id", () => {
+  it("should return a bookmark on success", async () => {
+  mongoData.getBookmarkByBookmarkId.mockResolvedValue({
+    _id: "6303e187a84112a7a4be6752",
+    username: "User1",
+    fire_id: "62fb42181c5b7ea309f7e0e8",
+    createdDate: "2022-08-21T07:00:00.000+00:00",
+  });
+  const res = await request(server).get("/fires/bookmarks/6303e187a84112a7a4be6752");
+  expect(res.statusCode).toEqual(200);
+  expect(Array.isArray(res.body)).toEqual(false);
+  expect(res.body.error).not.toBeDefined();
+  });
+  it("should return a status code of 404 if bookmark not found", async () => {
+    mongoData.getBookmarkByBookmarkId.mockResolvedValue(null);
+    const res = await request(server).get("/fires/bookmarks/6303e187a84112a7a4be6752");
+    expect(res.statusCode).toEqual(404);
+    expect(res.body.error).toBeDefined();
+  });
+});
 
-<<<<<<< Updated upstream
+// test get all bookmarks by username
+describe("GET /fires/user/:username/bookmarks", () => {
+ it("should return all bookmarks belong to a username on success", async () => {
+  mongoData.getBookmarkByUserName.mockResolvedValue([{
+    _id: "6303ec16a84112a7a4be6753",  
+    username: "User1",
+    fire_id: "62fb42181c5b7ea309f7e0e8",
+    createdDate: "2022-08-21T07:00:00.000Z"
+  },
+  {
+    _id: "6303f55f984a6bbf4f98e6f6",  
+    username: "User1",
+    fire_id: "62fb42131c5b7ea309f7e0e0",
+    createdDate: "2022-08-22T21:30:07.487Z"
+  }
+  ]);
+  const res = await request(server).get("fires/user/User1/bookmarks");
+  expect(res.statusCode).toEqual(404);
+  expect(Array.isArray(res.body)).toEqual(true);
+  expect(res.body.error).not.toBeDefined();
+ });
+ it("should return a status code of 404 if bookmark not found", async () => {
+  mongoData.getBookmarkByUserName.mockResolvedValue(null);
+  const res = await request(server).get("/fires/user/User1/bookmarks");
+  expect(res.statusCode).toEqual(404);
+  expect(res.body.error).toBeDefined();
+  });
+});
+  // test get all bookmarks by fireid
+
+  // create a bookmark by fireid and username
+
+  // remove bookmark by bookmarkid
+});
+/**
   describe("GET /fires/:id", () =>{
     it("should return a fire's data on success", async () => {
       mongoData.getFireById.mockResolvedValue({
@@ -211,7 +315,9 @@ describe("/fires routes", () => {
       expect(res.body.error).toBeDefined();
     });
   });
-=======
+
+  //test get all fires by MonthYear
+
   // test get fire by id
 
   // test  get all comments by fire id
@@ -226,19 +332,5 @@ describe("/fires routes", () => {
 
   // test delete comment by comment id
 
-  // test get a bookmakr by a  bookmark id
-
-  // test get all bookmarks by username
-
-  // test get all bookmarks by fireid
-
-  // create a bookmark by fireid and username
-
-  // remove bookmark by bookmarkid
-
-
-
   
->>>>>>> Stashed changes
-
-});
+*/
