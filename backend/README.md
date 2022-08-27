@@ -180,12 +180,46 @@ Get **all comments** for a **single fire event**:
 curl http://localhost:5000/fires/62fb42131c5b7ea309f7e0e0/comments
 ```
 
+<details><summary>Example responses</summary>
+<p>
+
+🙂 Returns array of all comments about the fire with `:fireId`:
+
+```bash
+[{"_id":"630250491f3d48c59da2eec7","username":"User1","text":"Khanh Test fire comments","fire_id":"62fb42131c5b7ea309f7e0e0","createdDate":"2022-08-22T07:00:00.000Z"},{"_id":"63041c5a1f1480d6cecaa999","text":"testest","fire_id":"62fb42131c5b7ea309f7e0e0","username":"User1","createdDate":"2022-08-23T00:16:26.173Z"}]
+```
+
+❌ No comments found for given `:fireId`:
+
+```bash
+{"error":"No comments found for fireid: 62fb42131c5b7ea309f7e0e0"}
+```
+</p>
+</details>
+
 Get a **single comment**:
 
 ```bash
-# Use /fires/comments/commentId to get the comment with the same :commentId:
+# Use /fires/comments/:commentId to get the comment with the same :commentId:
 curl http://localhost:5000/fires/comments/630250491f3d48c59da2eec7
 ```
+
+<details><summary>Example responses</summary>
+<p>
+
+🙂 Returns comment object with `:commentId`:
+
+```bash
+{"_id":"630250491f3d48c59da2eec7","username":"example_user","text":"This is a comment.","fire_id":"62fb42131c5b7ea309f7e0e0","createdDate":"2022-08-22T07:00:00.000Z"}
+```
+
+❌ No comments found for given `:commentId`:
+
+```bash
+{"error":"No comments found for commentId: 630250491f3d48c59da2eec7"}
+```
+</p>
+</details>
 
 Get **all comments** posted by a **single user**:
 
@@ -194,13 +228,59 @@ Get **all comments** posted by a **single user**:
 curl http://localhost:5000/fires/comments/user/User1
 ```
 
+<details><summary>Example responses</summary>
+<p>
+
+🙂 Returns array of comments posted by the user with `:username`:
+
+```bash
+[{"_id":"630250491f3d48c59da2eec7","username":"User1","text":"Khanh Test fire comments","fire_id":"62fb42131c5b7ea309f7e0e0","createdDate":"2022-08-22T07:00:00.000Z"},{"_id":"630314f418fa079d5f4b4b47","username":"User1","text":"Khanh Test get All Comments by userid","fire_id":"62fb42221c5b7ea309f7e0f3","createdDate":"2022-08-21T07:00:00.000Z"},{"_id":"63041c5a1f1480d6cecaa999","text":"testest","fire_id":"62fb42131c5b7ea309f7e0e0","username":"User1","createdDate":"2022-08-23T00:16:26.173Z"},{"_id":"630a10d2b0cbaf4fe936e835","text":"Khanh test unittest creating comment","fire_id":"62fb42181c5b7ea309f7e0e8","username":"User1","createdDate":"2022-08-27T12:40:50.741Z"}]
+```
+
+❌ No comments by `:username` found:
+
+```bash
+{"error":"No comments found for username: User1"}
+```
+</p>
+</details>
+
 **Create** a **new comment**:
 
 ```bash
 # REQUIRED: JSON object with a "text" property containing comment's text.
-# (/fires/:fireId/user/:userId/comments)
+# (/fires/:fireId/user/:username/comments)
 curl -X POST -H "Content-Type: application/json" -d '{"text":"Wow! What a hot fire!"}' http://localhost:5000/fires/62fb42131c5b7ea309f7e0e0/user/User1/comments
 ```
+
+<details><summary>Example responses</summary>
+<p>
+
+🙂 Returns comment's `newObjectId` and a success `message`:
+
+```bash
+{"newObjectId":"630a9846237279c09dc6e821","message":"Comment created! ID: 630a9846237279c09dc6e821"}
+```
+
+❌ `:username` is blank in request:
+
+```bash
+{"error":"UserName must not be blank."}
+```
+
+❌ Comment `text` is blank in request:
+
+```bash
+{"error":"Comments must not be blank."}
+```
+
+❌ Comment won't post. Validate syntax of request and backend status:
+
+```bash
+{"error":"Something went wrong. Please try again."}
+```
+</p>
+</details>
 
 **Edit** a **comment**:
 
@@ -210,6 +290,29 @@ curl -X POST -H "Content-Type: application/json" -d '{"text":"Wow! What a hot fi
 curl -X PUT -H "Content-Type: application/json" -d '{"text": "Updated comment..."}' http://localhost:5000/fires/comments/6303d66a816e5c3e74ac0980
 ```
 
+<details><summary>Example responses</summary>
+<p>
+
+🙂 Returns object of updated comment with `commentId`:
+
+```bash
+{"_id":"630250491f3d48c59da2eec7","username":"example_user","text":"This is a comment.","fire_id":"62fb42131c5b7ea309f7e0e0","createdDate":"2022-08-22T07:00:00.000Z"}
+```
+
+❌ Cannot update comment. Verify that comment exists and backend is working:
+
+```bash
+{"error":"Something went wrong. 0 comment was updated. Please try again."}
+```
+
+❌ Failure—check status of backend:
+
+```bash
+{"error":"Something went wrong. Please try again!"}
+```
+</p>
+</details>
+
 **Delete** a **comment**:
 
 ```bash
@@ -217,6 +320,23 @@ curl -X PUT -H "Content-Type: application/json" -d '{"text": "Updated comment...
 # (/fires/comments/:commentId)
 curl -X DELETE http://localhost:5000/fires/comments/6303d66a816e5c3e74ac0980
 ```
+
+<details><summary>Example responses</summary>
+<p>
+
+🙂 Returns message confirming deletion:
+
+```bash
+{"message":"Deleted 1 comment."}
+```
+
+❌ Cannot delete comment. Verify that comment exists:
+
+```bash
+{"error":"Something went wrong. 0 comments were deleted. Please try again."}
+```
+</p>
+</details>
 
 ##### 🔖 Bookmarks
 
