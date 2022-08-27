@@ -90,9 +90,33 @@ causes, cost of damages, location, and more
 
 ### Live Website
 
-{{DEPLOYED URL_HERE}}
+{{URL_TO_DEPLOYED_APP}}
 
 ### For Users
+
+#### Querying the API
+
+##### Fires
+
+Get ''all fire data'':
+
+```
+curl http://localhost:5000/fires/
+```
+
+You can also get fires by ''specific month and year'':
+
+```
+# Note the /in/:month/:year format:
+curl http://localhost:5000/fires/in/Jul/2014
+```
+
+''Single fire event'':
+
+```
+# /fires/:id format, :id being a fire's unique id:
+curl http://localhost:5000/fires/62fb42181c5b7ea309f7e0e8
+```
 
 So far:
 "/GET "
@@ -162,6 +186,7 @@ Plan a work timeline(Project Manager leads this process)
   complete, organized by each of the 5 remaining weeks until the presentation 
   (Sept 6).
 -->
+
 | Duration (WK)| MainTasks      | Sub Tasks     | Sub Task Items |Primary Resource |
 | :----------- | :------------: | :------------ | :------------  | :------------   |
 | WK6   	      |   DataBase     |               |                | Carlos          |
