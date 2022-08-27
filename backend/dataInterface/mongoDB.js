@@ -21,7 +21,7 @@ module.exports.getAllFires = async () => {
     const db = client.db(databaseName);
     const collection = db.collection(fire_Collection);
     // Edit limit to get all fires when in production
-    const result = await collection.find({}).limit(1).toArray();
+    const result = await collection.find({}).limit(10).toArray();
     return result;
   } catch (err) {
     return {error: 'Something is wrong. Not able to retrieve fire data.'}
@@ -115,12 +115,12 @@ module.exports.getFireCommentByCommentId = async (commentId) => {
   }
 };
 //get all fire comments by userid
-module.exports.getFireCommentsByUser = async (id) => {
+module.exports.getFireCommentsByUser = async (username) => {
   try {
     await client.connect();
     const db = client.db(databaseName);
     const collection = db.collection(comments_Collection);
-    const result = await collection.find({ username: id }).toArray();
+    const result = await collection.find({ username: username }).toArray();
     return result;
   } catch (err) {
     return {error: 'Something is wrong. Not able to retrieve fire comments.'}
@@ -227,13 +227,15 @@ module.exports.getBookmarkByUserName = async(userName) => {
     await client.connect();
     const db = client.db(databaseName);
     const collection = db.collection(bookmarks_Collection);
-    const result = await collection.find({ username: userName }).toArray();
-    return result;
+    const result = await collection.find({ username: userName });
+    return result
+    ? result.toArray()
+    : {
+      error: `We've encountered an error. Please try again later.`,
+    };
 
   } catch (err) {
-    return { error: "Failed to retrieve bookmarks for username: ${userName}" };
-  } finally {
-    await client.close();
+    return { error: `Failed to retrieve bookmarks for a username: ${userName}` };
   }
 }
 // get all bookmarks by fireid
@@ -292,11 +294,11 @@ module.exports.deleteBookmark = async (id) => {
     const result = await collection.deleteOne(deletionRules);
     if (result.deletedCount != 1) {
       return {
-        error: `Something went wrong. ${result.deletedCount} Bookmarks were deleted. Please try again.`,
+        error: `Something went wrong. 0 bookmarks were deleted. Please try again.`,
       };
     }
 
-    return { message: `Deleted ${result.deletedCount} bookmark.` };
+    return { message: `Deleted one bookmark.` };
   } catch (err) {
     return { Error: "Failed to Delete a bookmark" };
   } finally {
