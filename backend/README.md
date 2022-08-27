@@ -165,6 +165,45 @@ curl -X PUT -H "Content-Type: application/json" -d '{"text": "Updated comment...
 curl -X DELETE http://localhost:5000/fires/comments/6303d66a816e5c3e74ac0980
 ```
 
+##### 🔖 Bookmarks
+
+Get a **bookmark**:
+
+```bash
+# Get a bookmark specified by its :bookmarkId.
+# (/fires/bookmarks/bookmarkId)
+curl http://localhost:5000/fires/bookmarks/6303ec16a84112a7a4be6753
+```
+
+Get **all of a user's bookmarks**:
+
+```bash
+# Get :username's bookmarks using /fires/user/:username/bookmarks:
+curl http://localhost:5000/fires/user/User1/bookmarks
+```
+
+Get **all of a fire's bookmarks**:
+
+```bash
+# Get :fireId's bookmarks using /fires/:fireId/bookmarks:
+curl http://localhost:5000/fires/62fb42181c5b7ea309f7e0e8/bookmarks
+```
+
+**Create** a **new bookmark**:
+
+```bash
+# REQUIRES: Empty JSON object ('{}').
+# URI FORMAT: /fires/:fireId/user/:userId/bookmarks
+curl -X POST -H "Content-Type: application/json" -d '{}' http://localhost:5000/fires/62fb42131c5b7ea309f7e0e0/user/User1/bookmarks
+```
+
+**Delete** a **bookmark**:
+
+```bash
+# Delete :bookmarkId's bookmark using /fires/bookmarks/:bookmarkId.
+curl -X DELETE http://localhost:5000/fires/bookmarks/6303e187a84112a7a4be6752
+```
+
 ### For Developers
 
 #### Setting Up & Running
