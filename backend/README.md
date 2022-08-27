@@ -1,5 +1,4 @@
-# Washington Wildfires Community 
-
+# Washington Wildfire Occurrence Database
 
 ## Problem: Washington's Wildfires
 
@@ -58,7 +57,7 @@ https://apnews.com/article/portland-wildfires-health-washington-oregon-41d19571e
 [^7]: (2018). *Air quality index basics.* Environmental Protection Agency.
 https://web.archive.org/web/20180618144741/https://airnow.gov/index.cfm?action=aqibasics.aqi
 
-## Solution: {APP_NAME}
+## Solution: Washington Wildfire Occurrence Database
 
 <!--
 Design a solution (Database & Front End people lead this process)
@@ -77,15 +76,17 @@ Design a solution (Database & Front End people lead this process)
 -->
 
 
-**Washington Wildfires Community** is an interactive map of Washington State's historic wildfires 
-with data sourced from Wildland Fire Interagency Geospatial Services (WFIGS).
-We've filtered the data to make it leaner and more specific to Washington state.
-Registered users will be able to make comments on the data provided.
+**Washington Wildfires Community** is an interactive map of Washington State's 
+historic wildfires with data sourced from Wildland Fire Interagency Geospatial 
+Services (WFIGS). We've filtered the data to make it leaner and more specific to
+Washington state. Registered users will be able to make comments on the data 
+provided.
 
 * 🔥 Features data on fires from the last 5 years, including dates, ignition 
-causes, cost of damages, location, and (maybe) more  
-* 🔎 Examine fires by response region
-* 📊 Sign up, log in, and modify regional fire data as a user
+causes, cost of damages, location, and more
+* 🔎 Examine fires by month & year
+* 📊 Sign up, log in, and start a discussion on recent fires
+* 🔖 Revisit fires of your interest using bookmarks
 
 ### Technologies
 
