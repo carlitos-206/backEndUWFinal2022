@@ -85,7 +85,7 @@ provided.
 * 🔥 Features data on fires from the last 5 years, including dates, ignition 
 causes, cost of damages, location, and more
 * 🔎 Examine fires by month & year
-* 📊 Sign up, log in, and start a discussion on recent fires
+* 🗨️ Sign up, log in, and start a discussion on recent fires
 * 🔖 Revisit fires of your interest using bookmarks
 
 ### Live Website
@@ -96,49 +96,74 @@ causes, cost of damages, location, and more
 
 #### Querying the API
 
-##### Fires
+##### 🔥 Fires
 
-Get ''all fire data'':
+Get **all fires**:
 
-```
+```bash
 curl http://localhost:5000/fires/
 ```
 
-You can also get fires by ''specific month and year'':
+Get fires by **specific month and year**:
 
-```
+```bash
 # Note the /in/:month/:year format:
 curl http://localhost:5000/fires/in/Jul/2014
 ```
 
-''Single fire event'':
+Get a **single fire event**:
 
-```
-# /fires/:id format, :id being a fire's unique id:
+```bash
+# /fires/:fireId format, :fireId being a fire's unique id:
 curl http://localhost:5000/fires/62fb42181c5b7ea309f7e0e8
 ```
 
-So far:
-"/GET "
-`/signin`
+##### 🗨️ Comments
 
-"/POST "
-`/register`
+Get **all comments** for a **single fire event**:
 
-"/GET "
-`/:fireID`
+```bash
+# Use /fires/:fireId/comments to get the comments of the fire with :fireId:
+curl http://localhost:5000/fires/62fb42131c5b7ea309f7e0e0/comments
+```
 
-"/GET"
-/allFires
+Get a **single comment**:
 
-"/POST"
-`/:firestoreID/createComment/:fireID`
+```bash
+# Use /fires/comments/commentId to get the comment with the same :commentId:
+curl http://localhost:5000/fires/comments/630250491f3d48c59da2eec7
+```
 
-"/PUT"
-`/:firestoreID/update/:commentId/:fireID`
+Get **all comments** posted by a **single user**:
 
-"/DElETE"
-`/:firestoreID/delete/:commentID`
+```bash
+# Use /fires/comments/user/:username to get all comments posted by :username:
+curl http://localhost:5000/fires/comments/user/User1
+```
+
+**Create** a **new comment**:
+
+```bash
+# REQUIRED: JSON object with a "text" property containing comment's text.
+# (/fires/:fireId/user/:userId/comments)
+curl -X POST -H "Content-Type: application/json" -d '{"text":"Wow! What a hot fire!"}' http://localhost:5000/fires/62fb42131c5b7ea309f7e0e0/user/User1/comments
+```
+
+**Edit** a **comment**:
+
+```bash
+# Edit a comment specified by its :commentId.
+# (/fires/comments/:commentId)
+curl -X PUT -H "Content-Type: application/json" -d '{"text": "Updated comment..."}' http://localhost:5000/fires/comments/6303d66a816e5c3e74ac0980
+```
+
+**Delete** a **comment**:
+
+```bash
+# Delete a comment specified by its :commentId.
+# (/fires/comments/:commentId)
+curl -X DELETE http://localhost:5000/fires/comments/6303d66a816e5c3e74ac0980
+```
 
 ### For Developers
 
