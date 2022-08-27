@@ -53,10 +53,11 @@ router.get("/:id([0-9a-fA-F]{24})", async (req, res, next) => {
     
   }
 });
+
 // get all comments by fire id
 // curl http://localhost:5000/fires/:id/comments
 // curl http://localhost:5000/fires/62fb42131c5b7ea309f7e0e0/comments
-router.get("/:id[0-9a-fA-F]{24}/comments", async (req, res, next) => {
+router.get("/:id/comments", async (req, res, next) => {
   let statusCode;
   const result = await mongoConnection.getFireComments(req.params.id);
   if (!result) {

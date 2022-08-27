@@ -161,7 +161,7 @@ describe("/fires routes", () => {
     });
   });
   // test  get all comments by fire id
-  /**
+  
   describe("GET /fires/:id/comments", () =>{
     it("should return an array of fire's comments on success", async () => {
       mongoData.getFireComments.mockResolvedValue([{
@@ -183,7 +183,7 @@ describe("/fires routes", () => {
       expect(res.body.error).toBeDefined();
     });
   });
-  **/
+  
   // test get comment by comment id
   describe("GET /comments/:id", () => {
     it("should return a single comment for a given comment id on success", async () => {
