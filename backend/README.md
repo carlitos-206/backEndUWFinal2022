@@ -348,12 +348,52 @@ Get a **bookmark**:
 curl http://localhost:5000/fires/bookmarks/6303ec16a84112a7a4be6753
 ```
 
+<details><summary>Example responses</summary>
+<p>
+
+🙂 Returns object of bookmark's data:
+
+```bash
+{"_id":"6303ec16a84112a7a4be6753","username":"User1","fire_id":"62fb42181c5b7ea309f7e0e8","createdDate":"2022-08-21T07:00:00.000Z"}
+```
+
+❌ Bookmark with given `:bookmarkId` not found:
+
+```bash
+{"error":"Failed to retrieve bookmark!"}
+```
+</p>
+</details>
+
 Get **all of a user's bookmarks**:
 
 ```bash
 # Get :username's bookmarks using /fires/user/:username/bookmarks:
 curl http://localhost:5000/fires/user/User1/bookmarks
 ```
+
+<details><summary>Example responses</summary>
+<p>
+
+🙂 Returns array of `:username`'s bookmarks:
+
+```bash
+[{"_id":"6303ec16a84112a7a4be6753","username":"User1","fire_id":"62fb42181c5b7ea309f7e0e8","createdDate":"2022-08-21T07:00:00.000Z"},{"_id":"6303f55f984a6bbf4f98e6f6","fire_id":"62fb42131c5b7ea309f7e0e0","username":"User1","createdDate":"2022-08-22T21:30:07.487Z"},{"_id":"63095e9d1b9bf737af33097c","fire_id":"62fb42181c5b7ea309f7e0e9","username":"User1","createdDate":"2022-08-27T00:00:29.066Z"}]
+```
+
+❌ Bookmarks from `:username` not found:
+
+```bash
+{"error":"Failed to retrieve bookmarks for a username: badUsername"}
+```
+
+❌ Server failure:
+
+```bash
+{"error":"Failed to retrieve bookmark!"}
+```
+</p>
+</details>
 
 Get **all of a fire's bookmarks**:
 
@@ -362,13 +402,61 @@ Get **all of a fire's bookmarks**:
 curl http://localhost:5000/fires/62fb42181c5b7ea309f7e0e8/bookmarks
 ```
 
+<details><summary>Example responses</summary>
+<p>
+
+🙂 Returns array of bookmarks of fire with given `:fireId`:
+
+```bash
+[{"_id":"6303ec16a84112a7a4be6753","username":"User1","fire_id":"62fb42181c5b7ea309f7e0e8","createdDate":"2022-08-21T07:00:00.000Z"},{"_id":"6303efeea84112a7a4be6754","username":"User2","fire_id":"62fb42181c5b7ea309f7e0e8","createdDate":"2022-08-22T07:00:00.000Z"}]
+```
+
+❌ Bookmarks of `:fireId` not found:
+
+```bash
+{"error":"Failed to retrieve bookmarks for fire_id: 62fb42181c5b7ea309f7e0e8"}
+```
+
+❌ Server failure:
+
+```bash
+{"error":"Failed to retrieve bookmark!"}
+```
+</p>
+</details>
+
 **Create** a **new bookmark**:
 
 ```bash
-# REQUIRES: Empty JSON object ('{}').
-# URI FORMAT: /fires/:fireId/user/:userId/bookmarks
+# REQUIRES:
+# • Empty JSON object ('{}')
+# • Existing :username & :fireId
+# URI FORMAT: /fires/:fireId/user/:username/bookmarks
 curl -X POST -H "Content-Type: application/json" -d '{}' http://localhost:5000/fires/62fb42131c5b7ea309f7e0e0/user/User1/bookmarks
 ```
+
+<details><summary>Example responses</summary>
+<p>
+
+🙂 Returns bookmark's `newObjectId` and a success `message`:
+
+```bash
+{"newObjectId":"630aa05d237279c09dc6e823","message":"Bookmark created! ID: 630aa05d237279c09dc6e823"}
+```
+
+❌ `:username` in request is blank:
+
+```bash
+{"error":"UserName must not be blank."}
+```
+
+❌ Cannot create new bookmark—verify backend is connected to database:
+
+```bash
+{"error":"Something went wrong. Please try again."}
+```
+</p>
+</details>
 
 **Delete** a **bookmark**:
 
@@ -376,6 +464,23 @@ curl -X POST -H "Content-Type: application/json" -d '{}' http://localhost:5000/f
 # Delete :bookmarkId's bookmark using /fires/bookmarks/:bookmarkId.
 curl -X DELETE http://localhost:5000/fires/bookmarks/6303e187a84112a7a4be6752
 ```
+
+<details><summary>Example responses</summary>
+<p>
+
+🙂 Returns `message` confirming deletion of bookmark:
+
+```bash
+{"message":"Deleted one bookmark."}
+```
+
+❌ Cannot delete bookmark—verify bookmark exists:
+
+```bash
+{"error":"Something went wrong. 0 bookmarks were deleted. Please try again."}
+```
+</p>
+</details>
 
 ##### 👥 Users
 
@@ -388,7 +493,7 @@ curl -X POST -H "Content-Type: application/json" -d '{"username":"example", "ema
 <details><summary>Example responses</summary>
 <p>
 
-🙂 Returns user's `newObjectId` and includes a success `message`:
+🙂 Returns user's `newObjectId` and a success `message`:
 
 ```bash
 {"newObjectId":"630a8b31cb9c53a0e62a53e3","message":"User created! ID: 630a8b31cb9c53a0e62a53e3"}
