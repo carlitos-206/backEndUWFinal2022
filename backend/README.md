@@ -104,6 +104,23 @@ Get **all fires**:
 curl http://localhost:5000/fires/
 ```
 
+<details><summary>Example responses</summary>
+<p>
+
+🙂 Returns array of all fire data:
+
+```bash
+[{"_id":"62fb42131c5b7ea309f7e0e0","total_acres":null,"containment_datetime":"2014-08-24T18:59:59Z","control_datetime":"2014-08-24T19:01:00Z","daily_acres":0.1,"discovery_acres":null,"estimated_cost_to_date":null,"final_fire_report_approved_date":null,"fire_origin":{"cause":"Natural","general":null,"specific":null},"fire_discovery_datetime":"2014-07-17T20:07:59Z","fire_out_datetime":"2014-08-28T18:59:59Z","incident_name":"DUNCAN HILL 2-ENTIAT","location":{"latitude":null,"longitude":null,"city":null,"county":"Chelan","state":"US-WA"},"predominant_fuel_group":null,"modified_by_system":"wfdss","created_on_datetime":"2014-08-29T01:20:27Z","modified_on_datetime":"2014-08-29T18:46:06Z","source":"IRWIN","admin":{"created":"2022-08-16T07:06:59.277Z","modified":null}},{"_id":"62fb42181c5b7ea309f7e0e1","total_acres":null,"containment_datetime":null,"control_datetime":null,"daily_acres":1,"discovery_acres":1,"estimated_cost_to_date":null,"final_fire_report_approved_date":null,"fire_origin":{"cause":"Unknown","general":null,"specific":null},"fire_discovery_datetime":"2019-10-01T15:21:24Z","fire_out_datetime":null,"incident_name":"KAN RX - NOISY JOHN SALVAGE","location":{"latitude":48.81701,"longitude":-117.2443,"city":null,"county":"Pend Oreille","state":"US-WA"},"predominant_fuel_group":null,"modified_by_system":"wildcad","created_on_datetime":"2019-10-01T15:23:02Z","modified_on_datetime":"2020-11-02T15:51:28Z","source":"IRWIN","admin":{"created":"2022-08-16T07:07:04.286Z","modified":null}},{"_id":"62fb42181c5b7ea309f7e0e4","total_acres":null,"containment_datetime":"2014-07-06T03:40:00Z","control_datetime":"2014-07-06T03:45:00Z","daily_acres":0.5,"discovery_acres":null,"estimated_cost_to_date":null,"final_fire_report_approved_date":null,"fire_origin":{"cause":"Human","general":null,"specific":null},"fire_discovery_datetime":"2014-07-05T23:38:00Z","fire_out_datetime":"2014-07-10T19:38:59Z","incident_name":"JOHNSON CANYON","location":{"latitude":null,"longitude":null,"city":null,"county":"Kittitas","state":"US-WA"},"predominant_fuel_group":null,"modified_by_system":"wfdss","created_on_datetime":"2014-07-06T00:52:19Z","modified_on_datetime":"2014-07-19T21:40:56Z","source":"IRWIN","admin":{"created":"2022-08-16T07:07:04.288Z","modified":null}},{"_id":"62fb42181c5b7ea309f7e0e5","total_acres":null,"containment_datetime":"2017-08-02T21:10:00Z","control_datetime":"2017-08-02T22:54:59Z","daily_acres":0.1,"discovery_acres":0.1,"estimated_cost_to_date":null,"final_fire_report_approved_date":null,"fire_origin":{"cause":"Human","general":null,"specific":null},"fire_discovery_datetime":"2017-08-02T20:23:32Z","fire_out_datetime":"2017-08-06T17:29:00Z","incident_name":"GLENROSE ROAD","location":{"latitude":47.63531,"longitude":-117.3354,"city":null,"county":"Spokane","state":"US-WA"},"predominant_fuel_group":null,"modified_by_system":"wildcad","created_on_datetime":"2017-08-02T20:39:33Z","modified_on_datetime":"2017-08-14T17:03:46Z","source":"IRWIN","admin":{"created":"2022-08-16T07:07:04.288Z","modified":null}},{"_id":"62fb42181c5b7ea309f7e0e6","total_acres":null,"containment_datetime":null,"control_datetime":null,"daily_acres":null,"discovery_acres":null,"estimated_cost_to_date":null,"final_fire_report_approved_date":null,"fire_origin":{"cause":null,"general":null,"specific":null},"fire_discovery_datetime":"2019-08-31T19:01:00Z","fire_out_datetime":null,"incident_name":"781 MYERS RD","location":{"latitude":null,"longitude":null,"city":null,"county":"Yakima","state":"US-WA"},"predominant_fuel_group":null,"modified_by_system":"wfdss","created_on_datetime":"2019-08-31T23:22:30Z","modified_on_datetime":"2019-08-31T23:22:57Z","source":"IRWIN","admin":{"created":"2022-08-16T07:07:04.289Z","modified":null}},{"_id":"62fb42181c5b7ea309f7e0e7","total_acres":null,"containment_datetime":"2019-06-05T21:45:00Z","control_datetime":"2019-06-05T22:20:00Z","daily_acres":0.25,"discovery_acres":0.3,"estimated_cost_to_date":null,"final_fire_report_approved_date":null,"fire_origin":{"cause":"Human","general":null,"specific":null},"fire_discovery_datetime":"2019-06-05T20:47:04Z","fire_out_datetime":"2019-06-10T16:44:00Z","incident_name":"CRAIG","location":{"latitude":47.67908,"longitude":-117.6248,"city":null,"county":"Spokane","state":"US-WA"},"predominant_fuel_group":null,"modified_by_system":"wildcad","created_on_datetime":"2019-06-05T23:38:36Z","modified_on_datetime":"2019-08-05T15:44:04Z","source":"IRWIN","admin":{"created":"2022-08-16T07:07:04.289Z","modified":null}},{"_id":"62fb42181c5b7ea309f7e0e3","total_acres":null,"containment_datetime":"2014-08-14T17:29:59Z","control_datetime":"2014-08-14T22:54:59Z","daily_acres":0.1,"discovery_acres":null,"estimated_cost_to_date":null,"final_fire_report_approved_date":null,"fire_origin":{"cause":"Natural","general":null,"specific":null},"fire_discovery_datetime":"2014-08-13T20:06:59Z","fire_out_datetime":"2014-08-14T23:45:00Z","incident_name":"Poached Bear","location":{"latitude":null,"longitude":null,"city":null,"county":"Pend Oreille","state":"US-WA"},"predominant_fuel_group":null,"modified_by_system":"wfdss","created_on_datetime":"2014-08-14T16:28:21Z","modified_on_datetime":"2014-08-14T23:59:02Z","source":"IRWIN","admin":{"created":"2022-08-16T07:07:04.287Z","modified":null}},{"_id":"62fb42181c5b7ea309f7e0e2","total_acres":null,"containment_datetime":"2016-09-30T01:30:00Z","control_datetime":"2016-09-30T02:29:59Z","daily_acres":0.1,"discovery_acres":0.1,"estimated_cost_to_date":null,"final_fire_report_approved_date":null,"fire_origin":{"cause":"Undetermined","general":null,"specific":null},"fire_discovery_datetime":"2016-09-30T00:07:08Z","fire_out_datetime":"2016-10-31T21:30:00Z","incident_name":"OAKVILLE","location":{"latitude":46.87337,"longitude":-123.2764,"city":null,"county":"Grays Harbor","state":"US-WA"},"predominant_fuel_group":null,"modified_by_system":"wildcad","created_on_datetime":"2016-09-30T18:45:38Z","modified_on_datetime":"2016-11-01T14:54:41Z","source":"IRWIN","admin":{"created":"2022-08-16T07:07:04.287Z","modified":null}},{"_id":"62fb42181c5b7ea309f7e0e8","total_acres":null,"containment_datetime":null,"control_datetime":null,"daily_acres":null,"discovery_acres":0.1,"estimated_cost_to_date":null,"final_fire_report_approved_date":null,"fire_origin":{"cause":"Undetermined","general":null,"specific":null},"fire_discovery_datetime":"2016-10-14T20:32:00Z","fire_out_datetime":null,"incident_name":"2017 BLM Incident Support","location":{"latitude":47.65659,"longitude":-117.3587,"city":null,"county":"Spokane","state":"US-WA"},"predominant_fuel_group":null,"modified_by_system":"firecode","created_on_datetime":"2016-10-14T20:33:47Z","modified_on_datetime":"2016-10-14T20:34:54Z","source":"IRWIN","admin":{"created":"2022-08-16T07:07:04.289Z","modified":null}},{"_id":"62fb42181c5b7ea309f7e0e9","total_acres":null,"containment_datetime":null,"control_datetime":null,"daily_acres":null,"discovery_acres":null,"estimated_cost_to_date":null,"final_fire_report_approved_date":null,"fire_origin":{"cause":null,"general":null,"specific":null},"fire_discovery_datetime":"2015-05-09T17:26:00Z","fire_out_datetime":null,"incident_name":"RUSSELL","location":{"latitude":null,"longitude":null,"city":null,"county":"Yakima","state":"US-WA"},"predominant_fuel_group":null,"modified_by_system":"firecode","created_on_datetime":"2015-05-09T20:43:00Z","modified_on_datetime":"2015-05-09T20:47:16Z","source":"IRWIN","admin":{"created":"2022-08-16T07:07:04.290Z","modified":null}}]
+```
+
+❌ Failure—verify database is connected:
+
+```bash
+{"error":"Failed to retrieve fire data."}
+```
+</p>
+</details>
+
 Get fires by **specific month and year**:
 
 ```bash
@@ -111,12 +128,48 @@ Get fires by **specific month and year**:
 curl http://localhost:5000/fires/in/Jul/2014
 ```
 
+<details><summary>Example responses</summary>
+<p>
+
+🙂 Returns array of fires within specified month and year:
+
+```bash
+[{"_id":"62fb42131c5b7ea309f7e0e0","total_acres":null,"containment_datetime":"2014-08-24T18:59:59Z","control_datetime":"2014-08-24T19:01:00Z","daily_acres":0.1,"discovery_acres":null,"estimated_cost_to_date":null,"final_fire_report_approved_date":null,"fire_origin":{"cause":"Natural","general":null,"specific":null},"fire_discovery_datetime":"2014-07-17T20:07:59Z","fire_out_datetime":"2014-08-28T18:59:59Z","incident_name":"DUNCAN HILL 2-ENTIAT","location":{"latitude":null,"longitude":null,"city":null,"county":"Chelan","state":"US-WA"},"predominant_fuel_group":null,"modified_by_system":"wfdss","created_on_datetime":"2014-08-29T01:20:27Z","modified_on_datetime":"2014-08-29T18:46:06Z","source":"IRWIN","admin":{"created":"2022-08-16T07:06:59.277Z","modified":null}},{"_id":"62fb42181c5b7ea309f7e0e1","total_acres":null,"containment_datetime":null,"control_datetime":null,"daily_acres":1,"discovery_acres":1,"estimated_cost_to_date":null,"final_fire_report_approved_date":null,"fire_origin":{"cause":"Unknown","general":null,"specific":null},"fire_discovery_datetime":"2019-10-01T15:21:24Z","fire_out_datetime":null,"incident_name":"KAN RX - NOISY JOHN SALVAGE","location":{"latitude":48.81701,"longitude":-117.2443,"city":null,"county":"Pend Oreille","state":"US-WA"},"predominant_fuel_group":null,"modified_by_system":"wildcad","created_on_datetime":"2019-10-01T15:23:02Z","modified_on_datetime":"2020-11-02T15:51:28Z","source":"IRWIN","admin":{"created":"2022-08-16T07:07:04.286Z","modified":null}},{"_id":"62fb42181c5b7ea309f7e0e4","total_acres":null,"containment_datetime":"2014-07-06T03:40:00Z","control_datetime":"2014-07-06T03:45:00Z","daily_acres":0.5,"discovery_acres":null,"estimated_cost_to_date":null,"final_fire_report_approved_date":null,"fire_origin":{"cause":"Human","general":null,"specific":null},"fire_discovery_datetime":"2014-07-05T23:38:00Z","fire_out_datetime":"2014-07-10T19:38:59Z","incident_name":"JOHNSON CANYON","location":{"latitude":null,"longitude":null,"city":null,"county":"Kittitas","state":"US-WA"},"predominant_fuel_group":null,"modified_by_system":"wfdss","created_on_datetime":"2014-07-06T00:52:19Z","modified_on_datetime":"2014-07-19T21:40:56Z","source":"IRWIN","admin":{"created":"2022-08-16T07:07:04.288Z","modified":null}},{"_id":"62fb42181c5b7ea309f7e0e5","total_acres":null,"containment_datetime":"2017-08-02T21:10:00Z","control_datetime":"2017-08-02T22:54:59Z","daily_acres":0.1,"discovery_acres":0.1,"estimated_cost_to_date":null,"final_fire_report_approved_date":null,"fire_origin":{"cause":"Human","general":null,"specific":null},"fire_discovery_datetime":"2017-08-02T20:23:32Z","fire_out_datetime":"2017-08-06T17:29:00Z","incident_name":"GLENROSE ROAD","location":{"latitude":47.63531,"longitude":-117.3354,"city":null,"county":"Spokane","state":"US-WA"},"predominant_fuel_group":null,"modified_by_system":"wildcad","created_on_datetime":"2017-08-02T20:39:33Z","modified_on_datetime":"2017-08-14T17:03:46Z","source":"IRWIN","admin":{"created":"2022-08-16T07:07:04.288Z","modified":null}},{"_id":"62fb42181c5b7ea309f7e0e6","total_acres":null,"containment_datetime":null,"control_datetime":null,"daily_acres":null,"discovery_acres":null,"estimated_cost_to_date":null,"final_fire_report_approved_date":null,"fire_origin":{"cause":null,"general":null,"specific":null},"fire_discovery_datetime":"2019-08-31T19:01:00Z","fire_out_datetime":null,"incident_name":"781 MYERS RD","location":{"latitude":null,"longitude":null,"city":null,"county":"Yakima","state":"US-WA"},"predominant_fuel_group":null,"modified_by_system":"wfdss","created_on_datetime":"2019-08-31T23:22:30Z","modified_on_datetime":"2019-08-31T23:22:57Z","source":"IRWIN","admin":{"created":"2022-08-16T07:07:04.289Z","modified":null}},{"_id":"62fb42181c5b7ea309f7e0e7","total_acres":null,"containment_datetime":"2019-06-05T21:45:00Z","control_datetime":"2019-06-05T22:20:00Z","daily_acres":0.25,"discovery_acres":0.3,"estimated_cost_to_date":null,"final_fire_report_approved_date":null,"fire_origin":{"cause":"Human","general":null,"specific":null},"fire_discovery_datetime":"2019-06-05T20:47:04Z","fire_out_datetime":"2019-06-10T16:44:00Z","incident_name":"CRAIG","location":{"latitude":47.67908,"longitude":-117.6248,"city":null,"county":"Spokane","state":"US-WA"},"predominant_fuel_group":null,"modified_by_system":"wildcad","created_on_datetime":"2019-06-05T23:38:36Z","modified_on_datetime":"2019-08-05T15:44:04Z","source":"IRWIN","admin":{"created":"2022-08-16T07:07:04.289Z","modified":null}},{"_id":"62fb42181c5b7ea309f7e0e3","total_acres":null,"containment_datetime":"2014-08-14T17:29:59Z","control_datetime":"2014-08-14T22:54:59Z","daily_acres":0.1,"discovery_acres":null,"estimated_cost_to_date":null,"final_fire_report_approved_date":null,"fire_origin":{"cause":"Natural","general":null,"specific":null},"fire_discovery_datetime":"2014-08-13T20:06:59Z","fire_out_datetime":"2014-08-14T23:45:00Z","incident_name":"Poached Bear","location":{"latitude":null,"longitude":null,"city":null,"county":"Pend Oreille","state":"US-WA"},"predominant_fuel_group":null,"modified_by_system":"wfdss","created_on_datetime":"2014-08-14T16:28:21Z","modified_on_datetime":"2014-08-14T23:59:02Z","source":"IRWIN","admin":{"created":"2022-08-16T07:07:04.287Z","modified":null}},{"_id":"62fb42181c5b7ea309f7e0e2","total_acres":null,"containment_datetime":"2016-09-30T01:30:00Z","control_datetime":"2016-09-30T02:29:59Z","daily_acres":0.1,"discovery_acres":0.1,"estimated_cost_to_date":null,"final_fire_report_approved_date":null,"fire_origin":{"cause":"Undetermined","general":null,"specific":null},"fire_discovery_datetime":"2016-09-30T00:07:08Z","fire_out_datetime":"2016-10-31T21:30:00Z","incident_name":"OAKVILLE","location":{"latitude":46.87337,"longitude":-123.2764,"city":null,"county":"Grays Harbor","state":"US-WA"},"predominant_fuel_group":null,"modified_by_system":"wildcad","created_on_datetime":"2016-09-30T18:45:38Z","modified_on_datetime":"2016-11-01T14:54:41Z","source":"IRWIN","admin":{"created":"2022-08-16T07:07:04.287Z","modified":null}},{"_id":"62fb42181c5b7ea309f7e0e8","total_acres":null,"containment_datetime":null,"control_datetime":null,"daily_acres":null,"discovery_acres":0.1,"estimated_cost_to_date":null,"final_fire_report_approved_date":null,"fire_origin":{"cause":"Undetermined","general":null,"specific":null},"fire_discovery_datetime":"2016-10-14T20:32:00Z","fire_out_datetime":null,"incident_name":"2017 BLM Incident Support","location":{"latitude":47.65659,"longitude":-117.3587,"city":null,"county":"Spokane","state":"US-WA"},"predominant_fuel_group":null,"modified_by_system":"firecode","created_on_datetime":"2016-10-14T20:33:47Z","modified_on_datetime":"2016-10-14T20:34:54Z","source":"IRWIN","admin":{"created":"2022-08-16T07:07:04.289Z","modified":null}},{"_id":"62fb42181c5b7ea309f7e0e9","total_acres":null,"containment_datetime":null,"control_datetime":null,"daily_acres":null,"discovery_acres":null,"estimated_cost_to_date":null,"final_fire_report_approved_date":null,"fire_origin":{"cause":null,"general":null,"specific":null},"fire_discovery_datetime":"2015-05-09T17:26:00Z","fire_out_datetime":null,"incident_name":"RUSSELL","location":{"latitude":null,"longitude":null,"city":null,"county":"Yakima","state":"US-WA"},"predominant_fuel_group":null,"modified_by_system":"firecode","created_on_datetime":"2015-05-09T20:43:00Z","modified_on_datetime":"2015-05-09T20:47:16Z","source":"IRWIN","admin":{"created":"2022-08-16T07:07:04.290Z","modified":null}}]
+```
+
+❌ Failure—verify database is connected:
+
+```bash
+{"error":"Failed to retrieve fire data."}
+```
+</p>
+</details>
+
+
 Get a **single fire event**:
 
 ```bash
 # /fires/:fireId format, :fireId being a fire's unique id:
 curl http://localhost:5000/fires/62fb42181c5b7ea309f7e0e8
 ```
+
+<details><summary>Example responses</summary>
+<p>
+
+🙂 Returns object of fire's data:
+
+```bash
+{"_id":"62fb42181c5b7ea309f7e0e8","total_acres":null,"containment_datetime":null,"control_datetime":null,"daily_acres":null,"discovery_acres":0.1,"estimated_cost_to_date":null,"final_fire_report_approved_date":null,"fire_origin":{"cause":"Undetermined","general":null,"specific":null},"fire_discovery_datetime":"2016-10-14T20:32:00Z","fire_out_datetime":null,"incident_name":"2017 BLM Incident Support","location":{"latitude":47.65659,"longitude":-117.3587,"city":null,"county":"Spokane","state":"US-WA"},"predominant_fuel_group":null,"modified_by_system":"firecode","created_on_datetime":"2016-10-14T20:33:47Z","modified_on_datetime":"2016-10-14T20:34:54Z","source":"IRWIN","admin":{"created":"2022-08-16T07:07:04.289Z","modified":null}}
+```
+
+❌ Not found—verify `:fireId` in request is correct and that database is
+connected:
+
+```bash
+{"error":"Failed to retrieve fire data."}
+```
+</p>
+</details>
 
 ##### 🗨️ Comments
 
@@ -203,6 +256,60 @@ curl -X POST -H "Content-Type: application/json" -d '{}' http://localhost:5000/f
 # Delete :bookmarkId's bookmark using /fires/bookmarks/:bookmarkId.
 curl -X DELETE http://localhost:5000/fires/bookmarks/6303e187a84112a7a4be6752
 ```
+
+##### 👥 Users
+
+**Register** a user:
+
+```bash
+curl -X POST -H "Content-Type: application/json" -d '{"username":"example", "email":"example@example.com","password":"supersecretpswd!", "firstName":"Carlos", "lastName":"Caceres"}' http://localhost:5000/users/register
+```
+
+<details><summary>Example responses</summary>
+<p>
+
+🙂 Returns user's `newObjectId` and includes a success `message`:
+
+```bash
+{"newObjectId":"630a8b31cb9c53a0e62a53e3","message":"User created! ID: 630a8b31cb9c53a0e62a53e3"}
+```
+
+❌ Email already exists:
+
+```bash
+{"Error":"Email already exists"}
+```
+
+❌ Error. Verify `username`, `password`, `email`, `firstName` & `lastName` aren't missing from your request:
+
+```bash
+{"Error":"Failed to Create User"}
+```
+</p>
+</details>
+
+**Sign in** as a user:
+
+```bash
+curl -X POST -H "Content-Type: application/json" -d '{"usernameOrEmail":"user1","password":"secrets!"}' http://localhost:5000/users/login
+```
+
+<details><summary>Example responses</summary>
+<p>
+
+🙂 Returns signed-in user's `username` and `email`:
+
+```bash
+{"username":"my_username","email":"example@example.com"}
+```
+
+❌ User not found, given specified parameters:
+
+```bash
+{"error":"Failed to locate user"}
+```
+</p>
+</details>
 
 ### For Developers
 
