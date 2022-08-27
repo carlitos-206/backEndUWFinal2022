@@ -1,4 +1,4 @@
-# Washington Wildfire Occurrence Database
+# Washington Wildfires Community
 
 ## Problem: Washington's Wildfires
 
@@ -57,7 +57,7 @@ https://apnews.com/article/portland-wildfires-health-washington-oregon-41d19571e
 [^7]: (2018). *Air quality index basics.* Environmental Protection Agency.
 https://web.archive.org/web/20180618144741/https://airnow.gov/index.cfm?action=aqibasics.aqi
 
-## Solution: Washington Wildfire Occurrence Database
+## Solution: Washington Wildfires Community
 
 <!--
 Design a solution (Database & Front End people lead this process)
@@ -88,12 +88,11 @@ causes, cost of damages, location, and more
 * 📊 Sign up, log in, and start a discussion on recent fires
 * 🔖 Revisit fires of your interest using bookmarks
 
-### Technologies
+### Live Website
 
-* *MongoDB* for fire data
-* *Firestore* for user authentication
+{{DEPLOYED URL_HERE}}
 
-### Routes
+### For Users
 
 So far:
 "/GET "
@@ -116,6 +115,43 @@ So far:
 
 "/DElETE"
 `/:firestoreID/delete/:commentID`
+
+### For Developers
+
+#### Setting Up & Running
+
+You'll need to serve the **backend** and **frontend** to run the app locally and
+develop its functionality.
+
+1. **Serve the backend:**
+  * Enter `/backend`: `cd backend`
+  * `npm install` to install all backend packages
+  * `npm start` to serve the backend at `https://localhost:5000`
+2. **Serve the frontend:**
+  * Enter `/frontend/fire-app`: `cd frontend/fire-app`
+  * `npm install` to install all frontend packages
+  * `npm start` to serve the frontend at `https://localhost:3000`
+
+You should now be able to access the app's frontend at `http://localhost:3000`
+and use the app's full functionality.
+
+**‽** *Frontend isn't getting data* - Confirm backend is being served @ 
+`https://localhost:5000`. If it's not, run `npm start` in `/backend`.
+
+**‽** *Backend/frontend won't serve* - Confirm your `5000` & `3000` ports
+aren't being used by other applications. If they are, quit the other
+applications or change the ports the backend and frontend use. The backend port
+can be changed in `/backend/server.js`.
+
+#### Testing
+
+**Testing the API routes:**
+  * Enter `/backend`: `cd backend`
+  * `npm test` from `/backend` to run the Jest test suite
+  * Test files are located in `/backend/routes`
+
+**‽** *Tests aren't running* - Make sure `/backend` package dependencies are
+installed. Run `npm install` in `/backend`, then try `npm test` again.
 
 ## Project Timeline
 
