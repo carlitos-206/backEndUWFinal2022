@@ -59,7 +59,7 @@ export class MapContainer extends Component {
                     >
                         <div>
                             <h3>Name: {this.state.selectedPlace.name}</h3>
-                            <p>Cause: {this.state.selectedPlace.fire_origin.cause}</p>
+                            <p>Cause: {this.state.selectedPlace.cause}</p>
                             <p>Total Acres: {this.state.selectedPlace.totalAcres}</p>
                             <p>Total Cost: {this.state.selectedPlace.totalCost}</p>
                         </div>

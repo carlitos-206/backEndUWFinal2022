@@ -123,9 +123,106 @@ height: 80%;
 
 }
 
+.register-form, .login-form  {
+  width: 60%;
+  height: 30rem;
+  margin-left: 20%;
+  margin-top:7%;
+  text-align: center;
+  padding-top: 1%;
+  background-color: rgb(152, 121, 111);
+  color: #FFFFFF;
+
+ }
+ 
+.button-container {
+  padding-top: 2rem;
+}
+
+.register-label, .login-label {
+  display: block;
+  font-size: larger;
+  color: white;
+  padding: 5px;
+}
+ 
+.register-input, .login-input {
+  font-size: larger;
+  padding: 5px;
+  margin: 2px;
+  
+}
+.register-btn, .login-btn {
+  border: 1px solid #FFFFFF;
+  background-color: transparent;
+  font-family: 'Oswald', sans-serif;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: .5rem 2rem;
+}
+ 
+.register-messages, .login-messages {
+  display: flex;
+  justify-content: center;
+}
+ 
+.register-error, .login-error {
+  display: block;
+  background-color: red;
+  color: white;
+  width: fit-content;
+  height: 50px;
+  padding: 5px;
+}
+ 
+.register-success, .login-success {
+  display: block;
+  background-color: lightblue;
+  color: black;
+  width: fit-content;
+  height: 50px;
+  padding: 5px;
+}
+
+.register h2, .login h2 {
+
+  font-family: 'Oswald', sans-serif;
+  font-size: 2rem;
+  text-transform: capitalize;
+  padding-bottom: 3%;
+}
+
 footer {
   height: 50px;
   display: block;
   text-align: center;
   padding-top: 50px;
+}
+
+.button-container {
+  width: 30%;
+  align-content: center;
+  justify-content: center;
+}
+
+.comment-container {
+  width: 60%;
+}
+
+.button-container button {
+  width: 100%;
+}
+
+.card {
+  margin-bottom: 1rem;
+}
+
+.card button {
+  padding: 0.5rem 1rem;
+  
+}
+
+.posts{
+  margin-top: 3rem;
 }
