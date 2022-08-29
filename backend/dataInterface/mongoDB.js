@@ -1,7 +1,7 @@
 const { MongoClient } = require("mongodb");
 const ObjectId = require("mongodb").ObjectId;
 const bcrypt = require("bcryptjs");
-const { use } = require("../routes");
+//const { use } = require("../routes");
 const uri =
   "mongodb+srv://carlitos206:SharedFakePass123@cluster0.lshmeod.mongodb.net/?retryWrites=true&w=majority";
 
@@ -24,11 +24,52 @@ module.exports.getAllFires = async () => {
     const result = await collection.find({}).toArray();
     return result;
   } catch (err) {
-    console.log(err);
+    return {error: 'Something is wrong. Not able to retrieve fire data.'}
   } finally {
     await client.close();
   }
 };
+// get all fires by month and year
+module.exports.getFireByMonthYear = async (month, year) => {
+  //array to find month number by month name
+  const monthsShort = {
+    Jan: '01',
+    Feb: '02',
+    Mar: '03',
+    Apr: '04',
+    May: '05',
+    Jun: '06',
+    Jul: '07',
+    Aug: '08',
+    Sep: '09',
+    Oct: '10',
+    Nov: '11',
+    Dec: '12',
+  };
+  try {
+    await client.connect();
+    const db = client.db(databaseName);
+    const collection = db.collection(fire_Collection);
+    //get month num
+    const monthNum = monthsShort[month];
+    //contruct frmDate
+    const frmDate = `${year}-${monthNum}-01`;
+    //get month end date
+    const endDt = new Date(year, monthNum, 0);
+    // construct toDate
+    const toDate = `${year}-${monthNum}-${endDt}`;
+    // get all fires between the start and end date of a given month
+    const result = await collection.find({ fire_discovery_datetime : { $gt: frmDate, $lt: toDate}});
+
+    return result
+    ? result.toArray()
+    : {
+      error: `We've encountered an error. Please try again later.`,
+    };
+  } catch (err) {
+    return {error: 'Something is wrong. Not able to retrieve fire data.'}
+  }
+}
 //get fire by fire id
 module.exports.getFireById = async (id) => {
   try {
@@ -38,7 +79,7 @@ module.exports.getFireById = async (id) => {
     const result = await collection.findOne({ _id: ObjectId(id) });
     return result;
   } catch (err) {
-    console.log(err);
+    return {error: 'Something is wrong. Not able to retrieve fire data.'}
   } finally {
     await client.close();
   }
@@ -53,7 +94,7 @@ module.exports.getFireComments = async (id) => {
     const result = await collection.find(query).toArray();
     return result;
   } catch (err) {
-    console.log(err);
+    return {error: 'Something is wrong. Not able to retrieve fire comments.'}
   } finally {
     await client.close();
   }
@@ -68,35 +109,21 @@ module.exports.getFireCommentByCommentId = async (commentId) => {
     const result = await collection.findOne(query);
     return result;
   } catch (err) {
-    console.log(err);
+    return {error: 'Something is wrong. Not able to retrieve fire comments.'}
   } finally {
     await client.close();
   }
 };
 //get all fire comments by userid
-module.exports.getFireCommentsByUser = async (id) => {
+module.exports.getFireCommentsByUser = async (username) => {
   try {
     await client.connect();
     const db = client.db(databaseName);
     const collection = db.collection(comments_Collection);
-    const result = await collection.find({ username: id }).toArray();
+    const result = await collection.find({ username: username }).toArray();
     return result;
   } catch (err) {
-    console.log(err);
-  } finally {
-    await client.close();
-  }
-};
-//get all fire comment by fire id
-module.exports.getFireCommentsByFire = async (id) => {
-  try {
-    await client.connect();
-    const db = client.db(databaseName);
-    const collection = db.collection(comments_Collection);
-    const result = await collection.find({ fire_id: id }).toArray();
-    return result;
-  } catch (err) {
-    console.log(err);
+    return {error: 'Something is wrong. Not able to retrieve fire comments.'}
   } finally {
     await client.close();
   }
@@ -125,7 +152,7 @@ module.exports.createComment = async (paramObj, newObj) => {
       return { error: "New comment insert failed." };
     }
   } catch (err) {
-    console.log(err);
+    return {error: 'Something is wrong. Not able to insert comment.'}
   } finally {
     await client.close();
   }
@@ -200,13 +227,15 @@ module.exports.getBookmarkByUserName = async(userName) => {
     await client.connect();
     const db = client.db(databaseName);
     const collection = db.collection(bookmarks_Collection);
-    const result = await collection.find({ username: userName }).toArray();
-    return result;
+    const result = await collection.find({ username: userName });
+    return result
+    ? result.toArray()
+    : {
+      error: `We've encountered an error. Please try again later.`,
+    };
 
   } catch (err) {
-    return { error: "Failed to retrieve bookmarks for username: ${userName}" };
-  } finally {
-    await client.close();
+    return { error: `Failed to retrieve bookmarks for a username: ${userName}` };
   }
 }
 // get all bookmarks by fireid
@@ -215,13 +244,15 @@ module.exports.getAllBookmarksByFireId = async (id) => {
     await client.connect();
     const db = client.db(databaseName);
     const collection = db.collection(bookmarks_Collection);
-    const result = await collection.find({ fire_id: ObjectId(id) }).toArray();
-    return result;
+    const result = await collection.find({ fire_id: ObjectId(id) });
+    return result
+    ? result.toArray()
+    : {
+      error: `We've encountered an error. Please try again later.`,
+    };
 
   } catch (err) {
     return { error: "Failed to retrieve bookmarks for fire_id: ${id}" };
-  } finally {
-    await client.close();
   }
 }
 // create a bookmark by fireid and username
@@ -263,11 +294,11 @@ module.exports.deleteBookmark = async (id) => {
     const result = await collection.deleteOne(deletionRules);
     if (result.deletedCount != 1) {
       return {
-        error: `Something went wrong. ${result.deletedCount} Bookmarks were deleted. Please try again.`,
+        error: `Something went wrong. 0 bookmarks were deleted. Please try again.`,
       };
     }
 
-    return { message: `Deleted ${result.deletedCount} bookmark.` };
+    return { message: `Deleted one bookmark.` };
   } catch (err) {
     return { Error: "Failed to Delete a bookmark" };
   } finally {

@@ -1,41 +1,71 @@
 const { Router } = require("express");
 const router = Router();
-
+const bodyParser = require('body-parser');
 // Data interface
 const mongoConnection = require("../dataInterface/mongoDB");
+
+router.use(bodyParser.urlencoded({ extended: false }));
+router.use(bodyParser.json());
 
 // "GET" requests --- READ
 
 // curl http://localhost:5000/fires/
 router.get("/", async (req, res) => {
+  let statusCode = 500
   const result = await mongoConnection.getAllFires();
-  if (result) {
-    res.status(200).send(result);
+  if (result.length >0) {
+    statusCode = 200
+    res.status(statusCode).send(result);
   } else {
-    res.status(200).send({ message: "Failed" });
+    res.status(statusCode).send({ error: "Failed to retrieve fire data." });
   }
 });
 
-// curl http://localhost:5000/fires/:id
-router.get("/:id", async (req, res) => {
-  const result = await mongoConnection.getFireById(req.params.id);
+//get all fires by month and year
+// curl http://localhost:5000/fires/in/:month/:year
+// curl http://localhost:5000/fires/in/Jul/2014
+
+router.get("/in/:month/:year", async(req, res) => {
+
+  let statusCode
+  const result = await mongoConnection.getFireByMonthYear(req.params.month, req.params.year);
   if (result) {
-    res.status(200).send(result);
+    statusCode = 200
+    res.status(statusCode).send(result);
   } else {
-    res.status(200).send({ message: "Failed" });
+    statusCode = 404
+    res.status(statusCode).send({ error: "Failed to retrieve fire data." });
+  }
+
+});
+
+// curl http://localhost:5000/fires/:id
+// curl http://localhost:5000/fires/62fb42181c5b7ea309f7e0e8
+router.get("/:id([0-9a-fA-F]{24})", async (req, res, next) => {
+  let statusCode
+  const result = await mongoConnection.getFireById(req.params.id);
+  if (!result) {
+    statusCode = 404;
+    res.status(statusCode).send({ error: "Failed to retrieve fire data." });
+  } else {
+    statusCode = 200;
+    res.status(statusCode).send(result);
+    
   }
 });
+
 // get all comments by fire id
 // curl http://localhost:5000/fires/:id/comments
 // curl http://localhost:5000/fires/62fb42131c5b7ea309f7e0e0/comments
-router.get("/:id/comments", async (req, res) => {
+router.get("/:id/comments", async (req, res, next) => {
+  let statusCode;
   const result = await mongoConnection.getFireComments(req.params.id);
-  if (result) {
-    res.status(200).send(result);
+  if (!result) {
+    statusCode = 404;
+    res.status(statusCode).send({ error: "No comments found for fireid: ${req.params.id}" });
   } else {
-    res
-      .status(404)
-      .send({ message: "No comments found for fireid: ${req.params.id}" });
+    statusCode = 200;
+    res.status(statusCode).send(result);    
   }
 });
 // get comments by comment id
@@ -51,17 +81,17 @@ router.get("/comments/:id", async (req, res) => {
       .send({ message: "No comments found for commentId: ${req.params.id}" });
   }
 });
-//get all fire comments by userid
-// curl http://localhost:5000/fires/comments/user/:id
+//get all fire comments by username
+// curl http://localhost:5000/fires/comments/user/:username
 // curl http://localhost:5000/fires/comments/user/User1
-router.get("/comments/user/:id", async (req, res) => {
-  const result = await mongoConnection.getFireCommentsByUser(req.params.id);
+router.get("/comments/user/:username", async (req, res) => {
+  const result = await mongoConnection.getFireCommentsByUser(req.params.username);
   if (result) {
     res.status(200).send(result);
   } else {
     res
       .status(404)
-      .send({ message: "No comments found for userId: ${req.params.id}" });
+      .send({ message: "No comments found for username: ${req.params.username}" });
   }
 });
 //create new comment
@@ -71,7 +101,7 @@ router.post(
   async (req, res) => {
     let resultStatus;
     if (req.params.userName === "") {
-      resultStatus = 400;
+      resultStatus = 404;
       res.status(resultStatus).send({ error: "UserName must not be blank." });
     }
     //validate text
@@ -81,7 +111,7 @@ router.post(
     } else {
       const result = await mongoConnection.createComment(req.params, req.body);
       if (result.error) {
-        resultStatus = 400;
+        resultStatus = 500;
         res
           .status(resultStatus)
           .send({ error: "Something went wrong. Please try again." });
@@ -101,7 +131,7 @@ router.put("/comments/:id([0-9a-fA-F]{24})", async (req, res, err) => {
   {
     const result = await mongoConnection.updateComment(req.params.id, req.body)
     if(result.error){
-      resultStatus = 400;
+      resultStatus = 404;
     } else {
       resultStatus = 200;
     }
@@ -109,7 +139,7 @@ router.put("/comments/:id([0-9a-fA-F]{24})", async (req, res, err) => {
   }
   catch (err)
   {
-    resultStatus = 400;
+    resultStatus = 500;
     res.status(resultStatus).send({error: "Something went wrong. Please try again!"});
   }
   
@@ -126,37 +156,46 @@ router.delete("/comments/:commentId([0-9a-fA-F]{24})", async(req, res)=>{
   res.status(resultStatus).send(result);
 })
 //get a bookmark by a bookmarkid
-//curl http://localhost:5000/fires/bookmarks/6303e187a84112a7a4be6752
-router.get("/bookmarks/:id", async (req, res) => {
+//curl http://localhost:5000/fires/bookmarks/6303ec16a84112a7a4be6753
+router.get("/bookmarks/:id([0-9a-fA-F]{24})", async (req, res, next) => {
+
   const result = await mongoConnection.getBookmarkByBookmarkId(req.params.id);
+
   if (result) {
     res.status(200).send(result);
   } else {
-    res.status(400).send({ message: "Failed" });
+    res.status(404).send({ error: "Failed to retrieve bookmark!" });
   }
+
 });
 
 //get all bookmarks by a username
 //curl http://localhost:5000/fires/user/:username/bookmarks
 //curl http://localhost:5000/fires/user/User1/bookmarks
 router.get("/user/:username/bookmarks", async (req, res) => {
+  let returnStatus
   const result = await mongoConnection.getBookmarkByUserName(req.params.username);
-  if (result){
-    res.status(200).send(result);
+  if (!result){
+    returnStatus = 404
+    res.status(returnStatus).send({ error: "Failed to retrieve bookmark!" });
   } else {
-    res.status(400).send({ message: "Failed to retrieve bookmark!" });
+    returnStatus = 200
+    res.status(returnStatus).send(result);
   }
 });
 
 //get all bookmarks by a fireid
 //curl http://localhost:5000/fires/:id/bookmarks
 //curl http://localhost:5000/fires/62fb42181c5b7ea309f7e0e8/bookmarks
-router.get("/:id/bookmarks", async (req, res) => {
+router.get("/:id/bookmarks", async (req, res, next) => {
+  let returnStatus;
   const result = await mongoConnection.getAllBookmarksByFireId(req.params.id);
-  if (result){
-    res.status(200).send(result);
+  if (!result){
+    returnStatus = 404
+    res.status(returnStatus).send({ error: "Failed to retrieve bookmark!" });
   } else {
-    res.status(400).send({ message: "Failed to retrieve bookmark!" });
+    returnStatus = 200
+    res.status(returnStatus).send(result);
   }
 });
 //create a bookmark by fireid and username
@@ -167,13 +206,13 @@ router.post(
   async (req, res) => {
     let resultStatus;
     if (req.params.userName === "") {
-      resultStatus = 400;
+      resultStatus = 404;
       res.status(resultStatus).send({ error: "UserName must not be blank." });
     }
     else {
       const result = await mongoConnection.createBookmark(req.params);
       if (result.error) {
-        resultStatus = 400;
+        resultStatus = 500;
         res
           .status(resultStatus)
           .send({ error: "Something went wrong. Please try again." });
@@ -190,6 +229,7 @@ router.post(
 
 router.delete("/bookmarks/:id([0-9a-fA-F]{24})", async(req, res)=>{
   const result = await mongoConnection.deleteBookmark(req.params.id)
+  
   if(result.error){
     resultStatus = 404;
   } else {
