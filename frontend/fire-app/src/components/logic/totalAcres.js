@@ -7,7 +7,7 @@ export default function totalAcres(startDate, endDate, dailyAcres, totalAcres){
       if(days === 0){
         return dailyAcres
       }
-      let totalAcre_estimate =  Math.round((days * dailyAcres)*100)/100
+      let totalAcre_estimate = days * dailyAcres
       return totalAcre_estimate
     }else{
       return 'Not Available'
