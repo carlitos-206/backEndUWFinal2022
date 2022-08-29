@@ -1,5 +1,5 @@
 export default function convertToUSD(num){
-  if(num !== undefined || num !== null || num !==0) {
+  if(num !== undefined || num !== null) {
     let dollar = (num).toLocaleString('en-US', {
       style: 'currency',
       currency: 'USD',
