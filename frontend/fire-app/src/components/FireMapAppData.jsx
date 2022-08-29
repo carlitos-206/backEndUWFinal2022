@@ -8,7 +8,7 @@ function FireMapAppData() {
   const [hasError, setHasError] = useState(false);
 
   useEffect(() => {
-    fetch('http://localhost:5001/fires/')
+    fetch('http://localhost:5000/fires/')
 
       .then(response => response.json())
 
@@ -27,7 +27,7 @@ function FireMapAppData() {
       );
 
 
-  }, [fires]);
+  }, []);
 
   if (isLoading) {
     return <p>Loading...</p>
@@ -43,7 +43,7 @@ function FireMapAppData() {
       <div class="map container2" >
         <h1 class="map-text">The Fire Map goes here</h1>
         {fires.map((fire, id) =>
-
+          
           <section className="row card" key={id} >
             <div className="list">
               <div className="column list-info">

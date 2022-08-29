@@ -27,8 +27,8 @@ function App() {
                 <SigninButton />
               </nav>
             </div>
-            {/* <FireMapApp /> */}
-            <FireMapAppData />
+            <FireMapApp />
+            {/* <FireMapAppData /> */}
             <Footer />
           </main>
         </>
@@ -121,7 +121,7 @@ function App() {
           {/* Fire details to be displayed in balloon */}
           <Route
             path="/map/:fireId"
-            element={<FireDetailsPage />}
+            element={<FireDetailsPage/>}
           />
           {/* Page displaying the posts for a user */}
           <Route

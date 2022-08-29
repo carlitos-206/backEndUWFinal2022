@@ -20,8 +20,8 @@ module.exports.getAllFires = async () => {
     await client.connect();
     const db = client.db(databaseName);
     const collection = db.collection(fire_Collection);
-    // Edit limit to get all fires when in production
-    const result = await collection.find({}).limit(10).toArray();
+    // Edit limit to get all fires when in prduction
+    const result = await collection.find({}).toArray();
     return result;
   } catch (err) {
     return {error: 'Something is wrong. Not able to retrieve fire data.'}
