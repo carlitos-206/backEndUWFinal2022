@@ -143,10 +143,10 @@ function App() {
             element={<FireDetailsPage/>}
           />
           {/* Page displaying the posts for a user */}
-          <Route
+          {/* <Route
             path="/posts/:userId"
             element={<MyPostsPage />}
-          />
+          /> */}
           {/* Page with blank fields to add a post from MyPosts page */}
           <Route
             path="/posts/:postId"
