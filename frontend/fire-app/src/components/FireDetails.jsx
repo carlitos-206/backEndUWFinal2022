@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import checkVal from './logic/checkVal';
 import readTheDate from './logic/readTheDate';
 import totalAcres from './logic/totalAcres';
-import convertToUSD from './logic/converToUSD';
+// import convertToUSD from './logic/converToUSD';
 function FireDetails({ fireId  }) {
     const [fire, setFire] = useState(undefined);
     const [isLoading, setIsLoading] = useState(true);
@@ -23,7 +23,7 @@ function FireDetails({ fireId  }) {
                 setIsLoading(false);
             }
         );
-    }, []);
+    }, [fireId]);
     if (isLoading) {
         return <p>Loading...</p>
     }
@@ -48,7 +48,7 @@ function FireDetails({ fireId  }) {
                 <p>Total Acres:{totalAcres(fire.containment_datetime, fire.control_datetime, fire.daily_acres, fire.total_acres)}</p>
                 <p>Cause:{checkVal(fire.fire_origin.cause)} Activity</p>
                 <p>Predominant Fuel: {checkVal(fire.predominant_fuel_group)} </p>
-                <p>Cost:{convertToUSD(fire.estimated_cost_to_date)}</p>
+                <p>Cost:{fire.estimated_cost_to_date}</p>
                 <p>Source: {checkVal(fire.source)}</p>
             </div>
             <a href="/">Return Home</a>
