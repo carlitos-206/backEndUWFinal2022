@@ -1,0 +1,1651 @@
+[{
+    "_id": "62fb42131c5b7ea309f7e0e0",
+    "total_acres": null,
+    "containment_datetime": "2014-08-24T18:59:59Z",
+    "control_datetime": "2014-08-24T19:01:00Z",
+    "daily_acres": 0.1,
+    "discovery_acres": null,
+    "estimated_cost_to_date": null,
+    "final_fire_report_approved_date": null,
+    "fire_origin": {
+        "cause": "Natural",
+        "general": null,
+        "specific": null
+    },
+    "fire_discovery_datetime": "2014-07-17T20:07:59Z",
+    "fire_out_datetime": "2014-08-28T18:59:59Z",
+    "incident_name": "DUNCAN HILL 2-ENTIAT",
+    "location": {
+        "latitude": null,
+        "longitude": null,
+        "city": null,
+        "county": "Chelan",
+        "state": "US-WA"
+    },
+    "predominant_fuel_group": null,
+    "modified_by_system": "wfdss",
+    "created_on_datetime": "2014-08-29T01:20:27Z",
+    "modified_on_datetime": "2014-08-29T18:46:06Z",
+    "source": "IRWIN",
+    "admin": {
+        "created": "2022-08-16T07:06:59.277Z",
+        "modified": null
+    }
+}, {
+    "_id": "62fb42181c5b7ea309f7e0e1",
+    "total_acres": null,
+    "containment_datetime": null,
+    "control_datetime": null,
+    "daily_acres": 1,
+    "discovery_acres": 1,
+    "estimated_cost_to_date": null,
+    "final_fire_report_approved_date": null,
+    "fire_origin": {
+        "cause": "Unknown",
+        "general": null,
+        "specific": null
+    },
+    "fire_discovery_datetime": "2019-10-01T15:21:24Z",
+    "fire_out_datetime": null,
+    "incident_name": "KAN RX - NOISY JOHN SALVAGE",
+    "location": {
+        "latitude": 48.81701,
+        "longitude": -117.2443,
+        "city": null,
+        "county": "Pend Oreille",
+        "state": "US-WA"
+    },
+    "predominant_fuel_group": null,
+    "modified_by_system": "wildcad",
+    "created_on_datetime": "2019-10-01T15:23:02Z",
+    "modified_on_datetime": "2020-11-02T15:51:28Z",
+    "source": "IRWIN",
+    "admin": {
+        "created": "2022-08-16T07:07:04.286Z",
+        "modified": null
+    }
+}, {
+    "_id": "62fb42181c5b7ea309f7e0e4",
+    "total_acres": null,
+    "containment_datetime": "2014-07-06T03:40:00Z",
+    "control_datetime": "2014-07-06T03:45:00Z",
+    "daily_acres": 0.5,
+    "discovery_acres": null,
+    "estimated_cost_to_date": null,
+    "final_fire_report_approved_date": null,
+    "fire_origin": {
+        "cause": "Human",
+        "general": null,
+        "specific": null
+    },
+    "fire_discovery_datetime": "2014-07-05T23:38:00Z",
+    "fire_out_datetime": "2014-07-10T19:38:59Z",
+    "incident_name": "JOHNSON CANYON",
+    "location": {
+        "latitude": null,
+        "longitude": null,
+        "city": null,
+        "county": "Kittitas",
+        "state": "US-WA"
+    },
+    "predominant_fuel_group": null,
+    "modified_by_system": "wfdss",
+    "created_on_datetime": "2014-07-06T00:52:19Z",
+    "modified_on_datetime": "2014-07-19T21:40:56Z",
+    "source": "IRWIN",
+    "admin": {
+        "created": "2022-08-16T07:07:04.288Z",
+        "modified": null
+    }
+}, {
+    "_id": "62fb42181c5b7ea309f7e0e5",
+    "total_acres": null,
+    "containment_datetime": "2017-08-02T21:10:00Z",
+    "control_datetime": "2017-08-02T22:54:59Z",
+    "daily_acres": 0.1,
+    "discovery_acres": 0.1,
+    "estimated_cost_to_date": null,
+    "final_fire_report_approved_date": null,
+    "fire_origin": {
+        "cause": "Human",
+        "general": null,
+        "specific": null
+    },
+    "fire_discovery_datetime": "2017-08-02T20:23:32Z",
+    "fire_out_datetime": "2017-08-06T17:29:00Z",
+    "incident_name": "GLENROSE ROAD",
+    "location": {
+        "latitude": 47.63531,
+        "longitude": -117.3354,
+        "city": null,
+        "county": "Spokane",
+        "state": "US-WA"
+    },
+    "predominant_fuel_group": null,
+    "modified_by_system": "wildcad",
+    "created_on_datetime": "2017-08-02T20:39:33Z",
+    "modified_on_datetime": "2017-08-14T17:03:46Z",
+    "source": "IRWIN",
+    "admin": {
+        "created": "2022-08-16T07:07:04.288Z",
+        "modified": null
+    }
+}, {
+    "_id": "62fb42181c5b7ea309f7e0e6",
+    "total_acres": null,
+    "containment_datetime": null,
+    "control_datetime": null,
+    "daily_acres": null,
+    "discovery_acres": null,
+    "estimated_cost_to_date": null,
+    "final_fire_report_approved_date": null,
+    "fire_origin": {
+        "cause": null,
+        "general": null,
+        "specific": null
+    },
+    "fire_discovery_datetime": "2019-08-31T19:01:00Z",
+    "fire_out_datetime": null,
+    "incident_name": "781 MYERS RD",
+    "location": {
+        "latitude": null,
+        "longitude": null,
+        "city": null,
+        "county": "Yakima",
+        "state": "US-WA"
+    },
+    "predominant_fuel_group": null,
+    "modified_by_system": "wfdss",
+    "created_on_datetime": "2019-08-31T23:22:30Z",
+    "modified_on_datetime": "2019-08-31T23:22:57Z",
+    "source": "IRWIN",
+    "admin": {
+        "created": "2022-08-16T07:07:04.289Z",
+        "modified": null
+    }
+}, {
+    "_id": "62fb42181c5b7ea309f7e0e7",
+    "total_acres": null,
+    "containment_datetime": "2019-06-05T21:45:00Z",
+    "control_datetime": "2019-06-05T22:20:00Z",
+    "daily_acres": 0.25,
+    "discovery_acres": 0.3,
+    "estimated_cost_to_date": null,
+    "final_fire_report_approved_date": null,
+    "fire_origin": {
+        "cause": "Human",
+        "general": null,
+        "specific": null
+    },
+    "fire_discovery_datetime": "2019-06-05T20:47:04Z",
+    "fire_out_datetime": "2019-06-10T16:44:00Z",
+    "incident_name": "CRAIG",
+    "location": {
+        "latitude": 47.67908,
+        "longitude": -117.6248,
+        "city": null,
+        "county": "Spokane",
+        "state": "US-WA"
+    },
+    "predominant_fuel_group": null,
+    "modified_by_system": "wildcad",
+    "created_on_datetime": "2019-06-05T23:38:36Z",
+    "modified_on_datetime": "2019-08-05T15:44:04Z",
+    "source": "IRWIN",
+    "admin": {
+        "created": "2022-08-16T07:07:04.289Z",
+        "modified": null
+    }
+}, {
+    "_id": "62fb42181c5b7ea309f7e0e3",
+    "total_acres": null,
+    "containment_datetime": "2014-08-14T17:29:59Z",
+    "control_datetime": "2014-08-14T22:54:59Z",
+    "daily_acres": 0.1,
+    "discovery_acres": null,
+    "estimated_cost_to_date": null,
+    "final_fire_report_approved_date": null,
+    "fire_origin": {
+        "cause": "Natural",
+        "general": null,
+        "specific": null
+    },
+    "fire_discovery_datetime": "2014-08-13T20:06:59Z",
+    "fire_out_datetime": "2014-08-14T23:45:00Z",
+    "incident_name": "Poached Bear",
+    "location": {
+        "latitude": null,
+        "longitude": null,
+        "city": null,
+        "county": "Pend Oreille",
+        "state": "US-WA"
+    },
+    "predominant_fuel_group": null,
+    "modified_by_system": "wfdss",
+    "created_on_datetime": "2014-08-14T16:28:21Z",
+    "modified_on_datetime": "2014-08-14T23:59:02Z",
+    "source": "IRWIN",
+    "admin": {
+        "created": "2022-08-16T07:07:04.287Z",
+        "modified": null
+    }
+}, {
+    "_id": "62fb42181c5b7ea309f7e0e2",
+    "total_acres": null,
+    "containment_datetime": "2016-09-30T01:30:00Z",
+    "control_datetime": "2016-09-30T02:29:59Z",
+    "daily_acres": 0.1,
+    "discovery_acres": 0.1,
+    "estimated_cost_to_date": null,
+    "final_fire_report_approved_date": null,
+    "fire_origin": {
+        "cause": "Undetermined",
+        "general": null,
+        "specific": null
+    },
+    "fire_discovery_datetime": "2016-09-30T00:07:08Z",
+    "fire_out_datetime": "2016-10-31T21:30:00Z",
+    "incident_name": "OAKVILLE",
+    "location": {
+        "latitude": 46.87337,
+        "longitude": -123.2764,
+        "city": null,
+        "county": "Grays Harbor",
+        "state": "US-WA"
+    },
+    "predominant_fuel_group": null,
+    "modified_by_system": "wildcad",
+    "created_on_datetime": "2016-09-30T18:45:38Z",
+    "modified_on_datetime": "2016-11-01T14:54:41Z",
+    "source": "IRWIN",
+    "admin": {
+        "created": "2022-08-16T07:07:04.287Z",
+        "modified": null
+    }
+}, {
+    "_id": "62fb42181c5b7ea309f7e0e8",
+    "total_acres": null,
+    "containment_datetime": null,
+    "control_datetime": null,
+    "daily_acres": null,
+    "discovery_acres": 0.1,
+    "estimated_cost_to_date": null,
+    "final_fire_report_approved_date": null,
+    "fire_origin": {
+        "cause": "Undetermined",
+        "general": null,
+        "specific": null
+    },
+    "fire_discovery_datetime": "2016-10-14T20:32:00Z",
+    "fire_out_datetime": null,
+    "incident_name": "2017 BLM Incident Support",
+    "location": {
+        "latitude": 47.65659,
+        "longitude": -117.3587,
+        "city": null,
+        "county": "Spokane",
+        "state": "US-WA"
+    },
+    "predominant_fuel_group": null,
+    "modified_by_system": "firecode",
+    "created_on_datetime": "2016-10-14T20:33:47Z",
+    "modified_on_datetime": "2016-10-14T20:34:54Z",
+    "source": "IRWIN",
+    "admin": {
+        "created": "2022-08-16T07:07:04.289Z",
+        "modified": null
+    }
+}, {
+    "_id": "62fb42181c5b7ea309f7e0e9",
+    "total_acres": null,
+    "containment_datetime": null,
+    "control_datetime": null,
+    "daily_acres": null,
+    "discovery_acres": null,
+    "estimated_cost_to_date": null,
+    "final_fire_report_approved_date": null,
+    "fire_origin": {
+        "cause": null,
+        "general": null,
+        "specific": null
+    },
+    "fire_discovery_datetime": "2015-05-09T17:26:00Z",
+    "fire_out_datetime": null,
+    "incident_name": "RUSSELL",
+    "location": {
+        "latitude": null,
+        "longitude": null,
+        "city": null,
+        "county": "Yakima",
+        "state": "US-WA"
+    },
+    "predominant_fuel_group": null,
+    "modified_by_system": "firecode",
+    "created_on_datetime": "2015-05-09T20:43:00Z",
+    "modified_on_datetime": "2015-05-09T20:47:16Z",
+    "source": "IRWIN",
+    "admin": {
+        "created": "2022-08-16T07:07:04.290Z",
+        "modified": null
+    }
+}, {
+    "_id": "62fb421d1c5b7ea309f7e0ea",
+    "total_acres": null,
+    "containment_datetime": "2018-07-05T05:16:00Z",
+    "control_datetime": "2018-07-05T05:16:00Z",
+    "daily_acres": 0.1,
+    "discovery_acres": 0.1,
+    "estimated_cost_to_date": null,
+    "final_fire_report_approved_date": null,
+    "fire_origin": {
+        "cause": "Unknown",
+        "general": null,
+        "specific": null
+    },
+    "fire_discovery_datetime": "2018-07-05T05:00:59Z",
+    "fire_out_datetime": "2018-07-05T06:29:00Z",
+    "incident_name": "Round Lake ",
+    "location": {
+        "latitude": 48.2969,
+        "longitude": -118.3212,
+        "city": null,
+        "county": "Ferry",
+        "state": "US-WA"
+    },
+    "predominant_fuel_group": null,
+    "modified_by_system": "wildcad",
+    "created_on_datetime": "2018-07-05T05:22:07Z",
+    "modified_on_datetime": "2018-07-05T06:29:39Z",
+    "source": "IRWIN",
+    "admin": {
+        "created": "2022-08-16T07:07:09.300Z",
+        "modified": null
+    }
+}, {
+    "_id": "62fb421d1c5b7ea309f7e0ed",
+    "total_acres": null,
+    "containment_datetime": "2019-04-29T21:00:00Z",
+    "control_datetime": "2019-04-30T00:59:59Z",
+    "daily_acres": 0.1,
+    "discovery_acres": 0.1,
+    "estimated_cost_to_date": null,
+    "final_fire_report_approved_date": null,
+    "fire_origin": {
+        "cause": "Human",
+        "general": null,
+        "specific": null
+    },
+    "fire_discovery_datetime": "2019-04-29T19:56:00Z",
+    "fire_out_datetime": "2019-05-14T20:35:59Z",
+    "incident_name": "GRAPE LANE",
+    "location": {
+        "latitude": 47.30909,
+        "longitude": -122.8772,
+        "city": null,
+        "county": "Mason",
+        "state": "US-WA"
+    },
+    "predominant_fuel_group": null,
+    "modified_by_system": "wildcad",
+    "created_on_datetime": "2019-04-30T16:19:43Z",
+    "modified_on_datetime": "2019-05-20T18:28:54Z",
+    "source": "IRWIN",
+    "admin": {
+        "created": "2022-08-16T07:07:09.302Z",
+        "modified": null
+    }
+}, {
+    "_id": "62fb421d1c5b7ea309f7e0ec",
+    "total_acres": null,
+    "containment_datetime": "2019-04-22T21:39:00Z",
+    "control_datetime": "2019-04-22T21:39:00Z",
+    "daily_acres": 85,
+    "discovery_acres": 2,
+    "estimated_cost_to_date": null,
+    "final_fire_report_approved_date": null,
+    "fire_origin": {
+        "cause": "Human",
+        "general": null,
+        "specific": null
+    },
+    "fire_discovery_datetime": "2019-03-20T00:04:59Z",
+    "fire_out_datetime": "2019-09-05T20:55:00Z",
+    "incident_name": "WILDWOOD LANE",
+    "location": {
+        "latitude": 46.15799,
+        "longitude": -123.3071,
+        "city": null,
+        "county": "Wahkiakum",
+        "state": "US-WA"
+    },
+    "predominant_fuel_group": null,
+    "modified_by_system": "wildcad",
+    "created_on_datetime": "2019-03-20T01:55:56Z",
+    "modified_on_datetime": "2020-01-24T22:34:15Z",
+    "source": "IRWIN",
+    "admin": {
+        "created": "2022-08-16T07:07:09.301Z",
+        "modified": null
+    }
+}, {
+    "_id": "62fb421d1c5b7ea309f7e0eb",
+    "total_acres": null,
+    "containment_datetime": "2018-06-23T03:59:59Z",
+    "control_datetime": "2018-06-23T05:00:00Z",
+    "daily_acres": 0.1,
+    "discovery_acres": 0.1,
+    "estimated_cost_to_date": null,
+    "final_fire_report_approved_date": null,
+    "fire_origin": {
+        "cause": "Natural",
+        "general": null,
+        "specific": null
+    },
+    "fire_discovery_datetime": "2018-06-23T01:52:57Z",
+    "fire_out_datetime": "2018-07-01T20:55:59Z",
+    "incident_name": "SHEARER SHALE",
+    "location": {
+        "latitude": 48.21964,
+        "longitude": -117.0441,
+        "city": null,
+        "county": "Pend Oreille",
+        "state": "US-WA"
+    },
+    "predominant_fuel_group": null,
+    "modified_by_system": "wildcad",
+    "created_on_datetime": "2018-06-23T03:06:33Z",
+    "modified_on_datetime": "2018-09-23T16:14:24Z",
+    "source": "IRWIN",
+    "admin": {
+        "created": "2022-08-16T07:07:09.301Z",
+        "modified": null
+    }
+}, {
+    "_id": "62fb421d1c5b7ea309f7e0ee",
+    "total_acres": null,
+    "containment_datetime": null,
+    "control_datetime": null,
+    "daily_acres": null,
+    "discovery_acres": null,
+    "estimated_cost_to_date": null,
+    "final_fire_report_approved_date": null,
+    "fire_origin": {
+        "cause": null,
+        "general": null,
+        "specific": null
+    },
+    "fire_discovery_datetime": "2015-06-04T16:02:00Z",
+    "fire_out_datetime": null,
+    "incident_name": "1242 HAWK RD.",
+    "location": {
+        "latitude": null,
+        "longitude": null,
+        "city": null,
+        "county": "Yakima",
+        "state": "US-WA"
+    },
+    "predominant_fuel_group": null,
+    "modified_by_system": "wfdss",
+    "created_on_datetime": "2015-06-05T00:58:55Z",
+    "modified_on_datetime": "2015-06-05T00:59:43Z",
+    "source": "IRWIN",
+    "admin": {
+        "created": "2022-08-16T07:07:09.302Z",
+        "modified": null
+    }
+}, {
+    "_id": "62fb421d1c5b7ea309f7e0f1",
+    "total_acres": null,
+    "containment_datetime": "2018-09-10T21:59:59Z",
+    "control_datetime": "2018-09-12T01:20:00Z",
+    "daily_acres": 8.3,
+    "discovery_acres": 0.1,
+    "estimated_cost_to_date": null,
+    "final_fire_report_approved_date": null,
+    "fire_origin": {
+        "cause": "Natural",
+        "general": null,
+        "specific": null
+    },
+    "fire_discovery_datetime": "2018-09-08T18:43:59Z",
+    "fire_out_datetime": "2018-10-09T21:59:59Z",
+    "incident_name": "EAST PONTIAC",
+    "location": {
+        "latitude": 48.73712,
+        "longitude": -119.2918,
+        "city": null,
+        "county": "Okanogan",
+        "state": "US-WA"
+    },
+    "predominant_fuel_group": null,
+    "modified_by_system": "wildcad",
+    "created_on_datetime": "2018-09-08T21:08:09Z",
+    "modified_on_datetime": "2018-10-11T19:43:48Z",
+    "source": "IRWIN",
+    "admin": {
+        "created": "2022-08-16T07:07:09.302Z",
+        "modified": null
+    }
+}, {
+    "_id": "62fb421d1c5b7ea309f7e0f2",
+    "total_acres": null,
+    "containment_datetime": "2020-06-08T22:50:00Z",
+    "control_datetime": "2020-06-09T15:59:59Z",
+    "daily_acres": 0.5,
+    "discovery_acres": 0.5,
+    "estimated_cost_to_date": null,
+    "final_fire_report_approved_date": "2020-06-25T19:37:56Z",
+    "fire_origin": {
+        "cause": "Human",
+        "general": "Camping",
+        "specific": null
+    },
+    "fire_discovery_datetime": "2020-06-08T18:49:59Z",
+    "fire_out_datetime": "2020-06-20T19:44:59Z",
+    "incident_name": "FRENCHMAN CANAL",
+    "location": {
+        "latitude": 46.97896,
+        "longitude": -119.6532,
+        "city": null,
+        "county": "Grant",
+        "state": "US-WA"
+    },
+    "predominant_fuel_group": "Grass",
+    "modified_by_system": "INFORM_Inspector",
+    "created_on_datetime": "2020-06-08T21:44:20Z",
+    "modified_on_datetime": "2020-06-25T19:37:57Z",
+    "source": "IRWIN",
+    "admin": {
+        "created": "2022-08-16T07:07:09.303Z",
+        "modified": null
+    }
+}, {
+    "_id": "62fb421d1c5b7ea309f7e0f0",
+    "total_acres": null,
+    "containment_datetime": "2020-05-31T23:07:59Z",
+    "control_datetime": "2020-05-31T23:50:00Z",
+    "daily_acres": 0.1,
+    "discovery_acres": 0.1,
+    "estimated_cost_to_date": null,
+    "final_fire_report_approved_date": null,
+    "fire_origin": {
+        "cause": "Natural",
+        "general": null,
+        "specific": null
+    },
+    "fire_discovery_datetime": "2020-05-31T03:06:09Z",
+    "fire_out_datetime": "2020-06-06T18:00:00Z",
+    "incident_name": "STANDING TREE",
+    "location": {
+        "latitude": 46.01575,
+        "longitude": -121.5195,
+        "city": null,
+        "county": "Klickitat",
+        "state": "US-WA"
+    },
+    "predominant_fuel_group": null,
+    "modified_by_system": "wildcad",
+    "created_on_datetime": "2020-05-31T18:25:14Z",
+    "modified_on_datetime": "2020-06-11T18:43:41Z",
+    "source": "IRWIN",
+    "admin": {
+        "created": "2022-08-16T07:07:09.302Z",
+        "modified": null
+    }
+}, {
+    "_id": "62fb421d1c5b7ea309f7e0ef",
+    "total_acres": null,
+    "containment_datetime": null,
+    "control_datetime": null,
+    "daily_acres": null,
+    "discovery_acres": 2,
+    "estimated_cost_to_date": null,
+    "final_fire_report_approved_date": null,
+    "fire_origin": {
+        "cause": "Undetermined",
+        "general": null,
+        "specific": null
+    },
+    "fire_discovery_datetime": "2016-07-03T03:19:33Z",
+    "fire_out_datetime": null,
+    "incident_name": "Power Line",
+    "location": {
+        "latitude": 47.17794,
+        "longitude": -120.8003,
+        "city": null,
+        "county": "Kittitas",
+        "state": "US-WA"
+    },
+    "predominant_fuel_group": null,
+    "modified_by_system": "wildcad",
+    "created_on_datetime": "2016-07-04T22:16:38Z",
+    "modified_on_datetime": "2016-07-04T22:16:38Z",
+    "source": "IRWIN",
+    "admin": {
+        "created": "2022-08-16T07:07:09.302Z",
+        "modified": null
+    }
+}, {
+    "_id": "62fb42221c5b7ea309f7e0f4",
+    "total_acres": null,
+    "containment_datetime": "2015-07-20T04:44:00Z",
+    "control_datetime": "2015-07-20T04:44:59Z",
+    "daily_acres": 0.13,
+    "discovery_acres": 0.13,
+    "estimated_cost_to_date": null,
+    "final_fire_report_approved_date": null,
+    "fire_origin": {
+        "cause": "Undetermined",
+        "general": null,
+        "specific": null
+    },
+    "fire_discovery_datetime": "2015-07-19T23:32:00Z",
+    "fire_out_datetime": "2015-07-22T21:49:59Z",
+    "incident_name": "Kachess Saddle",
+    "location": {
+        "latitude": 47.336498,
+        "longitude": -121.196999,
+        "city": null,
+        "county": "Kittitas",
+        "state": "US-WA"
+    },
+    "predominant_fuel_group": null,
+    "modified_by_system": "wildcad",
+    "created_on_datetime": "2015-07-20T01:11:08Z",
+    "modified_on_datetime": "2016-05-06T18:28:31Z",
+    "source": "IRWIN",
+    "admin": {
+        "created": "2022-08-16T07:07:14.304Z",
+        "modified": null
+    }
+}, {
+    "_id": "62fb42221c5b7ea309f7e0f5",
+    "total_acres": null,
+    "containment_datetime": null,
+    "control_datetime": null,
+    "daily_acres": 1,
+    "discovery_acres": 1,
+    "estimated_cost_to_date": null,
+    "final_fire_report_approved_date": null,
+    "fire_origin": {
+        "cause": "Human",
+        "general": null,
+        "specific": null
+    },
+    "fire_discovery_datetime": "2017-05-28T22:41:31Z",
+    "fire_out_datetime": null,
+    "incident_name": "FISH TRAIL",
+    "location": {
+        "latitude": 47.64996,
+        "longitude": -117.4433,
+        "city": null,
+        "county": "Spokane",
+        "state": "US-WA"
+    },
+    "predominant_fuel_group": null,
+    "modified_by_system": "wildcad",
+    "created_on_datetime": "2017-05-29T04:20:26Z",
+    "modified_on_datetime": "2017-06-15T16:25:32Z",
+    "source": "IRWIN",
+    "admin": {
+        "created": "2022-08-16T07:07:14.304Z",
+        "modified": null
+    }
+}, {
+    "_id": "62fb42221c5b7ea309f7e0f3",
+    "total_acres": null,
+    "containment_datetime": "2017-08-29T02:54:00Z",
+    "control_datetime": "2017-08-29T02:54:00Z",
+    "daily_acres": 1,
+    "discovery_acres": 1,
+    "estimated_cost_to_date": null,
+    "final_fire_report_approved_date": null,
+    "fire_origin": {
+        "cause": "Human",
+        "general": null,
+        "specific": null
+    },
+    "fire_discovery_datetime": "2017-08-28T19:15:38Z",
+    "fire_out_datetime": "2017-09-04T18:32:00Z",
+    "incident_name": "NORTH FORK",
+    "location": {
+        "latitude": 45.65607,
+        "longitude": -122.1566,
+        "city": null,
+        "county": "Skamania",
+        "state": "US-WA"
+    },
+    "predominant_fuel_group": null,
+    "modified_by_system": "wildcad",
+    "created_on_datetime": "2017-08-28T20:05:35Z",
+    "modified_on_datetime": "2017-09-04T18:38:11Z",
+    "source": "IRWIN",
+    "admin": {
+        "created": "2022-08-16T07:07:14.304Z",
+        "modified": null
+    }
+}, {
+    "_id": "62fb42221c5b7ea309f7e0f6",
+    "total_acres": null,
+    "containment_datetime": "2016-09-30T03:30:00Z",
+    "control_datetime": "2016-09-30T03:30:00Z",
+    "daily_acres": 1,
+    "discovery_acres": 1,
+    "estimated_cost_to_date": null,
+    "final_fire_report_approved_date": null,
+    "fire_origin": {
+        "cause": "Human",
+        "general": null,
+        "specific": null
+    },
+    "fire_discovery_datetime": "2016-09-30T00:49:59Z",
+    "fire_out_datetime": "2016-09-30T03:30:00Z",
+    "incident_name": "B & D",
+    "location": {
+        "latitude": 46.66759,
+        "longitude": -123.0483,
+        "city": null,
+        "county": "Lewis",
+        "state": "US-WA"
+    },
+    "predominant_fuel_group": null,
+    "modified_by_system": "wildcad",
+    "created_on_datetime": "2016-10-05T20:01:38Z",
+    "modified_on_datetime": "2016-10-05T20:52:42Z",
+    "source": "IRWIN",
+    "admin": {
+        "created": "2022-08-16T07:07:14.305Z",
+        "modified": null
+    }
+}, {
+    "_id": "62fb42221c5b7ea309f7e0f7",
+    "total_acres": null,
+    "containment_datetime": null,
+    "control_datetime": null,
+    "daily_acres": null,
+    "discovery_acres": null,
+    "estimated_cost_to_date": null,
+    "final_fire_report_approved_date": null,
+    "fire_origin": {
+        "cause": null,
+        "general": null,
+        "specific": null
+    },
+    "fire_discovery_datetime": "2016-08-31T15:17:59Z",
+    "fire_out_datetime": null,
+    "incident_name": "JOHN TOM",
+    "location": {
+        "latitude": null,
+        "longitude": null,
+        "city": null,
+        "county": "Ferry",
+        "state": "US-WA"
+    },
+    "predominant_fuel_group": null,
+    "modified_by_system": "wfdss",
+    "created_on_datetime": "2016-09-01T17:59:20Z",
+    "modified_on_datetime": "2016-09-01T17:59:49Z",
+    "source": "IRWIN",
+    "admin": {
+        "created": "2022-08-16T07:07:14.305Z",
+        "modified": null
+    }
+}, {
+    "_id": "62fb42221c5b7ea309f7e0f9",
+    "total_acres": null,
+    "containment_datetime": "2020-05-30T23:48:00Z",
+    "control_datetime": "2020-06-02T22:09:59Z",
+    "daily_acres": 0.1,
+    "discovery_acres": 0.1,
+    "estimated_cost_to_date": null,
+    "final_fire_report_approved_date": null,
+    "fire_origin": {
+        "cause": "Human",
+        "general": null,
+        "specific": null
+    },
+    "fire_discovery_datetime": "2020-05-30T22:50:51Z",
+    "fire_out_datetime": "2020-06-02T22:15:00Z",
+    "incident_name": "CAT",
+    "location": {
+        "latitude": 48.45534,
+        "longitude": -120.198,
+        "city": null,
+        "county": "Okanogan",
+        "state": "US-WA"
+    },
+    "predominant_fuel_group": null,
+    "modified_by_system": "wildcad",
+    "created_on_datetime": "2020-05-31T00:17:30Z",
+    "modified_on_datetime": "2020-06-02T22:17:20Z",
+    "source": "IRWIN",
+    "admin": {
+        "created": "2022-08-16T07:07:14.305Z",
+        "modified": null
+    }
+}, {
+    "_id": "62fb42221c5b7ea309f7e0f8",
+    "total_acres": null,
+    "containment_datetime": "2020-08-21T23:39:59Z",
+    "control_datetime": "2020-08-21T23:41:00Z",
+    "daily_acres": 0.1,
+    "discovery_acres": 0.1,
+    "estimated_cost_to_date": null,
+    "final_fire_report_approved_date": "2021-01-22T20:52:34Z",
+    "fire_origin": {
+        "cause": "Human",
+        "general": "Camping",
+        "specific": "Campfire"
+    },
+    "fire_discovery_datetime": "2020-08-20T19:54:59Z",
+    "fire_out_datetime": "2020-08-21T23:42:00Z",
+    "incident_name": "Necklace",
+    "location": {
+        "latitude": 47.63518,
+        "longitude": -121.2587,
+        "city": null,
+        "county": "King",
+        "state": "US-WA"
+    },
+    "predominant_fuel_group": "Timber",
+    "modified_by_system": "INFORM_Inspector",
+    "created_on_datetime": "2020-08-21T23:42:32Z",
+    "modified_on_datetime": "2021-01-22T20:52:36Z",
+    "source": "IRWIN",
+    "admin": {
+        "created": "2022-08-16T07:07:14.305Z",
+        "modified": null
+    }
+}, {
+    "_id": "62fb42221c5b7ea309f7e0fb",
+    "total_acres": null,
+    "containment_datetime": "2014-07-06T18:59:59Z",
+    "control_datetime": "2014-07-07T00:59:59Z",
+    "daily_acres": 12,
+    "discovery_acres": null,
+    "estimated_cost_to_date": null,
+    "final_fire_report_approved_date": null,
+    "fire_origin": {
+        "cause": null,
+        "general": null,
+        "specific": null
+    },
+    "fire_discovery_datetime": "2014-07-06T05:39:59Z",
+    "fire_out_datetime": "2014-07-21T18:59:59Z",
+    "incident_name": "BARKER CANYON CAMPFIRE",
+    "location": {
+        "latitude": null,
+        "longitude": null,
+        "city": null,
+        "county": "Douglas",
+        "state": "US-WA"
+    },
+    "predominant_fuel_group": null,
+    "modified_by_system": "wfdss",
+    "created_on_datetime": "2014-07-06T09:29:43Z",
+    "modified_on_datetime": "2014-11-14T18:33:45Z",
+    "source": "IRWIN",
+    "admin": {
+        "created": "2022-08-16T07:07:14.305Z",
+        "modified": null
+    }
+}, {
+    "_id": "62fb42221c5b7ea309f7e0fa",
+    "total_acres": null,
+    "containment_datetime": "2019-09-29T02:10:59Z",
+    "control_datetime": "2019-09-29T22:54:59Z",
+    "daily_acres": 58,
+    "discovery_acres": 12,
+    "estimated_cost_to_date": null,
+    "final_fire_report_approved_date": null,
+    "fire_origin": {
+        "cause": "Unknown",
+        "general": null,
+        "specific": null
+    },
+    "fire_discovery_datetime": "2019-09-28T19:31:00Z",
+    "fire_out_datetime": "2019-10-15T20:50:00Z",
+    "incident_name": "MCBEE",
+    "location": {
+        "latitude": 48.71103,
+        "longitude": -120.1708,
+        "city": null,
+        "county": "Benton",
+        "state": "US-WA"
+    },
+    "predominant_fuel_group": null,
+    "modified_by_system": "wildcad",
+    "created_on_datetime": "2019-09-29T00:06:36Z",
+    "modified_on_datetime": "2019-10-15T20:52:19Z",
+    "source": "IRWIN",
+    "admin": {
+        "created": "2022-08-16T07:07:14.305Z",
+        "modified": null
+    }
+}, {
+    "_id": "62fb42271c5b7ea309f7e0fc",
+    "total_acres": null,
+    "containment_datetime": null,
+    "control_datetime": null,
+    "daily_acres": 391,
+    "discovery_acres": null,
+    "estimated_cost_to_date": null,
+    "final_fire_report_approved_date": null,
+    "fire_origin": {
+        "cause": "Unknown",
+        "general": null,
+        "specific": null
+    },
+    "fire_discovery_datetime": "2019-11-21T17:23:56Z",
+    "fire_out_datetime": "2019-12-16T22:30:00Z",
+    "incident_name": "CABIN",
+    "location": {
+        "latitude": 46.13132,
+        "longitude": -122.0994,
+        "city": null,
+        "county": "Skamania",
+        "state": "US-WA"
+    },
+    "predominant_fuel_group": null,
+    "modified_by_system": "wildcad",
+    "created_on_datetime": "2019-11-21T17:28:41Z",
+    "modified_on_datetime": "2019-12-16T22:42:36Z",
+    "source": "IRWIN",
+    "admin": {
+        "created": "2022-08-16T07:07:19.308Z",
+        "modified": null
+    }
+}, {
+    "_id": "62fb42271c5b7ea309f7e0fd",
+    "total_acres": null,
+    "containment_datetime": "2019-07-06T03:45:00Z",
+    "control_datetime": "2019-07-06T03:45:00Z",
+    "daily_acres": null,
+    "discovery_acres": null,
+    "estimated_cost_to_date": null,
+    "final_fire_report_approved_date": null,
+    "fire_origin": {
+        "cause": null,
+        "general": null,
+        "specific": null
+    },
+    "fire_discovery_datetime": "2019-07-06T02:35:00Z",
+    "fire_out_datetime": "2019-07-09T18:24:59Z",
+    "incident_name": "BIRDS NEST",
+    "location": {
+        "latitude": null,
+        "longitude": null,
+        "city": null,
+        "county": "Stevens",
+        "state": "US-WA"
+    },
+    "predominant_fuel_group": null,
+    "modified_by_system": "wfdss",
+    "created_on_datetime": "2019-07-06T19:00:47Z",
+    "modified_on_datetime": "2019-07-09T18:25:43Z",
+    "source": "IRWIN",
+    "admin": {
+        "created": "2022-08-16T07:07:19.309Z",
+        "modified": null
+    }
+}, {
+    "_id": "62fb42271c5b7ea309f7e0fe",
+    "total_acres": null,
+    "containment_datetime": "2015-07-15T02:03:59Z",
+    "control_datetime": "2015-07-16T21:33:00Z",
+    "daily_acres": 0.1,
+    "discovery_acres": null,
+    "estimated_cost_to_date": null,
+    "final_fire_report_approved_date": null,
+    "fire_origin": {
+        "cause": "Natural",
+        "general": null,
+        "specific": null
+    },
+    "fire_discovery_datetime": "2015-07-14T18:59:00Z",
+    "fire_out_datetime": "2015-07-16T21:33:00Z",
+    "incident_name": "GILLETTE RIDGE",
+    "location": {
+        "latitude": null,
+        "longitude": null,
+        "city": null,
+        "county": "Stevens",
+        "state": "US-WA"
+    },
+    "predominant_fuel_group": null,
+    "modified_by_system": "wfdss",
+    "created_on_datetime": "2015-07-17T21:25:05Z",
+    "modified_on_datetime": "2015-07-17T21:26:03Z",
+    "source": "IRWIN",
+    "admin": {
+        "created": "2022-08-16T07:07:19.309Z",
+        "modified": null
+    }
+}, {
+    "_id": "62fb42271c5b7ea309f7e101",
+    "total_acres": null,
+    "containment_datetime": null,
+    "control_datetime": null,
+    "daily_acres": 1,
+    "discovery_acres": 1,
+    "estimated_cost_to_date": null,
+    "final_fire_report_approved_date": null,
+    "fire_origin": {
+        "cause": "Unknown",
+        "general": null,
+        "specific": null
+    },
+    "fire_discovery_datetime": "2021-01-05T16:12:37Z",
+    "fire_out_datetime": null,
+    "incident_name": "2021 ENTIAT RX",
+    "location": {
+        "latitude": 47.67489,
+        "longitude": -120.2093,
+        "city": null,
+        "county": "Chelan",
+        "state": "US-WA"
+    },
+    "predominant_fuel_group": null,
+    "modified_by_system": "wildcad",
+    "created_on_datetime": "2021-02-08T23:34:25Z",
+    "modified_on_datetime": "2021-02-08T23:34:25Z",
+    "source": "IRWIN",
+    "admin": {
+        "created": "2022-08-16T07:07:19.310Z",
+        "modified": null
+    }
+}, {
+    "_id": "62fb42271c5b7ea309f7e102",
+    "total_acres": null,
+    "containment_datetime": "2014-08-18T15:59:59Z",
+    "control_datetime": "2014-08-18T16:30:00Z",
+    "daily_acres": 0.1,
+    "discovery_acres": null,
+    "estimated_cost_to_date": 1062000,
+    "final_fire_report_approved_date": null,
+    "fire_origin": {
+        "cause": "Human",
+        "general": null,
+        "specific": null
+    },
+    "fire_discovery_datetime": "2014-08-01T20:57:00Z",
+    "fire_out_datetime": null,
+    "incident_name": "RISING EAGLE ROAD",
+    "location": {
+        "latitude": null,
+        "longitude": null,
+        "city": null,
+        "county": "Okanogan",
+        "state": "US-WA"
+    },
+    "predominant_fuel_group": null,
+    "modified_by_system": "wfdss",
+    "created_on_datetime": "2014-08-01T23:24:22Z",
+    "modified_on_datetime": "2014-12-02T23:08:34Z",
+    "source": "IRWIN",
+    "admin": {
+        "created": "2022-08-16T07:07:19.310Z",
+        "modified": null
+    }
+}, {
+    "_id": "62fb42271c5b7ea309f7e103",
+    "total_acres": null,
+    "containment_datetime": null,
+    "control_datetime": null,
+    "daily_acres": 0.1,
+    "discovery_acres": 1,
+    "estimated_cost_to_date": null,
+    "final_fire_report_approved_date": null,
+    "fire_origin": {
+        "cause": "Unknown",
+        "general": null,
+        "specific": null
+    },
+    "fire_discovery_datetime": "2020-09-08T18:13:06Z",
+    "fire_out_datetime": "2020-09-13T21:40:00Z",
+    "incident_name": "GARDEN VIEW ",
+    "location": {
+        "latitude": 46.32038,
+        "longitude": -122.7749,
+        "city": null,
+        "county": "Cowlitz",
+        "state": "US-WA"
+    },
+    "predominant_fuel_group": null,
+    "modified_by_system": "wildcad",
+    "created_on_datetime": "2020-09-30T23:44:33Z",
+    "modified_on_datetime": "2020-10-07T20:04:04Z",
+    "source": "IRWIN",
+    "admin": {
+        "created": "2022-08-16T07:07:19.310Z",
+        "modified": null
+    }
+}, {
+    "_id": "62fb42271c5b7ea309f7e0ff",
+    "total_acres": null,
+    "containment_datetime": "2018-09-13T20:00:00Z",
+    "control_datetime": "2018-09-13T21:00:00Z",
+    "daily_acres": 0.1,
+    "discovery_acres": 0.1,
+    "estimated_cost_to_date": null,
+    "final_fire_report_approved_date": null,
+    "fire_origin": {
+        "cause": "Unknown",
+        "general": null,
+        "specific": null
+    },
+    "fire_discovery_datetime": "2018-09-13T16:12:02Z",
+    "fire_out_datetime": "2018-09-30T20:15:00Z",
+    "incident_name": "BALKY HOLE",
+    "location": {
+        "latitude": 48.39111,
+        "longitude": -120.1201,
+        "city": null,
+        "county": "Okanogan",
+        "state": "US-WA"
+    },
+    "predominant_fuel_group": null,
+    "modified_by_system": "wildcad",
+    "created_on_datetime": "2018-09-14T16:52:15Z",
+    "modified_on_datetime": "2018-09-30T20:12:54Z",
+    "source": "IRWIN",
+    "admin": {
+        "created": "2022-08-16T07:07:19.309Z",
+        "modified": null
+    }
+}, {
+    "_id": "62fb42271c5b7ea309f7e104",
+    "total_acres": null,
+    "containment_datetime": "2021-03-14T00:00:00Z",
+    "control_datetime": "2021-03-14T00:40:00Z",
+    "daily_acres": 0.8,
+    "discovery_acres": 0.1,
+    "estimated_cost_to_date": null,
+    "final_fire_report_approved_date": "2021-12-15T18:48:30Z",
+    "fire_origin": {
+        "cause": "Human",
+        "general": "Debris/Open Burning",
+        "specific": null
+    },
+    "fire_discovery_datetime": "2021-03-13T22:30:00Z",
+    "fire_out_datetime": "2021-03-15T21:49:00Z",
+    "incident_name": "EAST BURNETT ROAD",
+    "location": {
+        "latitude": 47.75994,
+        "longitude": -117.2156,
+        "city": null,
+        "county": "Spokane",
+        "state": "US-WA"
+    },
+    "predominant_fuel_group": "Timber",
+    "modified_by_system": "INFORM_Inspector",
+    "created_on_datetime": "2021-03-16T15:59:22Z",
+    "modified_on_datetime": "2021-12-15T18:48:30Z",
+    "source": "IRWIN",
+    "admin": {
+        "created": "2022-08-16T07:07:19.310Z",
+        "modified": null
+    }
+}, {
+    "_id": "62fb42271c5b7ea309f7e100",
+    "total_acres": null,
+    "containment_datetime": null,
+    "control_datetime": null,
+    "daily_acres": 1,
+    "discovery_acres": 1,
+    "estimated_cost_to_date": null,
+    "final_fire_report_approved_date": null,
+    "fire_origin": {
+        "cause": "Human",
+        "general": null,
+        "specific": null
+    },
+    "fire_discovery_datetime": "2020-04-18T22:10:07Z",
+    "fire_out_datetime": null,
+    "incident_name": "ORCHARD SPOT",
+    "location": {
+        "latitude": 48.77892,
+        "longitude": -119.4187,
+        "city": null,
+        "county": "Okanogan",
+        "state": "US-WA"
+    },
+    "predominant_fuel_group": null,
+    "modified_by_system": "wildcad",
+    "created_on_datetime": "2020-04-19T00:14:56Z",
+    "modified_on_datetime": "2020-04-19T00:38:57Z",
+    "source": "IRWIN",
+    "admin": {
+        "created": "2022-08-16T07:07:19.309Z",
+        "modified": null
+    }
+}, {
+    "_id": "62fb422c1c5b7ea309f7e105",
+    "total_acres": null,
+    "containment_datetime": "2020-07-28T00:59:59Z",
+    "control_datetime": "2020-07-28T05:00:00Z",
+    "daily_acres": 0.76,
+    "discovery_acres": 0.1,
+    "estimated_cost_to_date": null,
+    "final_fire_report_approved_date": null,
+    "fire_origin": {
+        "cause": "Human",
+        "general": null,
+        "specific": null
+    },
+    "fire_discovery_datetime": "2020-07-28T00:22:44Z",
+    "fire_out_datetime": "2020-08-02T20:50:00Z",
+    "incident_name": "CAYUSE ROAD",
+    "location": {
+        "latitude": 48.66264,
+        "longitude": -119.1986,
+        "city": null,
+        "county": "Okanogan",
+        "state": "US-WA"
+    },
+    "predominant_fuel_group": null,
+    "modified_by_system": "wildcad",
+    "created_on_datetime": "2020-07-28T01:03:07Z",
+    "modified_on_datetime": "2020-08-12T23:14:42Z",
+    "source": "IRWIN",
+    "admin": {
+        "created": "2022-08-16T07:07:24.322Z",
+        "modified": null
+    }
+}, {
+    "_id": "62fb422c1c5b7ea309f7e107",
+    "total_acres": null,
+    "containment_datetime": "2015-08-17T03:30:00Z",
+    "control_datetime": "2015-08-17T15:00:00Z",
+    "daily_acres": 3.5,
+    "discovery_acres": 1,
+    "estimated_cost_to_date": null,
+    "final_fire_report_approved_date": null,
+    "fire_origin": {
+        "cause": "Natural",
+        "general": null,
+        "specific": null
+    },
+    "fire_discovery_datetime": "2015-08-17T00:24:59Z",
+    "fire_out_datetime": "2015-08-26T17:00:00Z",
+    "incident_name": "ONION BODIE",
+    "location": {
+        "latitude": 48.8341,
+        "longitude": -117.8081,
+        "city": null,
+        "county": "Stevens",
+        "state": "US-WA"
+    },
+    "predominant_fuel_group": null,
+    "modified_by_system": "wildcad",
+    "created_on_datetime": "2015-08-22T01:36:41Z",
+    "modified_on_datetime": "2015-09-05T00:13:19Z",
+    "source": "IRWIN",
+    "admin": {
+        "created": "2022-08-16T07:07:24.322Z",
+        "modified": null
+    }
+}, {
+    "_id": "62fb422c1c5b7ea309f7e106",
+    "total_acres": null,
+    "containment_datetime": "2018-05-31T21:26:00Z",
+    "control_datetime": "2018-06-01T21:48:00Z",
+    "daily_acres": 0.1,
+    "discovery_acres": 0.1,
+    "estimated_cost_to_date": null,
+    "final_fire_report_approved_date": null,
+    "fire_origin": {
+        "cause": "Unknown",
+        "general": null,
+        "specific": null
+    },
+    "fire_discovery_datetime": "2018-05-30T23:51:59Z",
+    "fire_out_datetime": "2018-06-04T21:46:59Z",
+    "incident_name": "Upper Granite Creek 2",
+    "location": {
+        "latitude": 48.30803,
+        "longitude": -118.4824,
+        "city": null,
+        "county": "Ferry",
+        "state": "US-WA"
+    },
+    "predominant_fuel_group": null,
+    "modified_by_system": "wildcad",
+    "created_on_datetime": "2018-05-31T00:41:56Z",
+    "modified_on_datetime": "2018-06-04T21:51:27Z",
+    "source": "IRWIN",
+    "admin": {
+        "created": "2022-08-16T07:07:24.322Z",
+        "modified": null
+    }
+}, {
+    "_id": "62fb422c1c5b7ea309f7e10c",
+    "total_acres": null,
+    "containment_datetime": "2018-06-04T23:29:59Z",
+    "control_datetime": "2018-06-04T23:29:59Z",
+    "daily_acres": 0.1,
+    "discovery_acres": 0.1,
+    "estimated_cost_to_date": null,
+    "final_fire_report_approved_date": null,
+    "fire_origin": {
+        "cause": "Human",
+        "general": null,
+        "specific": null
+    },
+    "fire_discovery_datetime": "2018-06-04T22:55:52Z",
+    "fire_out_datetime": "2018-06-12T16:21:59Z",
+    "incident_name": "HIGH MEADOWS",
+    "location": {
+        "latitude": 46.51072,
+        "longitude": -122.4804,
+        "city": null,
+        "county": "Lewis",
+        "state": "US-WA"
+    },
+    "predominant_fuel_group": null,
+    "modified_by_system": "wildcad",
+    "created_on_datetime": "2018-06-04T23:55:03Z",
+    "modified_on_datetime": "2018-10-16T16:24:22Z",
+    "source": "IRWIN",
+    "admin": {
+        "created": "2022-08-16T07:07:24.323Z",
+        "modified": null
+    }
+}, {
+    "_id": "62fb422c1c5b7ea309f7e109",
+    "total_acres": null,
+    "containment_datetime": null,
+    "control_datetime": null,
+    "daily_acres": 0.25,
+    "discovery_acres": 0.25,
+    "estimated_cost_to_date": null,
+    "final_fire_report_approved_date": null,
+    "fire_origin": {
+        "cause": "Human",
+        "general": null,
+        "specific": null
+    },
+    "fire_discovery_datetime": "2015-08-17T22:38:00Z",
+    "fire_out_datetime": "2015-10-08T18:59:59Z",
+    "incident_name": "Railex",
+    "location": {
+        "latitude": 46.1364,
+        "longitude": -118.933,
+        "city": null,
+        "county": "Walla Walla",
+        "state": "US-WA"
+    },
+    "predominant_fuel_group": null,
+    "modified_by_system": "wildcad",
+    "created_on_datetime": "2015-08-17T23:11:37Z",
+    "modified_on_datetime": "2015-10-09T19:26:08Z",
+    "source": "IRWIN",
+    "admin": {
+        "created": "2022-08-16T07:07:24.323Z",
+        "modified": null
+    }
+}, {
+    "_id": "62fb422c1c5b7ea309f7e10b",
+    "total_acres": null,
+    "containment_datetime": null,
+    "control_datetime": null,
+    "daily_acres": null,
+    "discovery_acres": null,
+    "estimated_cost_to_date": null,
+    "final_fire_report_approved_date": null,
+    "fire_origin": {
+        "cause": null,
+        "general": null,
+        "specific": null
+    },
+    "fire_discovery_datetime": "2015-06-30T02:06:00Z",
+    "fire_out_datetime": null,
+    "incident_name": "LINE STRIKES",
+    "location": {
+        "latitude": null,
+        "longitude": null,
+        "city": null,
+        "county": "Stevens",
+        "state": "US-WA"
+    },
+    "predominant_fuel_group": null,
+    "modified_by_system": "wfdss",
+    "created_on_datetime": "2015-06-30T14:50:58Z",
+    "modified_on_datetime": "2015-06-30T14:55:29Z",
+    "source": "IRWIN",
+    "admin": {
+        "created": "2022-08-16T07:07:24.323Z",
+        "modified": null
+    }
+}, {
+    "_id": "62fb422c1c5b7ea309f7e108",
+    "total_acres": null,
+    "containment_datetime": "2019-06-30T01:30:00Z",
+    "control_datetime": "2019-06-30T23:23:59Z",
+    "daily_acres": 0.1,
+    "discovery_acres": 0.2,
+    "estimated_cost_to_date": null,
+    "final_fire_report_approved_date": null,
+    "fire_origin": {
+        "cause": "Natural",
+        "general": null,
+        "specific": null
+    },
+    "fire_discovery_datetime": "2019-06-29T18:30:08Z",
+    "fire_out_datetime": "2019-07-09T22:30:00Z",
+    "incident_name": "COUGAR CREEK",
+    "location": {
+        "latitude": 48.75232,
+        "longitude": -118.8864,
+        "city": null,
+        "county": "Okanogan",
+        "state": "US-WA"
+    },
+    "predominant_fuel_group": null,
+    "modified_by_system": "wildcad",
+    "created_on_datetime": "2019-06-29T20:51:10Z",
+    "modified_on_datetime": "2019-08-24T19:08:28Z",
+    "source": "IRWIN",
+    "admin": {
+        "created": "2022-08-16T07:07:24.323Z",
+        "modified": null
+    }
+}, {
+    "_id": "62fb422c1c5b7ea309f7e10d",
+    "total_acres": null,
+    "containment_datetime": "2017-07-06T01:20:00Z",
+    "control_datetime": "2017-07-06T01:20:00Z",
+    "daily_acres": 0.1,
+    "discovery_acres": 0.1,
+    "estimated_cost_to_date": null,
+    "final_fire_report_approved_date": null,
+    "fire_origin": {
+        "cause": "Human",
+        "general": null,
+        "specific": null
+    },
+    "fire_discovery_datetime": "2017-07-05T23:58:43Z",
+    "fire_out_datetime": "2017-07-08T18:55:00Z",
+    "incident_name": "ELFENDAHL",
+    "location": {
+        "latitude": 47.46852,
+        "longitude": -122.9182,
+        "city": null,
+        "county": "Mason",
+        "state": "US-WA"
+    },
+    "predominant_fuel_group": null,
+    "modified_by_system": "wildcad",
+    "created_on_datetime": "2017-07-06T19:46:58Z",
+    "modified_on_datetime": "2017-07-08T19:53:02Z",
+    "source": "IRWIN",
+    "admin": {
+        "created": "2022-08-16T07:07:24.323Z",
+        "modified": null
+    }
+}, {
+    "_id": "62fb422c1c5b7ea309f7e10a",
+    "total_acres": null,
+    "containment_datetime": "2019-07-25T02:15:00Z",
+    "control_datetime": "2019-07-25T02:29:59Z",
+    "daily_acres": 0.3,
+    "discovery_acres": 0.1,
+    "estimated_cost_to_date": null,
+    "final_fire_report_approved_date": null,
+    "fire_origin": {
+        "cause": "Natural",
+        "general": null,
+        "specific": null
+    },
+    "fire_discovery_datetime": "2019-07-25T00:19:22Z",
+    "fire_out_datetime": "2019-08-05T18:00:00Z",
+    "incident_name": "ESLICK ROAD ",
+    "location": {
+        "latitude": 48.8939,
+        "longitude": -118.2278,
+        "city": null,
+        "county": "Ferry",
+        "state": "US-WA"
+    },
+    "predominant_fuel_group": null,
+    "modified_by_system": "wildcad",
+    "created_on_datetime": "2019-07-25T03:38:02Z",
+    "modified_on_datetime": "2019-08-10T17:39:25Z",
+    "source": "IRWIN",
+    "admin": {
+        "created": "2022-08-16T07:07:24.323Z",
+        "modified": null
+    }
+}, {
+    "_id": "62fb42311c5b7ea309f7e111",
+    "total_acres": null,
+    "containment_datetime": null,
+    "control_datetime": null,
+    "daily_acres": null,
+    "discovery_acres": null,
+    "estimated_cost_to_date": null,
+    "final_fire_report_approved_date": null,
+    "fire_origin": {
+        "cause": null,
+        "general": null,
+        "specific": null
+    },
+    "fire_discovery_datetime": "2014-08-11T20:42:59Z",
+    "fire_out_datetime": null,
+    "incident_name": "CALIFORNIA 101",
+    "location": {
+        "latitude": null,
+        "longitude": null,
+        "city": null,
+        "county": "Mason",
+        "state": "US-WA"
+    },
+    "predominant_fuel_group": null,
+    "modified_by_system": "firecode",
+    "created_on_datetime": "2014-08-14T20:34:49Z",
+    "modified_on_datetime": "2014-08-14T20:34:48Z",
+    "source": "IRWIN",
+    "admin": {
+        "created": "2022-08-16T07:07:29.337Z",
+        "modified": null
+    }
+}, {
+    "_id": "62fb42311c5b7ea309f7e10e",
+    "total_acres": null,
+    "containment_datetime": "2018-08-20T23:00:00Z",
+    "control_datetime": "2018-08-20T23:29:59Z",
+    "daily_acres": 0.2,
+    "discovery_acres": 0.1,
+    "estimated_cost_to_date": null,
+    "final_fire_report_approved_date": null,
+    "fire_origin": {
+        "cause": "Human",
+        "general": null,
+        "specific": null
+    },
+    "fire_discovery_datetime": "2018-08-20T20:39:00Z",
+    "fire_out_datetime": "2018-09-07T18:00:00Z",
+    "incident_name": "KITT NARCISSE",
+    "location": {
+        "latitude": 48.4879,
+        "longitude": -117.7438,
+        "city": null,
+        "county": "Stevens",
+        "state": "US-WA"
+    },
+    "predominant_fuel_group": null,
+    "modified_by_system": "wildcad",
+    "created_on_datetime": "2018-08-21T00:46:26Z",
+    "modified_on_datetime": "2018-09-07T19:04:41Z",
+    "source": "IRWIN",
+    "admin": {
+        "created": "2022-08-16T07:07:29.336Z",
+        "modified": null
+    }
+}, {
+    "_id": "62fb42311c5b7ea309f7e112",
+    "total_acres": null,
+    "containment_datetime": null,
+    "control_datetime": null,
+    "daily_acres": null,
+    "discovery_acres": null,
+    "estimated_cost_to_date": null,
+    "final_fire_report_approved_date": null,
+    "fire_origin": {
+        "cause": null,
+        "general": null,
+        "specific": null
+    },
+    "fire_discovery_datetime": "2019-07-05T03:40:00Z",
+    "fire_out_datetime": null,
+    "incident_name": "INDIAN CHURCH RD",
+    "location": {
+        "latitude": null,
+        "longitude": null,
+        "city": null,
+        "county": "Yakima",
+        "state": "US-WA"
+    },
+    "predominant_fuel_group": null,
+    "modified_by_system": "wfdss",
+    "created_on_datetime": "2019-07-05T15:06:22Z",
+    "modified_on_datetime": "2019-07-05T15:06:49Z",
+    "source": "IRWIN",
+    "admin": {
+        "created": "2022-08-16T07:07:29.337Z",
+        "modified": null
+    }
+}, {
+    "_id": "62fb42311c5b7ea309f7e113",
+    "total_acres": null,
+    "containment_datetime": "2018-07-06T00:45:00Z",
+    "control_datetime": "2018-07-06T00:59:59Z",
+    "daily_acres": 0.5,
+    "discovery_acres": 0.1,
+    "estimated_cost_to_date": null,
+    "final_fire_report_approved_date": null,
+    "fire_origin": {
+        "cause": "Human",
+        "general": null,
+        "specific": null
+    },
+    "fire_discovery_datetime": "2018-07-05T21:02:53Z",
+    "fire_out_datetime": "2018-07-10T18:59:59Z",
+    "incident_name": "SOUTH BANK FINAL",
+    "location": {
+        "latitude": 46.84437,
+        "longitude": -123.2766,
+        "city": null,
+        "county": "Grays Harbor",
+        "state": "US-WA"
+    },
+    "predominant_fuel_group": null,
+    "modified_by_system": "wildcad",
+    "created_on_datetime": "2018-07-06T16:09:07Z",
+    "modified_on_datetime": "2018-07-10T19:52:28Z",
+    "source": "IRWIN",
+    "admin": {
+        "created": "2022-08-16T07:07:29.337Z",
+        "modified": null
+    }
+}]

@@ -9,6 +9,16 @@ router.use(bodyParser.json());
 
 // "GET" requests --- READ
 
+
+  // curl http://localhost:5001/fires/:id
+    router.get('/:id', async(req, res)=>{
+     const result = await mongoConnection.getFireById(req.params.id)
+       if(result){
+         res.status(200).send(result)
+       }else{
+         res.status(200).send({message: 'Failed'})
+       }
+     })
 // curl http://localhost:5000/fires/
 router.get("/", async (req, res) => {
   let statusCode = 500
