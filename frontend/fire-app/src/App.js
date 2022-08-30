@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './App.css';
 import MyPosts from './components/MyPosts';
 import CreatePost from './components/CreatePost';
 import DeletePost from './components/DeletePost';
 import EditPost from './components/EditPost';
 import FireMapApp from './components/FireMapApp';
-import FireMapAppData from './components/FireMapAppData';
+// import FireMapAppData from './components/FireMapAppData';
 import FireDetails from './components/FireDetails';
 import Banner from './components/Banner'
 import Footer from './components/Footer'
