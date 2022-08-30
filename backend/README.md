@@ -90,7 +90,7 @@ causes, cost of damages, location, and more
 
 ### Live Website
 
-{{URL_TO_DEPLOYED_APP}}
+https://famous-tanuki-4913b3.netlify.app/
 
 ### For Users
 
@@ -101,7 +101,7 @@ causes, cost of damages, location, and more
 Get **all fires**:
 
 ```bash
-curl http://localhost:5000/fires/
+curl http://localhost:8000/fires/
 ```
 
 <details><summary>Example responses</summary>
@@ -125,7 +125,7 @@ Get fires by **specific month and year**:
 
 ```bash
 # Note the /in/:month/:year format:
-curl http://localhost:5000/fires/in/Jul/2014
+curl http://localhost:8000/fires/in/Jul/2014
 ```
 
 <details><summary>Example responses</summary>
@@ -150,7 +150,7 @@ Get a **single fire event**:
 
 ```bash
 # /fires/:fireId format, :fireId being a fire's unique id:
-curl http://localhost:5000/fires/62fb42181c5b7ea309f7e0e8
+curl http://localhost:8000/fires/62fb42181c5b7ea309f7e0e8
 ```
 
 <details><summary>Example responses</summary>
@@ -177,7 +177,7 @@ Get **all comments** for a **single fire event**:
 
 ```bash
 # Use /fires/:fireId/comments to get the comments of the fire with :fireId:
-curl http://localhost:5000/fires/62fb42131c5b7ea309f7e0e0/comments
+curl http://localhost:8000/fires/62fb42131c5b7ea309f7e0e0/comments
 ```
 
 <details><summary>Example responses</summary>
@@ -201,7 +201,7 @@ Get a **single comment**:
 
 ```bash
 # Use /fires/comments/:commentId to get the comment with the same :commentId:
-curl http://localhost:5000/fires/comments/630250491f3d48c59da2eec7
+curl http://localhost:8000/fires/comments/630250491f3d48c59da2eec7
 ```
 
 <details><summary>Example responses</summary>
@@ -225,7 +225,7 @@ Get **all comments** posted by a **single user**:
 
 ```bash
 # Use /fires/comments/user/:username to get all comments posted by :username:
-curl http://localhost:5000/fires/comments/user/User1
+curl http://localhost:8000/fires/comments/user/User1
 ```
 
 <details><summary>Example responses</summary>
@@ -250,7 +250,7 @@ curl http://localhost:5000/fires/comments/user/User1
 ```bash
 # REQUIRED: JSON object with a "text" property containing comment's text.
 # (/fires/:fireId/user/:username/comments)
-curl -X POST -H "Content-Type: application/json" -d '{"text":"Wow! What a hot fire!"}' http://localhost:5000/fires/62fb42131c5b7ea309f7e0e0/user/User1/comments
+curl -X POST -H "Content-Type: application/json" -d '{"text":"Wow! What a hot fire!"}' http://localhost:8000/fires/62fb42131c5b7ea309f7e0e0/user/User1/comments
 ```
 
 <details><summary>Example responses</summary>
@@ -287,7 +287,7 @@ curl -X POST -H "Content-Type: application/json" -d '{"text":"Wow! What a hot fi
 ```bash
 # Edit a comment specified by its :commentId.
 # (/fires/comments/:commentId)
-curl -X PUT -H "Content-Type: application/json" -d '{"text": "Updated comment..."}' http://localhost:5000/fires/comments/6303d66a816e5c3e74ac0980
+curl -X PUT -H "Content-Type: application/json" -d '{"text": "Updated comment..."}' http://localhost:8000/fires/comments/6303d66a816e5c3e74ac0980
 ```
 
 <details><summary>Example responses</summary>
@@ -318,7 +318,7 @@ curl -X PUT -H "Content-Type: application/json" -d '{"text": "Updated comment...
 ```bash
 # Delete a comment specified by its :commentId.
 # (/fires/comments/:commentId)
-curl -X DELETE http://localhost:5000/fires/comments/6303d66a816e5c3e74ac0980
+curl -X DELETE http://localhost:8000/fires/comments/6303d66a816e5c3e74ac0980
 ```
 
 <details><summary>Example responses</summary>
@@ -345,7 +345,7 @@ Get a **bookmark**:
 ```bash
 # Get a bookmark specified by its :bookmarkId.
 # (/fires/bookmarks/bookmarkId)
-curl http://localhost:5000/fires/bookmarks/6303ec16a84112a7a4be6753
+curl http://localhost:8000/fires/bookmarks/6303ec16a84112a7a4be6753
 ```
 
 <details><summary>Example responses</summary>
@@ -369,7 +369,7 @@ Get **all of a user's bookmarks**:
 
 ```bash
 # Get :username's bookmarks using /fires/user/:username/bookmarks:
-curl http://localhost:5000/fires/user/User1/bookmarks
+curl http://localhost:8000/fires/user/User1/bookmarks
 ```
 
 <details><summary>Example responses</summary>
@@ -399,7 +399,7 @@ Get **all of a fire's bookmarks**:
 
 ```bash
 # Get :fireId's bookmarks using /fires/:fireId/bookmarks:
-curl http://localhost:5000/fires/62fb42181c5b7ea309f7e0e8/bookmarks
+curl http://localhost:8000/fires/62fb42181c5b7ea309f7e0e8/bookmarks
 ```
 
 <details><summary>Example responses</summary>
@@ -432,7 +432,7 @@ curl http://localhost:5000/fires/62fb42181c5b7ea309f7e0e8/bookmarks
 # • Empty JSON object ('{}')
 # • Existing :username & :fireId
 # URI FORMAT: /fires/:fireId/user/:username/bookmarks
-curl -X POST -H "Content-Type: application/json" -d '{}' http://localhost:5000/fires/62fb42131c5b7ea309f7e0e0/user/User1/bookmarks
+curl -X POST -H "Content-Type: application/json" -d '{}' http://localhost:8000/fires/62fb42131c5b7ea309f7e0e0/user/User1/bookmarks
 ```
 
 <details><summary>Example responses</summary>
@@ -462,7 +462,7 @@ curl -X POST -H "Content-Type: application/json" -d '{}' http://localhost:5000/f
 
 ```bash
 # Delete :bookmarkId's bookmark using /fires/bookmarks/:bookmarkId.
-curl -X DELETE http://localhost:5000/fires/bookmarks/6303e187a84112a7a4be6752
+curl -X DELETE http://localhost:8000/fires/bookmarks/6303e187a84112a7a4be6752
 ```
 
 <details><summary>Example responses</summary>
@@ -487,7 +487,7 @@ curl -X DELETE http://localhost:5000/fires/bookmarks/6303e187a84112a7a4be6752
 **Register** a user:
 
 ```bash
-curl -X POST -H "Content-Type: application/json" -d '{"username":"example", "email":"example@example.com","password":"supersecretpswd!", "firstName":"Carlos", "lastName":"Caceres"}' http://localhost:5000/users/register
+curl -X POST -H "Content-Type: application/json" -d '{"username":"example", "email":"example@example.com","password":"supersecretpswd!", "firstName":"Carlos", "lastName":"Caceres"}' http://localhost:8000/users/register
 ```
 
 <details><summary>Example responses</summary>
@@ -516,7 +516,7 @@ curl -X POST -H "Content-Type: application/json" -d '{"username":"example", "ema
 **Sign in** as a user:
 
 ```bash
-curl -X POST -H "Content-Type: application/json" -d '{"usernameOrEmail":"user1","password":"secrets!"}' http://localhost:5000/users/login
+curl -X POST -H "Content-Type: application/json" -d '{"usernameOrEmail":"user1","password":"secrets!"}' http://localhost:8000/users/login
 ```
 
 <details><summary>Example responses</summary>
@@ -546,7 +546,7 @@ develop its functionality.
 1. **Serve the backend:**
   * Enter `/backend`: `cd backend`
   * `npm install` to install all backend packages
-  * `npm start` to serve the backend at `https://localhost:5000`
+  * `npm start` to serve the backend at `https://localhost:8000`
 2. **Serve the frontend:**
   * Enter `/frontend/fire-app`: `cd frontend/fire-app`
   * `npm install` to install all frontend packages
@@ -556,9 +556,9 @@ You should now be able to access the app's frontend at `http://localhost:3000`
 and use the app's full functionality.
 
 **‽** *Frontend isn't getting data* - Confirm backend is being served @ 
-`https://localhost:5000`. If it's not, run `npm start` in `/backend`.
+`https://localhost:8000`. If it's not, run `npm start` in `/backend`.
 
-**‽** *Backend/frontend won't serve* - Confirm your `5000` & `3000` ports
+**‽** *Backend/frontend won't serve* - Confirm your `8000` & `3000` ports
 aren't being used by other applications. If they are, quit the other
 applications or change the ports the backend and frontend use. The backend port
 can be changed in `/backend/server.js`.
