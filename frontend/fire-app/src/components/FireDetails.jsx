@@ -11,7 +11,7 @@ function FireDetails({ fireId  }) {
     const [hasError, setHasError] = useState(false);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/fires/${fireId}`)
+        fetch(`https://uw-api-2022.herokuapp.com/fires/${fireId}`)
         .then(response => response.json())
         .then(
             data => {
