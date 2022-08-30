@@ -43,7 +43,7 @@ function FireMapApp() {
   const [hasError, setHasError] = useState(false);
 
   useEffect(() => {
-    fetch('http://localhost:5000/fires/')
+    fetch('https://uw-api-2022.herokuapp.com/fires/')
 
       .then(response => response.json())
 
