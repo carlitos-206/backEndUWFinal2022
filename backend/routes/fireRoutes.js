@@ -6,7 +6,7 @@ const mongoConnection = require("../dataInterface/mongoDB")
 
 // "GET" requests --- READ
 
-      // curl http://localhost:5000/fires/
+      // curl http://localhost:5001/fires/
       router.get('/', async(req, res)=>{
         const result = await mongoConnection.getAllFires()
         if(result){
@@ -16,7 +16,7 @@ const mongoConnection = require("../dataInterface/mongoDB")
         }
       })
 
-      // curl http://localhost:5000/fires/:id
+      // curl http://localhost:5001/fires/:id
       router.get('/:id', async(req, res)=>{
         const result = await mongoConnection.getFireById(req.params.id)
         if(result){
