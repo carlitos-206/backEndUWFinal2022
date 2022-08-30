@@ -5,6 +5,7 @@ import CreatePost from './components/CreatePost';
 import DeletePost from './components/DeletePost';
 import EditPost from './components/EditPost';
 import FireMapApp from './components/FireMapApp';
+// import FireMapAppData from './components/FireMapAppData';
 import FireDetails from './components/FireDetails';
 import Banner from './components/Banner'
 import Footer from './components/Footer'
@@ -130,14 +131,40 @@ function App() {
 
   const RegisterPage = () => {
     return (
-      <>
-        <main>
-          <div >
-            <Register
-            />
-          </div>
-        </main>
-      </>
+  
+      <div className="App">
+  
+        <Routes>
+          <Route path="/" element={<Home />} />
+  
+          {/* Fire details to be displayed in balloon */}
+          <Route
+            path="/map/:fireId"
+            element={<FireDetailsPage/>}
+          />
+          {/* Page displaying the posts for a user */}
+          <Route
+            path="/posts/:userId"
+            element={<MyPostsPage />}
+          />
+          {/* Page with blank fields to add a post from MyPosts page */}
+          <Route
+            path="/posts/:postId"
+            element={<CreatePostPage />}
+          />
+          {/* Do we need a delete route or will this be javascript from the delete button on the My Posts Page? */}
+          <Route
+            path="/posts/:postId"
+            element={<DeletePostPage />}
+          />
+          {/* Page with fields populated for exist post that a user can edit from My Posts Page */}
+          <Route
+            path="/posts/:postId"
+            element={<EditPostPage />}
+          />
+        </Routes>
+  
+      </div>
     );
   }
 

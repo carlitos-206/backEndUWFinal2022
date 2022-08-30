@@ -1,12 +1,17 @@
 import React, { Component } from "react";
 import { Map, Marker, GoogleApiWrapper } from "google-maps-react";
 import InfoWindowEx from "./InfoWindowEx";
+import readTheDate from "./logic/readTheDate";
 
 const mapStyles = {
-    width: '80%',
-    height: '80%',
-  };
+    width: '85%',
+    height: '75%',
+};
 
+
+const readAboutFire = (id) =>{
+    return `/map/${id}`
+}
 export class MapContainer extends Component {
     constructor(props) {
         super(props);
@@ -24,11 +29,6 @@ export class MapContainer extends Component {
             showingInfoWindow: true
         });
     };
-
-    showDetails = place => {
-        console.log(place);
-    };
-
     render() {
         return (
             <div className="map-container">
@@ -58,10 +58,12 @@ export class MapContainer extends Component {
                         visible={this.state.showingInfoWindow}
                     >
                         <div>
-                            <h3>Name: {this.state.selectedPlace.name}</h3>
-                            <p>Cause: {this.state.selectedPlace.cause}</p>
-                            <p>Total Acres: {this.state.selectedPlace.totalAcres}</p>
-                            <p>Total Cost: {this.state.selectedPlace.totalCost}</p>
+                            <h2>{this.state.selectedPlace.incident_name}</h2>
+                            <br/>
+                            <p>{readTheDate(this.state.selectedPlace.fire_discovery_datetime)}</p>
+                            <br/>
+                            <a href={readAboutFire(this.state.selectedPlace._id)}> Read More</a>
+                            <br/>
                         </div>
                     </InfoWindowEx>
                 </Map>

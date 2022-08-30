@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 function FireMapAppData() {
 
@@ -8,7 +8,7 @@ function FireMapAppData() {
   const [hasError, setHasError] = useState(false);
 
   useEffect(() => {
-    fetch('http://localhost:5001/fires/')
+    fetch('https://uw-api-2022.herokuapp.com/fires/')
 
       .then(response => response.json())
 
@@ -27,7 +27,7 @@ function FireMapAppData() {
       );
 
 
-  }, [fires]);
+  }, []);
 
   if (isLoading) {
     return <p>Loading...</p>

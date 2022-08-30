@@ -10,7 +10,7 @@ function FireMapApp() {
   const [hasError, setHasError] = useState(false);
 
   useEffect(() => {
-    fetch('http://localhost:5001/fires/')
+    fetch('https://uw-api-2022.herokuapp.com/fires/')
 
       .then(response => response.json())
 
@@ -29,7 +29,6 @@ function FireMapApp() {
 
 
   }, []);
-
   if (isLoading) {
     return <p>Loading...</p>
   }
@@ -37,7 +36,7 @@ function FireMapApp() {
   if (hasError) {
     return <p>An error has occurred.  Please try again.</p>
   }
-
+  console.log(fires)
   return <Map places={fires} center={{ lat: 47.444, lng: -120.021 }} />;
 }
 
