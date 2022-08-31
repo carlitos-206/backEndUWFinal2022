@@ -33,6 +33,7 @@ function Register() {
   // Handling the form submission
   const handleSubmit = (e) => {
     e.preventDefault();
+    const request = {}
     if (name === '' || email === '' || password === '') {
       setError(true);
     } else {

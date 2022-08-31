@@ -18,7 +18,7 @@ function Login() {
     console.log(`Email ${userEmail}`);
     console.log(`Password ${userPassword}`);
 
-    let result = fetch('http://localhost:5000/users/login', {
+    let result = fetch('https://uw-api-2022.herokuapp.com/users/login', {
      
       method: 'post',
       body: JSON.stringify({ userEmail, userPassword }),

@@ -1,4 +1,5 @@
 import React from 'react';
+import Banner from '../components/Banner'
 import { Link } from 'react-router-dom';
 
 const comments = [
@@ -58,10 +59,11 @@ function Posts() {
 
 
     return (
+        <Banner />>
         <div className="posts row">
             <section className="button-container column">
                 <Link to={`/`}><button className="submit-btn">Home</button></Link>
-                <Link to={`/CreatePost`}><button className="submit-btn">Create Post</button></Link>
+                <Link to={`createpost`}><button className="submit-btn">Create Post</button></Link>
             </section>
 
             <div className = "comment-container">
