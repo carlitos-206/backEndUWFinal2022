@@ -92,9 +92,13 @@ causes, cost of damages, location, and more
 
 https://famous-tanuki-4913b3.netlify.app/
 
+### live API
+
+https://uw-api-2022.herokuapp.com/
+
 ### For Users
 
-#### Querying the API
+#### Querying the API locally
 
 ##### 🔥 Fires
 
