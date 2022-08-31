@@ -21,7 +21,7 @@ function App() {
 
     return (
       <>
-        <main>
+ <main>
           <div className="row">
             <header  >
               <Banner />
@@ -54,7 +54,7 @@ function App() {
   }
 
   const PostsPage = () => {
-    const { userId } = useParams();
+    // const { userId } = useParams();
     return (
       <>
         <main>
@@ -78,7 +78,6 @@ function App() {
         <main>
           <div >
             <CreatePost
-              postId={postId}
             />
           </div>
         </main>
@@ -131,6 +130,18 @@ function App() {
 
   const RegisterPage = () => {
     return (
+      <>
+        <main>
+          <div >
+            <Register
+            />
+          </div>
+        </main>
+      </>
+    );
+  }
+
+    return (
   
       <div className="App">
   
@@ -143,13 +154,13 @@ function App() {
             element={<FireDetailsPage/>}
           />
           {/* Page displaying the posts for a user */}
-          {/* <Route
-            path="/posts/:userId"
-            element={<MyPostsPage />}
-          /> */}
+        <Route
+          path="/posts"
+          element={<PostsPage />}
+          />
           {/* Page with blank fields to add a post from MyPosts page */}
           <Route
-            path="/posts/:postId"
+            path="/createpost"
             element={<CreatePostPage />}
           />
           {/* Do we need a delete route or will this be javascript from the delete button on the My Posts Page? */}
@@ -162,47 +173,7 @@ function App() {
             path="/posts/:postId"
             element={<EditPostPage />}
           />
-        </Routes>
-  
-      </div>
-    );
-  }
-
-
-  return (
-
-    <div className="App">
-
-      <Routes>
-        <Route path="/" element={<Home />} />
-
-        {/* Fire details to be displayed in balloon */}
-        <Route
-          path="/map/:fireId"
-          element={<FireDetailsPage />}
-        />
-        {/* Page displaying the posts for a user */}
-        <Route
-          path="/posts"
-          element={<PostsPage />}
-        />
-        {/* Page with blank fields to add a post from MyPosts page */}
-        <Route
-          path="/posts/:postId"
-          element={<CreatePostPage />}
-        />
-        {/* Do we need a delete route or will this be javascript from the delete button on the My Posts Page? */}
-        <Route
-          path="/posts/:postId"
-          element={<DeletePostPage />}
-        />
-        {/* Page with fields populated for exist post that a user can edit from My Posts Page */}
-        <Route
-          path="/posts/:postId"
-          element={<EditPostPage />}
-        />
-
-        <Route
+                  <Route
           path="/login"
           element={<LoginPage />}
         />
@@ -211,14 +182,13 @@ function App() {
           path="/register"
           element={<RegisterPage />}
         />
+        </Routes>
+  
+      </div>
+    );
+  }
 
-      </Routes>
 
 
-
-    </div>
-  );
-
-}
 
 export default App;
