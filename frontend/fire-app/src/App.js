@@ -72,12 +72,13 @@ function App() {
   }
 
   const CreatePostPage = () => {
-    const { postId } = useParams();
+    const { id } = useParams();
     return (
       <>
         <main>
           <div >
             <CreatePost
+            id = {id}
             />
           </div>
         </main>
@@ -160,7 +161,7 @@ function App() {
           />
           {/* Page with blank fields to add a post from MyPosts page */}
           <Route
-            path="/createpost"
+            path="/createpost/:id"
             element={<CreatePostPage />}
           />
           {/* Do we need a delete route or will this be javascript from the delete button on the My Posts Page? */}

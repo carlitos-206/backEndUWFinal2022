@@ -2,79 +2,76 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 function Login() {
-  // States for registration
+  // States for login
+  const [usernameOrEmail, setUsernameOrEmail] = useState('');
+  const [password, setUserPassword] = useState('');
 
-  const [userEmail, setUserEmail] = useState('');
-  const [userPassword, setUserPassword] = useState('');
+  console.log(`Email ${usernameOrEmail}`);
+  console.log(`Password ${password}`);
 
-  // const email = userEmail;
-  // const password = userPassword;
-
-  console.log(`Email ${userEmail}`);
-  console.log(`Password ${userPassword}`);
-
+  // Handle the login on submit
   const handleLogin = async (event) => {
     event.preventDefault();
-    console.log(`Email ${userEmail}`);
-    console.log(`Password ${userPassword}`);
 
-    let result = fetch('https://uw-api-2022.herokuapp.com/users/login', {
-     
-      method: 'post',
-      body: JSON.stringify({ userEmail, userPassword }),
+    const data = {
+      "usernameOrEmail": usernameOrEmail,
+      "password": password
+    }
+ 
+    // process the login
+    fetch('https://uw-api-2022.herokuapp.com/users/login', {
+      method: 'POST', // or 'PUT'
       headers: {
-        'Content-Type': 'application.json'
-      }
-
-    });
-    result = await result.json();
-
-
-    console.log(result);
-
-
-  }
-
-  return (
-    <section className="login">
-      <div className="login-form">
-        <div>
-          <h2>Sign In</h2>
-        </div>
-
-        <form >
-          {/* Labels and inputs for form data */}
-          <div className="form-container">
-            <label className="register-label">Email</label>
-            <input className="register-input"
-              onChange={(e) => setUserEmail(e.target.value)}
-              value={userEmail}
-              type="email"
-              autoComplete="off"
-              required
-            />
-            <label className="register-label">Password</label>
-            <input className="register-input"
-              onChange={(e) => setUserPassword(e.target.value)}
-              value={userPassword}
-              autoComplete="off"
-              type="password"
-              required />
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log('Success:', data);
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+    }
+    return (
+      <section className="login">
+        <div className="login-form">
+          <div>
+            <h2>User Login</h2>
           </div>
-          {/* <div>
-          <button className="login-btn" type="submit">Submit</button>
+          <form >
+            {/* Labels and inputs for form data */}
+            <div className="form-container">
+              <label className="register-label">User Name or Email</label>
+              <input className="register-input"
+                onChange={(e) => setUsernameOrEmail(e.target.value)}
+                value={usernameOrEmail}
+                type="email"
+                autoComplete="on"
+                required
+              />
+              <label className="register-label">Password</label>
+              <input className="register-input"
+                onChange={(e) => setUserPassword(e.target.value)}
+                value={password}
+                autoComplete="on"
+                type="password"
+                required />
+            </div>
+            {/* <div>
         </div> */}
-          <div className="row button-container">
-            <Link to={`/`}><button className="register-btn">Cancel</button></Link>
-            <button onClick={handleLogin} className="register-btn" type="submit">
-              Login
-            </button>
-            <Link to={`/register`}><button className="register-btn">Register</button></Link>
-          </div>
-        </form>
-      </div>
-    </section>
-  )
+            <div className="row button-container">
+              <Link to={`/`}><button className="register-btn">Cancel</button></Link>
+              <button onClick={handleLogin} className="register-btn" type="submit">
+                Login
+              </button>
+              <Link to={`/register`}><button className="register-btn">Register</button></Link>
+            </div>
+          </form>
+        </div>
+      </section>
+    )
 }
 
 export default Login

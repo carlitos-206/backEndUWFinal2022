@@ -3,70 +3,49 @@ import { Link } from 'react-router-dom';
 
 function Register() {
 
+
   // States for registration
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
 
-  // States for checking the errors
-  const [submitted, setSubmitted] = useState(false);
-  const [error, setError] = useState(false);
+  const [userName, setUserName] = useState('');
+  const [userEmail, setUserEmail] = useState('');
+  const [userPassword, setUserPassword] = useState('');
+  const [userFirstName, setUserFirstName] = useState('');
+  const [userLastName, setUserLastName] = useState('');
+  //   console.log(`Name ${userName}`);
+  //  console.log(`Email ${userEmail}`);
+  //  console.log(`Password ${userPassword}`);
 
-  // Handling the name change
-  const handleName = (e) => {
-    setName(e.target.value);
-    setSubmitted(false);
-  };
+  // Handle the login on submit
+  const handleSubmit = async (event) => {
+    event.preventDefault();
 
-  // Handling the email change
-  const handleEmail = (e) => {
-    setEmail(e.target.value);
-    setSubmitted(false);
-  };
+    const data = {
+      "username": userName,
+      "email": userEmail,
+      "password": userPassword,
+      "firstName": userFirstName,
+      "lastName": userLastName
 
-  // Handling the password change
-  const handlePassword = (e) => {
-    setPassword(e.target.value);
-    setSubmitted(false);
-  };
 
-  // Handling the form submission
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const request = {}
-    if (name === '' || email === '' || password === '') {
-      setError(true);
-    } else {
-      setSubmitted(true);
-      setError(false);
     }
-  };
 
-  // Showing success message
-  const successMessage = () => {
-    return (
-      <div
-        className="success"
-        style={{
-          display: submitted ? '' : 'none',
-        }}>
-        <h1>User {name} successfully registered!!</h1>
-      </div>
-    );
-  };
-
-  // Showing error message if error is true
-  const errorMessage = () => {
-    return (
-      <div
-        className="error"
-        style={{
-          display: error ? '' : 'none',
-        }}>
-        <h1>Please enter all the fields</h1>
-      </div>
-    );
-  };
+    //  username":"user1", "email":"carlitos@uw.edu","password":"secrets!", "firstName":"Carlos", "lastName":"Caceres
+    // process the registration
+    fetch('https://uw-api-2022.herokuapp.com/users/register', {
+      method: 'POST', // or 'PUT'
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log('Success:', data);
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+  }
 
   return (
     <section className="register">
@@ -74,27 +53,49 @@ function Register() {
         <div>
           <h2>User Registration</h2>
         </div>
-
-        {/* Calling to the methods */}
-        <div className="register-messages">
-          {errorMessage()}
-          {successMessage()}
-        </div>
-
         <form>
           {/* Labels and inputs for form data */}
           <div className="form-container">
-            <label className="register-label">Name</label>
-            <input onChange={handleName} className="register-input"
-              value={name} type="text" />
-
+            <label className="register-label">User Name</label>
+            <input className="register-input"
+              onChange={(e) => setUserName(e.target.value)}
+              value={userName}
+              type="text"
+              autoComplete="on"
+              required
+            />
             <label className="register-label">Email</label>
-            <input onChange={handleEmail} className="register-input"
-              value={email} type="email" />
-
+            <input className="register-input"
+              onChange={(e) => setUserEmail(e.target.value)}
+              value={userEmail}
+              type="email"
+              autoComplete="on"
+              required
+            />
             <label className="register-label">Password</label>
-            <input onChange={handlePassword} className="register-input"
-              value={password} type="password" />
+            <input className="register-input"
+              onChange={(e) => setUserPassword(e.target.value)}
+              value={userPassword}
+              autoComplete="on"
+              type="password"
+              required />
+
+            <label className="register-label">First Name</label>
+            <input className="register-input"
+              onChange={(e) => setUserFirstName(e.target.value)}
+              value={userFirstName}
+              autoComplete="on"
+              type="text"
+              required />
+
+            <label className="register-label">Last Name</label>
+            <input className="register-input"
+              onChange={(e) => setUserLastName(e.target.value)}
+              value={userLastName}
+              autoComplete="on"
+              type="text"
+              required />
+
           </div>
           <div className="row button-container">
             <Link to={`/`}><button className="register-btn">Cancel</button></Link>
