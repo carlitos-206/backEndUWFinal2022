@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types'
 import checkVal from './logic/checkVal';
 import readTheDate from './logic/readTheDate';
@@ -51,7 +51,8 @@ function FireDetails({ fireId  }) {
                 <p>Cost:{fire.estimated_cost_to_date}</p>
                 <p>Source: {checkVal(fire.source)}</p>
             </div>
-            <a href="/">Return Home</a>
+            <Link to={`/`}><button>Return Home</button></Link>
+            <Link to={`/createmessage/${fireId}`}><button  >Post About a Fire</button></Link>
         </div>
     )
 }
