@@ -38,6 +38,9 @@ function FireMapAppData() {
     return <p>An error has occurred.  Please try again.</p>
   }
 
+  const fireId = fires._id;
+  console.log({fireId})
+
   return (
     <main>
       <div class="map container2" >
@@ -64,8 +67,8 @@ function FireMapAppData() {
                 <p>Total Acres:{fire.total_acres}</p>
                 <p>Cost:{fire.estimated_cost_to_date}</p>
 
-
-                {/* <Link to={`/fireDetails/${fire._id}`}><button>fireDetails</button></Link> */}
+                <Link to={`/createmessage/${fire._id}`}><button>Return to Map</button></Link>
+               <Link to={`/`}><button>Return to Map</button></Link>
               </div>
             </div>
           </section>

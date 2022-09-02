@@ -1,5 +1,6 @@
-import React from 'react';
-import Banner from '../components/Banner'
+import React,{useEffect,useState} from 'react';
+import{useParams}from'react-router-dom';
+import Banner from '../components/Banner';
 import { Link } from 'react-router-dom';
 
 const comments = [
@@ -59,30 +60,37 @@ function Posts() {
 
 
     return (
-        <Banner />>
-        <div className="posts row">
-            <section className="button-container column">
-                <Link to={`/`}><button className="submit-btn">Home</button></Link>
-                <Link to={`createpost`}><button className="submit-btn">Create Post</button></Link>
-            </section>
-
-            <div className = "comment-container">
-                {comments.map((comment, id) =>
-                    <section className="column card" key={id} >
-                        <div className="list">
-                            <div>
-                                {comment.post}
-                            </div>
-                            <div className="row list-info">
-                                <Link to={`/edit/${comment.id}`}><button className="submit-btn">Edit</button></Link>
-                                <Link to={`/deletepost/${comment.id}`}><button className="submit-btn">Delete</button></Link>
-                            </div>
-                        </div>
-                    </section>
-                )}
+        <>
+            <div className="row">
+                <header  >
+                    <Banner />
+                </header>
+                <nav  >
+                    <Link to={'/login'}><button type="submit" className="submit-btn">Sign-in/Register</button></Link>
+                    <Link to={`/`}><button className="submit-btn">Return to Maps</button></Link>
+                </nav>
             </div>
-
-        </div>
+            <div className="posts row">
+                <div class = "comment-btn-container">
+                    <Link to={`createpost`}><button className="comment-btn">Create Post</button></Link>
+                </div>
+                <div className="comment-container">
+                    {comments.map((comment, id) =>
+                        <section className="column comment-card" key={id} >
+                            <div className="list">
+                                <div>
+                                    {comment.post}
+                                </div>
+                                <div className="row list-info">
+                                    <Link to={`/edit/${comment._id}`}><button className="comment-link">Edit</button></Link>
+                                    <Link to={`/deletepost/${comment._id}`}><button className="comment-link">Delete</button></Link>
+                                </div>
+                            </div>
+                        </section>
+                    )}
+                </div>
+            </div>
+        </>
     )
 }
 export default Posts

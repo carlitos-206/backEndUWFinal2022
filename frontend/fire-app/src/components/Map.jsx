@@ -62,7 +62,7 @@ export class MapContainer extends Component {
                             <br/>
                             <p>{readTheDate(this.state.selectedPlace.fire_discovery_datetime)}</p>
                             <br/>
-                            <a href={readAboutFire(this.state.selectedPlace._id)}> Read More</a>
+                            <a className = "read-btn" href={readAboutFire(this.state.selectedPlace._id)}> Read More</a>
                             <br/>
                         </div>
                     </InfoWindowEx>
