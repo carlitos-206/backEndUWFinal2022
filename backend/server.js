@@ -1,7 +1,7 @@
 const express = require("express");
 const routes = require("./routes");
 const cors = require("cors");
-// cor updated to match the netlify url
+// cors updated to allow all origins
 const corsOptions = {origin:'*' };
 
 const server = express();
