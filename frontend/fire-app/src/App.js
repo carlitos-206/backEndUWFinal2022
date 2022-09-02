@@ -58,9 +58,6 @@ function App() {
     return (
       <>
         <main>
-          <header>
-          <Banner />
-          </header>
           <div >
             <Posts
               
@@ -72,13 +69,13 @@ function App() {
   }
 
   const CreatePostPage = () => {
-    const { id } = useParams();
+    const { fireId } = useParams();
     return (
       <>
         <main>
           <div >
             <CreatePost
-            id = {id}
+            fireId = {fireId}
             />
           </div>
         </main>
@@ -87,13 +84,13 @@ function App() {
   }
 
   const DeletePostPage = () => {
-    const { postId } = useParams();
+    const { id} = useParams();
     return (
       <>
         <main>
           <div >
             <DeletePost
-              postId={postId}
+              id={id}
             />
           </div>
         </main>
@@ -161,7 +158,7 @@ function App() {
           />
           {/* Page with blank fields to add a post from MyPosts page */}
           <Route
-            path="/createpost/:id"
+            path="/createmessage/:fireId"
             element={<CreatePostPage />}
           />
           {/* Do we need a delete route or will this be javascript from the delete button on the My Posts Page? */}
