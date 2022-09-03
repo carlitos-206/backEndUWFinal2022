@@ -61,15 +61,13 @@ function Posts() {
 
     return (
         <>
-            <div className="row">
-                <header  >
-                    <Banner />
-                </header>
-                <nav  >
-                    <Link to={'/login'}><button type="submit" className="submit-btn">Sign-in/Register</button></Link>
-                    <Link to={`/`}><button className="submit-btn">Return to Maps</button></Link>
-                </nav>
-            </div>
+            <header  >
+                <Banner />
+            </header>
+            <nav>
+                <Link to={'/login'}><button type="submit" className="submit-btn">Sign-in/Register</button></Link>
+                <Link to={`/`}><button className="submit-btn">Return to Maps</button></Link>
+            </nav>
             <div className="posts row">
                 <div class = "comment-btn-container">
                     <Link to={`createpost`}><button className="comment-btn">Create Post</button></Link>
