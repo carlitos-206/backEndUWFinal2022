@@ -21,16 +21,14 @@ function App() {
 
     return (
       <>
- <main>
-          <div className="row">
-            <header  >
+        <main>
+            <header>
               <Banner />
             </header>
-            <nav  >
+            <nav>
               <SigninButton />
               <Link to={`/posts`}><button className="submit-btn">Create a Post</button></Link>
             </nav>
-          </div>
           <FireMapApp />
           <Footer />
         </main>
