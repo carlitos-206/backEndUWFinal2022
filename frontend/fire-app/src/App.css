@@ -234,3 +234,11 @@ footer {
 .comment-link {
   padding: .5rem 3rem;
 }
+
+button:hover {
+  cursor: pointer;
+}
+
+select:hover {
+  cursor: pointer;
+}
