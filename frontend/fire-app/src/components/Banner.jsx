@@ -6,11 +6,13 @@ import { Link } from 'react-router-dom';
 function Banner() {
     return (
       <Link to = {'/'}>
-        <div className="App-header">
-          <h1>
-            Washington Wildfires Community
-          </h1>
-       </div>
+        <header>
+          <div className="App-header">
+            <h1>
+              Washington Wildfires Community
+            </h1>
+          </div>
+        </header>
       </Link>
     );
   }

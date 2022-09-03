@@ -22,9 +22,7 @@ function App() {
     return (
       <>
         <main>
-            <header>
-              <Banner />
-            </header>
+            <Banner />
             <nav>
               <SigninButton />
               <Link to={`/posts`}><button className="submit-btn">Create a Post</button></Link>

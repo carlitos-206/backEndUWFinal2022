@@ -36,7 +36,7 @@ function Login() {
     }
     return (
       <section className="login">
-        <div className="login-form">
+        <div className="login-form card">
           <div>
             <h2>User Login</h2>
           </div>

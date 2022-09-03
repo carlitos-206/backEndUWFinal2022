@@ -49,7 +49,7 @@ function Register() {
 
   return (
     <section className="register">
-      <div className="register-form">
+      <div className="register-form card">
         <div>
           <h2>User Registration</h2>
         </div>

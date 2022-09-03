@@ -5,6 +5,7 @@
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 18px;
+  color: rgb(54, 34, 71);
   box-sizing: border-box;
 }
 
@@ -15,6 +16,10 @@ a {
 body {
   background-color: rgb(233, 227, 215);
   padding-bottom: 50px;
+}
+
+.alert {
+  color: rgb(190, 74, 79);
 }
 
 .caption {
@@ -39,6 +44,7 @@ button {
   padding-right: 1rem;
   color: rgb(241, 237, 229);
   background-color: rgb(152, 121, 111);
+  border: none;
 }
 
 button:hover {
@@ -52,6 +58,29 @@ button:focus {
 
 select:hover {
   cursor: pointer;
+}
+
+input {
+  background-color: rgb(241, 237, 229);
+  font-size: 1.2rem;
+  border-radius: 1rem;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  border: none;
+  box-shadow: 0 0 rgb(73, 46, 96);
+  transition: box-shadow, 0.2s;
+}
+
+input:hover {
+  box-shadow: 0 0.3rem rgb(119, 94, 85);
+}
+
+input:focus {
+  box-shadow: 0 0.3rem rgb(73, 46, 96);
+  background-color: rgb(248, 246, 242);
+  outline: none;
 }
 
 /* header ////////////////////////////////////////////////////////////////////*/
@@ -80,10 +109,15 @@ header h1 {
   outline: none;
 }
 
-.submit-btn, .comment-btn, .comment-link, .read-btn {
-  background-color: rgb(152, 121, 111);
-  color: rgb(233, 227, 215);
-  font-weight: bold;
+/* forms /////////////////////////////////////////////////////////////////////*/
+
+.form-container label {
+  margin-top: 0.5rem;
+  margin-bottom: 0.2rem;
+}
+
+form {
+
 }
 
 div.container {
@@ -105,7 +139,6 @@ div.container h1 {
   transform: translate(-50%, -50%);
   font-size: 200%;
   font-weight: bolder;
-
 }
 
 /* nav ///////////////////////////////////////////////////////////////////////*/
@@ -174,6 +207,27 @@ height: 80%;
   border-color: rgb(131, 103, 93);
 }
 
+/* card //////////////////////////////////////////////////////////////////////*/
+
+.card {
+  height: 35rem;
+  text-align: center;
+  background-color: rgb(152, 121, 111);
+  color: rgb(241, 237, 229);
+}
+
+.card h2 {
+  font-size: 2rem;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+  color: rgb(241, 237, 229);
+  background-color: rgb(119, 94, 85);
+}
+
+.card label {
+  color: rgb(241, 237, 229);
+}
+
 /* ///////////////////////////////////////////////////////////////////////////*/
 
 .row {
@@ -217,18 +271,6 @@ height: 80%;
   height: 100%;
   margin-right: 1.5rem;
 }
-
-.register-form, .login-form, .card  {
-  width: 60%;
-  height: 35rem;
-  margin-left: 20%;
-  margin-top:7%;
-  text-align: center;
-  padding-top: 1%;
-  background-color: rgb(152, 121, 111);
-  color: #FFFFFF;
-
- }
  
 .button-container {
   padding-top: 2rem;
@@ -244,17 +286,16 @@ height: 80%;
   padding: 5px;
 }
  
-.register-input, .login-input {
+/* .register-input, .login-input {
   font-size: larger;
   padding: 5px;
   margin: 2px;
-  
-}
+} */
+
 .register-btn, .login-btn {
-  border: 1px solid #FFFFFF;
+  border: 1px solid rgb(241, 237, 229);
   background-color: transparent;
   font-family: 'Oswald', sans-serif;
-  color: #FFFFFF;
   text-transform: uppercase;
   font-weight: bold;
   padding: .5rem 2rem;
@@ -282,14 +323,6 @@ height: 80%;
   width: fit-content;
   height: 50px;
   padding: 5px;
-}
-
-.register h2, .login h2 {
-
-  font-family: 'Oswald', sans-serif;
-  font-size: 2rem;
-  text-transform: capitalize;
-  padding-bottom: 3%;
 }
 
 footer {

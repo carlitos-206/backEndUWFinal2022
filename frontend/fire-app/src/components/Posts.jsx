@@ -61,9 +61,7 @@ function Posts() {
 
     return (
         <>
-            <header  >
-                <Banner />
-            </header>
+            <Banner />
             <nav>
                 <Link to={'/login'}><button type="submit" className="submit-btn">Sign-in/Register</button></Link>
                 <Link to={`/`}><button className="submit-btn">Return to Maps</button></Link>
