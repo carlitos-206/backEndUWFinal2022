@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import Banner from './Banner';
 
 function Login() {
   // States for login
@@ -36,9 +37,10 @@ function Login() {
     }
     return (
       <section className="login">
+        <Banner />
         <div className="login-form card">
           <div>
-            <h2>User Login</h2>
+            <h2>Login</h2>
           </div>
           <form >
             {/* Labels and inputs for form data */}

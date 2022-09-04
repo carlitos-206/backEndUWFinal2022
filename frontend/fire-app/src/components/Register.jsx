@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import Banner from './Banner';
 
 function Register() {
 
@@ -49,9 +50,10 @@ function Register() {
 
   return (
     <section className="register">
+      <Banner />
       <div className="register-form card">
         <div>
-          <h2>User Registration</h2>
+          <h2>Register</h2>
         </div>
         <form>
           {/* Labels and inputs for form data */}
