@@ -4,12 +4,28 @@ import PropTypes from 'prop-types'
 import checkVal from './logic/checkVal';
 import readTheDate from './logic/readTheDate';
 import totalAcres from './logic/totalAcres';
+import DeletePost from './DeletePost';
+import EditPost from './EditPost';
+// import FireMapAppData from './components/FireMapAppData';
+import Banner from './Banner'
+import Footer from './Footer'
+import { Route, Routes, useParams } from 'react-router-dom';
+import SigninButton from './SignInButton';
+import Login from './Login';
+import logOut from './logOut';
+
 // import convertToUSD from './logic/converToUSD';
 function FireDetails({ fireId }) {
     const [fire, setFire] = useState(undefined);
     const [isLoading, setIsLoading] = useState(true);
     const [hasError, setHasError] = useState(false);
-
+    const userLogIn = () =>{
+        if(localStorage.getItem('loginData')){
+            return(
+                <Link to={`/createmessage/${fireId}`}><button >Comment</button></Link>
+            )
+        }
+    }
     useEffect(() => {
         fetch(`https://uw-api-2022.herokuapp.com/fires/${fireId}`)
         .then(response => response.json())
@@ -30,34 +46,40 @@ function FireDetails({ fireId }) {
     if (hasError) {
         return <p>An error has occurred.  Please try again.</p>
     }
-console.log(fireId);
 
     return (
-        // return info for each fire
-        <div className="container">
-            <div className="column list-info">
-                <h2><span>Fire Name:</span>{checkVal(fire.incident_name)}</h2>
-                <p>Lattitude:{checkVal(fire.location.latitude)}</p>
-                <p>Longitude:{checkVal(fire.location.longitude)}</p>
-                <p>City:{checkVal(fire.location.city)}</p>
-                <p>County: {checkVal(fire.location.county)}</p>
-                <p>State:{checkVal(fire.location.state)}</p>
-                <p>Discovered:{readTheDate(fire.fire_discovery_datetime)}</p>
-                <p>Contained:{readTheDate(fire.containment_datetime)}</p>
-                <p>Controlled:{readTheDate(fire.control_datetime)}</p>
-                <p>Fire Out Date:{readTheDate(fire.fire_out_datetime)}</p>
-                <p>Daily Acres:{checkVal(fire.daily_acres)}</p>
-                <p>Total Acres:{totalAcres(fire.containment_datetime, fire.control_datetime, fire.daily_acres, fire.total_acres)}</p>
-                <p>Cause:{checkVal(fire.fire_origin.cause)} Activity</p>
-                <p>Predominant Fuel: {checkVal(fire.predominant_fuel_group)} </p>
-                <p>Cost:{fire.estimated_cost_to_date}</p>
-                <p>Source: {checkVal(fire.source)}</p>
-            </div>
+        <>
+        <main>
+            <Banner />
+            <nav>
+                <Link to= "/"><button>Return Home</button></Link>
+            </nav>
+            <div className="container">
+                <div className="column list-info">
+                    <h2><span>Fire Name:</span>{checkVal(fire.incident_name)}</h2>
+                    <p>Lattitude:{checkVal(fire.location.latitude)}</p>
+                    <p>Longitude:{checkVal(fire.location.longitude)}</p>
+                    <p>City:{checkVal(fire.location.city)}</p>
+                    <p>County: {checkVal(fire.location.county)}</p>
+                    <p>State:{checkVal(fire.location.state)}</p>
+                    <p>Discovered:{readTheDate(fire.fire_discovery_datetime)}</p>
+                    <p>Contained:{readTheDate(fire.containment_datetime)}</p>
+                    <p>Controlled:{readTheDate(fire.control_datetime)}</p>
+                    <p>Fire Out Date:{readTheDate(fire.fire_out_datetime)}</p>
+                    <p>Daily Acres:{checkVal(fire.daily_acres)}</p>
+                    <p>Total Acres:{totalAcres(fire.containment_datetime, fire.control_datetime, fire.daily_acres, fire.total_acres)}</p>
+                    <p>Cause:{checkVal(fire.fire_origin.cause)} Activity</p>
+                    <p>Predominant Fuel: {checkVal(fire.predominant_fuel_group)} </p>
+                    <p>Cost:{fire.estimated_cost_to_date}</p>
+                    <p>Source: {checkVal(fire.source)}</p>
+                </div>
             <div className ="link-buttons">
-            <Link to={`/`}><button>Return Home</button></Link>
-            <Link to={`/createmessage/${fireId}`}><button  >Post About a Fire</button></Link>
+                {userLogIn()}
             </div>
         </div>
+          <Footer />
+        </main>
+      </>
     )
   
 }
