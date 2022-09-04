@@ -4,8 +4,8 @@ import InfoWindowEx from "./InfoWindowEx";
 import readTheDate from "./logic/readTheDate";
 
 const mapStyles = {
-    width: '85%',
-    height: '75%',
+    width: '61.8vw',
+    height: '61.8vw',
 };
 
 

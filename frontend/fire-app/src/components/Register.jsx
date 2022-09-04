@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import Banner from './Banner';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { solid } from '@fortawesome/fontawesome-svg-core/import.macro';
 
 function Register() {
 
@@ -49,9 +52,15 @@ function Register() {
 
   return (
     <section className="register">
-      <div className="register-form">
-        <div>
-          <h2>User Registration</h2>
+      <Banner />
+      <div className="register-form card">
+        <div className="card-header">
+          <h2>Register</h2> 
+          <Link to={`/`}>
+            <button>
+              <FontAwesomeIcon icon={solid('x')} />
+            </button>
+          </Link>
         </div>
         <form>
           {/* Labels and inputs for form data */}
@@ -98,7 +107,6 @@ function Register() {
 
           </div>
           <div className="row button-container">
-            <Link to={`/`}><button className="register-btn">Cancel</button></Link>
             <button onClick={handleSubmit} className="register-btn" type="submit">
               Register
             </button>

@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import Banner from './Banner';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { solid } from '@fortawesome/fontawesome-svg-core/import.macro';
 
 function Login() {
   // States for login
@@ -36,9 +39,15 @@ function Login() {
     }
     return (
       <section className="login">
-        <div className="login-form">
-          <div>
-            <h2>User Login</h2>
+        <Banner />
+        <div className="login-form card">
+          <div className="card-header">
+            <h2>Login</h2> 
+            <Link to={`/`}>
+              <button>
+                <FontAwesomeIcon icon={solid('x')} />
+              </button>
+            </Link>
           </div>
           <form >
             {/* Labels and inputs for form data */}
@@ -62,7 +71,6 @@ function Login() {
             {/* <div>
         </div> */}
             <div className="row button-container">
-              <Link to={`/`}><button className="register-btn">Cancel</button></Link>
               <button onClick={handleLogin} className="register-btn" type="submit">
                 Login
               </button>

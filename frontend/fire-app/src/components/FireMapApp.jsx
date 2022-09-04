@@ -45,15 +45,15 @@ function FireMapApp() {
     };
 
     return (
-      <div className="center">
-        <label htmlFor="months">Month:</label>
+      <div className="map-date-controls">
+        <label htmlFor="months">Month</label>
         <select value={month} onChange={handleMonthChange}>
           {months.map((mon) => (
             <option value={mon}>{mon}</option>
           ))}
         </select>
         &nbsp; &nbsp; &nbsp; &nbsp;
-        <label htmlFor="years">Year:</label>
+        <label htmlFor="years">Year</label>
         <select value={year} onChange={handleYearChange}>
           {years.map((yr) => (
             <option value={yr}>{yr}</option>
@@ -111,10 +111,8 @@ function FireMapApp() {
 
   return (
     <div>
-      <p className="center">Available dataset Jul/2014 - Aug/2022</p>
-      <br />
+      <p class="caption"><b>Available datasets:</b> Jul / 2014 - Aug / 2022</p>
       <ShowDropDown month={month} year={year}></ShowDropDown>
-      <br />
       <Map places={fires} center={{ lat: 47.444, lng: -120.021 }} />
     </div>
   );

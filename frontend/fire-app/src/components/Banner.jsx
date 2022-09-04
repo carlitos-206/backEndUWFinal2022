@@ -1,20 +1,19 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 // import { Link  } from 'react-router-dom';
 
 function Banner() {
     return (
-      <div className="container">
-        <div className="App-header">
-          {/* <img src={logo} className="App-logo" alt="logo" /> */}
-          <div className = "container">
-          <h1>
-            Fire Tracker App
-          </h1>
+      <Link to = {'/'}>
+        <header>
+          <div className="App-header">
+            <h1>
+              Washington Wildfires Community
+            </h1>
           </div>
-        </div>
-       
-      </div>
+        </header>
+      </Link>
     );
   }
 
