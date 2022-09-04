@@ -1,14 +1,296 @@
+/* * /////////////////////////////////////////////////////////////////////////*/
+
 * {
   margin: 0;
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  color: rgb(54, 34, 71);
   box-sizing: border-box;
-  font-size: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  background-color: rgb(233, 227, 215);
+  padding-bottom: 50px;
+}
+
+.alert {
+  color: rgb(190, 74, 79);
+}
+
+.caption {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* main //////////////////////////////////////////////////////////////////////*/
+
+main {
+  width: 61.8vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* input elements ////////////////////////////////////////////////////////////*/
+
+button {
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  color: rgb(241, 237, 229);
+  background-color: rgb(152, 121, 111);
+  border: none;
+}
+
+button path {
+  color: rgb(241, 237, 229);
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: rgb(143, 112, 102);
+}
+
+button:focus {
+  background-color: rgb(131, 103, 93);
+}
+
+select:hover {
+  cursor: pointer;
+}
+
+input {
+  background-color: rgb(241, 237, 229);
+  font-size: 1.2rem;
+  border-radius: 1rem;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  border: none;
+  box-shadow: 0 0 rgb(73, 46, 96);
+  transition: box-shadow, 0.2s;
+}
+
+input:hover {
+  box-shadow: 0 0.3rem rgb(119, 94, 85);
+}
+
+input:focus {
+  box-shadow: 0 0.3rem rgb(73, 46, 96);
+  background-color: rgb(248, 246, 242);
+  outline: none;
+}
+
+/* header ////////////////////////////////////////////////////////////////////*/
+
+/* header and signin button */
+header {
+  background: linear-gradient(to left, darkgreen, rgb(156, 206, 230));
+  /* background-image: url("./images/wildfire4.png"); */
+  background-image: url("./images/wildfire.jpg");
+  background-size: cover;
+  height: 20vh;
+  width: 100%;
+  border: 0.3rem outset rgb(119, 94, 85);
+  display: flex;
+  align-items: center;
+  outline: none;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  font-weight: bolder;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  color: rgb(241, 237, 229);
+  text-shadow: 2px 2px 8px #000;
+  outline: none;
+}
+
+/* forms /////////////////////////////////////////////////////////////////////*/
+
+.form-container label {
+  margin-top: 0.5rem;
+  margin-bottom: 0.2rem;
+}
+
+form {
 
 }
 
-/* flexbox formatting */
+/* div.container {
+  height: 10em;
+  position: relative
+} */
+
+div.container2 {
+  position: relative
+}
+
+div.container h1 {
+  margin: 0;
+  color: rgb(52, 48, 48);
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  font-size: 200%;
+  font-weight: bolder;
+}
+
+/* nav ///////////////////////////////////////////////////////////////////////*/
+
+nav {
+  background-color: rgb(119, 94, 85);
+  display: flex;
+  justify-content: flex-end;
+}
+
+.banner-container {
+  height: 10em;
+  position: relative
+}
+
+.banner-container h1 {
+  margin: 0;
+  color: rgb(52, 48, 48);
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  font-size: 200%;
+  font-weight: bolder;
+
+}
+
+body {
+  background-color: rgb(233, 227, 215);
+  padding-bottom: 50px;
+nav button {
+  border: none;
+}
+
+/* map ///////////////////////////////////////////////////////////////////////*/
+
+.map {
+  width: 61.8vw !important;
+  height: 61.8vw !important;
+}
+
+.map-container {
+width: 80%;
+height: 80%;
+}
+
+.map-text {
+  color: black;
+}
+
+.map-date-controls {
+  margin-bottom: 1rem;
+}
+
+.register-form, .login-form, .card {
+  width: 60%;
+  height: 35rem;
+  margin-left: 20%;
+  margin-top:7%;
+.map-date-controls label {
+  background-color: rgb(152, 121, 111);
+  border-radius: 1rem 0px 0px 1rem;
+  color: rgb(241, 237, 229);
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.map-date-controls select {
+  border-radius: 0px 1rem 1rem 0px;
+  background-color: rgb(241, 237, 229);
+  border: none;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.map-date-controls select:hover {
+  background-color: rgb(248, 246, 242);
+}
+
+.map-date-controls select:hover {
+  border-color: rgb(143, 112, 102);
+}
+
+.map-date-controls select:focus {
+  border-color: rgb(131, 103, 93);
+}
+
+/* card //////////////////////////////////////////////////////////////////////*/
+
+.card {
+  text-align: center;
+  background-color: rgb(152, 121, 111);
+  color: rgb(241, 237, 229);
+  padding-bottom: 1rem;
+}
+
+.card h2 {
+  font-size: 2rem;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+  color: rgb(241, 237, 229);
+  background-color: rgb(119, 94, 85);
+  margin-left: 1rem;
+}
+
+.card label {
+  color: rgb(241, 237, 229);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(119, 94, 85);
+}
+
+.card-header button {
+  border: none;
+  background-color: rgb(119, 94, 85);
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+}
+
+.card-header button:hover {
+  background-color: rgb(152, 121, 111);
+}
+
+.card-header button svg {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ///////////////////////////////////////////////////////////////////////////*/
+
 .row {
+  /* flexbox formatting */
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -48,102 +330,6 @@
   height: 100%;
   margin-right: 1.5rem;
 }
-
-/* header and signin button */
-header {
-  background: linear-gradient(to left, darkgreen, rgb(156, 206, 230));
-  /* background-image: url("./images/wildfire4.png"); */
-  background-image: url("./images/wildfire.jpg");
-  background-size: cover;
-  height: 100px;
-  width: 60%;
-  margin-left: 10%;
-  margin-top: 50px;
-  border: 1px solid black;
-}
-
-nav {
-  height: 100px;
-  width: 20%;
-  margin: 5%;
-  margin-top: 50px;
-}
-
-.submit-btn, .comment-btn, .comment-link, .read-btn {
-  padding: 5%;
-  margin-top: 30px;
-  background-color: rgb(152, 121, 111);
-  color: rgb(233, 227, 215);
-  font-weight: bold;
-}
-
-/* div.container {
-  height: 10em;
-  position: relative
-} */
-
-div.container2 {
-  position: relative
-}
-
-div.container h1 {
-  margin: 0;
-  color: rgb(52, 48, 48);
-  position: absolute;
-  top: 25%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
-  font-size: 200%;
-  font-weight: bolder;
-
-}
-
-.banner-container {
-  height: 10em;
-  position: relative
-}
-
-.banner-container h1 {
-  margin: 0;
-  color: rgb(52, 48, 48);
-  position: absolute;
-  top: 25%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
-  font-size: 200%;
-  font-weight: bolder;
-
-}
-
-body {
-  background-color: rgb(233, 227, 215);
-  padding-bottom: 50px;
-}
-
-.map-container {
-margin-left: 10%;
-width: 80%;
-height: 80%;
-}
-
-.map-text {
-  color: black;
-
-}
-
-.register-form, .login-form, .card {
-  width: 60%;
-  height: 35rem;
-  margin-left: 20%;
-  margin-top:7%;
-  text-align: center;
-  padding-top: 1%;
-  background-color: rgb(152, 121, 111);
-  color: #FFFFFF;
-
- }
  
 .button-container {
   padding-top: 2rem;
@@ -159,17 +345,16 @@ height: 80%;
   padding: 5px;
 }
  
-.register-input, .login-input {
+/* .register-input, .login-input {
   font-size: larger;
   padding: 5px;
   margin: 2px;
-  
-}
+} */
+
 .register-btn, .login-btn {
-  border: 1px solid #FFFFFF;
+  border: 1px solid rgb(241, 237, 229);
   background-color: transparent;
   font-family: 'Oswald', sans-serif;
-  color: #FFFFFF;
   text-transform: uppercase;
   font-weight: bold;
   padding: .5rem 2rem;
@@ -197,14 +382,6 @@ height: 80%;
   width: fit-content;
   height: 50px;
   padding: 5px;
-}
-
-.register h2, .login h2 {
-
-  font-family: 'Oswald', sans-serif;
-  font-size: 2rem;
-  text-transform: capitalize;
-  padding-bottom: 3%;
 }
 
 footer {

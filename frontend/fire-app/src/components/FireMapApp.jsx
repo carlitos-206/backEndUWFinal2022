@@ -45,15 +45,16 @@ function FireMapApp() {
     };
 
     return (
-      <div className="center">
-        <label htmlFor="months">Month:</label>
+
+      <div className="map-date-controls">
+        <label htmlFor="months">Month</label>
         <select value={month} onChange={handleMonthChange}>
           {months.map((mon) => (
             <option value={mon}>{mon}</option>
           ))}
         </select>
         &nbsp; &nbsp; &nbsp; &nbsp;
-        <label htmlFor="years">Year:</label>
+        <label htmlFor="years">Year</label>
         <select value={year} onChange={handleYearChange}>
           {years.map((yr) => (
             <option value={yr}>{yr}</option>
