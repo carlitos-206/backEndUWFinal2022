@@ -23,17 +23,21 @@ function FireDetails({ fireId }) {
         if(localStorage.getItem('loginData')){
             const popUpCommentBox = (e) =>{
                 e.preventDefault()
-                console.log('here')
-                return(
-                    <>
-                        <h1>HEllo</h1>
-                    </>
-                )
+                const showCommentBox = document.getElementsByClassName('commentSection')[0]
+                showCommentBox.setAttribute('style', 'display:block')
             }
             return(
                 <button onClick={(e)=>{popUpCommentBox(e)}}>Comment</button>
             )
+        }else{
+            return(
+                <SigninButton />
+            )
         }
+    }
+
+    const closebox = () =>{
+        document.getElementsByClassName("commentForm")[0].reset();
     }
     useEffect(() => {
         fetch(`https://uw-api-2022.herokuapp.com/fires/${fireId}`)
@@ -84,6 +88,15 @@ function FireDetails({ fireId }) {
                 </div>
             <div className ="link-buttons">
                 {userLogIn()}
+                <div className='commentSection' style={{
+                    display:'none'}}>
+                    <form className='comentForm'>
+                        <input type="text" name="" id="" placeholder='Enter Title' />
+                        <textarea name="" id="" cols="38" rows="10" placeholder='Enter comment'></textarea>
+                        <button onClick={(e)=>{closebox(e)}}>Cancel</button>
+                        <button>Submit</button>
+                    </form>
+                </div>
             </div>
         </div>
           <Footer />
