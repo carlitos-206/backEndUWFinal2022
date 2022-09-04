@@ -2,6 +2,7 @@ const { MongoClient } = require("mongodb");
 const ObjectId = require("mongodb").ObjectId;
 const bcrypt = require("bcryptjs");
 //const { use } = require("../routes");
+const auth = require('../auth')
 const uri =
   "mongodb+srv://carlitos206:SharedFakePass123@cluster0.lshmeod.mongodb.net/?retryWrites=true&w=majority";
 
@@ -351,9 +352,11 @@ module.exports.signIn = async (user) => {
     });
     if (userExistEmail) {
       if (await bcrypt.compare(user.password, userExistEmail.password)) {
+        let token = auth.createToken(user.password)
         return {
           username: userExistEmail.username,
           email: userExistEmail.email,
+          token: token
         };
       }
     }
@@ -364,6 +367,8 @@ module.exports.signIn = async (user) => {
           email: userExistUsername.email,
         };
       }
+    }else{
+      return {error: "Failed to locate user" }
     }
   } catch (err) {
     return { error: "Failed to locate user" };

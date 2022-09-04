@@ -21,10 +21,12 @@ const mongoConnection = require("../dataInterface/mongoDB")
     // curl -X POST -H "Content-Type: application/json" -d '{"usernameOrEmail":"user1","password":"secrets!"}' http://localhost:5000/users/login
     router.post("/login", cors(), async (req, res) => {
         let result = await mongoConnection.signIn(req.body)
-        if(result.error){
-          res.status(500).send(result)
-        }else{
+        if(!result.error){
+          console.log(result)
           res.status(200).send(result)
+        }else{
+          console.log(result)
+          res.status(404).send(result)
         }
     }),
 
