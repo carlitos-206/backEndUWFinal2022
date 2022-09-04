@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function FireMapAppData() {
 
@@ -38,8 +38,6 @@ function FireMapAppData() {
     return <p>An error has occurred.  Please try again.</p>
   }
 
-  const fireId = fires._id;
-  console.log({fireId})
 
   return (
     <main>
@@ -67,8 +65,8 @@ function FireMapAppData() {
                 <p>Total Acres:{fire.total_acres}</p>
                 <p>Cost:{fire.estimated_cost_to_date}</p>
 
-                <Link to={`/createmessage/${fireId}`}><button>Return to Map</button></Link>
-               <Link to={`/`}><button>Return to Map</button></Link>
+                <Link to={`/createmessage/${fire._id}`}><button>Create Comment</button></Link>
+                <Link to={`/`}><button>Return to Map</button></Link>
               </div>
             </div>
           </section>

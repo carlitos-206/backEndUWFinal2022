@@ -27,7 +27,7 @@ function App() {
               <SigninButton />
               <Link to={`/posts`}><button className="submit-btn">Create a Post</button></Link>
             </nav>
-          <FireMapApp />
+          <FireMapApp/>
           <Footer />
         </main>
       </>
