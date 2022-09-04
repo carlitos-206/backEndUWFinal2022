@@ -7,18 +7,44 @@ import { solid } from '@fortawesome/fontawesome-svg-core/import.macro';
 const axios = require('axios')
 function Login() {
   const navigate = useNavigate();
-  // States for login
-  // const [usernameOrEmail, setUsernameOrEmail] = useState(null);
-  // const [password, setUserPassword] = useState(null);
 
   const handleLogin = (e) =>{
     e.preventDefault()
     let username = document.forms.logInForm.fieldOne.value
     let pass = document.forms.logInForm.fieldTwo.value
-    console.log(username, pass)
     axios.post('https://uw-api-2022.herokuapp.com/users/login', {usernameOrEmail: username, password: pass})
-    .then(response => console.log(response.data))
-    .then(data => console.log(data) )
+    .then(response =>{
+      console.log(response.data)
+      if (response.data.token !== '' || response.data.token !== null) {
+        const loginData = response.data
+        localStorage.setItem("authenticated", true);
+        localStorage.setItem("loginData", JSON.stringify(loginData));
+        navigate("/")
+      }else{
+
+      console.log(response, 'here')
+    }
+  })
+  .catch(function (error) {
+    if (error.response) {
+      // The request was made and the server responded with a status code
+      // that falls out of the range of 2xx
+      console.log(error.response.data);
+      if(error.response.data){
+        alert('Wrong information, please try again.')
+      }
+    } else if (error.request) {
+      // The request was made but no response was received
+      // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
+      // http.ClientRequest in node.js
+      console.log(error.request);
+    } else {
+      // Something happened in setting up the request that triggered an Error
+      console.log('Error', error.message);
+    }
+    console.log(error.config);
+  });
+    // .then(data => console.log(data) )
   }
     return (
       <section className="login">
