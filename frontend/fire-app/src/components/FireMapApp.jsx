@@ -34,7 +34,6 @@ function FireMapApp() {
     const handleMonthChange = (e) => {
       e.preventDefault();
       setMonth(months[e.target.selectedIndex]);
-      console.log('handle')
       console.log(`In Mon - month: ${month} year: ${year}`);
     };
     const handleYearChange = (e) => {
@@ -66,7 +65,6 @@ function FireMapApp() {
   function getCurrentMonth() {
     const d = new Date();
     const m = months[d.getMonth()];
-
     return m;
   }
   function getCurrentYear() {
@@ -75,7 +73,6 @@ function FireMapApp() {
     return y;
   }
   useEffect(()=>{
-    console.log('here')
     let url = `https://uw-api-2022.herokuapp.com/fires/in/${month}/${year}`;
       console.log("url: ", url);
       fetch(url)

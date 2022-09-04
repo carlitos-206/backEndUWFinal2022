@@ -390,7 +390,8 @@ footer {
   height: 50px;
   display: block;
   text-align: center;
-  padding-top: 50px;
+  position: relative;
+  top: 1000px;
 }
 
 .button-container {
