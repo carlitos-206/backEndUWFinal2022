@@ -21,8 +21,17 @@ function FireDetails({ fireId }) {
     const [hasError, setHasError] = useState(false);
     const userLogIn = () =>{
         if(localStorage.getItem('loginData')){
+            const popUpCommentBox = (e) =>{
+                e.preventDefault()
+                console.log('here')
+                return(
+                    <>
+                        <h1>HEllo</h1>
+                    </>
+                )
+            }
             return(
-                <Link to={`/createmessage/${fireId}`}><button >Comment</button></Link>
+                <button onClick={(e)=>{popUpCommentBox(e)}}>Comment</button>
             )
         }
     }
