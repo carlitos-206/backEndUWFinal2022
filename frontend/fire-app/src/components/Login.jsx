@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 
 function Login() {
+  const navigate = useNavigate();
   // States for login
   const [usernameOrEmail, setUsernameOrEmail] = useState('');
   const [password, setUserPassword] = useState('');
@@ -29,6 +31,14 @@ function Login() {
       .then((response) => response.json())
       .then((data) => {
         console.log('Success:', data);
+
+        if (data.token !== '' || data.token !== null) {
+          const loginData = data
+         localStorage.setItem("authenticated", true);
+         localStorage.setItem("loginData", JSON.stringify(loginData));
+         navigate("/posts");
+       }
+
       })
       .catch((error) => {
         console.error('Error:', error);

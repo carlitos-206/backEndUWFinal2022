@@ -5,7 +5,7 @@ import checkVal from './logic/checkVal';
 import readTheDate from './logic/readTheDate';
 import totalAcres from './logic/totalAcres';
 // import convertToUSD from './logic/converToUSD';
-function FireDetails({ fireId  }) {
+function FireDetails({ fireId }) {
     const [fire, setFire] = useState(undefined);
     const [isLoading, setIsLoading] = useState(true);
     const [hasError, setHasError] = useState(false);
@@ -30,11 +30,13 @@ function FireDetails({ fireId  }) {
     if (hasError) {
         return <p>An error has occurred.  Please try again.</p>
     }
+console.log(fireId);
+
     return (
         // return info for each fire
         <div className="container">
             <div className="column list-info">
-                <h2>Fire Name:{checkVal(fire.incident_name)}</h2>
+                <h2><span>Fire Name:</span>{checkVal(fire.incident_name)}</h2>
                 <p>Lattitude:{checkVal(fire.location.latitude)}</p>
                 <p>Longitude:{checkVal(fire.location.longitude)}</p>
                 <p>City:{checkVal(fire.location.city)}</p>
@@ -51,10 +53,13 @@ function FireDetails({ fireId  }) {
                 <p>Cost:{fire.estimated_cost_to_date}</p>
                 <p>Source: {checkVal(fire.source)}</p>
             </div>
+            <div className ="link-buttons">
             <Link to={`/`}><button>Return Home</button></Link>
             <Link to={`/createmessage/${fireId}`}><button  >Post About a Fire</button></Link>
+            </div>
         </div>
     )
+  
 }
 FireDetails.propTypes = {
     fireId: PropTypes.string.isRequired,

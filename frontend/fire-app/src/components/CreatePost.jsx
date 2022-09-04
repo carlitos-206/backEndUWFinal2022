@@ -1,19 +1,31 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
+
 function CreatePost() {
   const { id } = useParams();
+
   // States for create comment
   const [text, setText] = useState('');
-  // const [userName, setUserName] = useState('');
+
+  // define fire id
   const fireId = id
-  const username = "User1"
-  console.log({fireId});
+  console.log(fireId);
+ 
+// define username
+  let newObj = window.localStorage.getItem("loginData", );
+  let loggedUser = JSON.parse(newObj);
+    console.log(loggedUser);
+    const username =  loggedUser.username ;
+    console.log(username);
+  
+console.log(`https://uw-api-2022.herokuapp.com//fires/${fireId}/user/${username}/comments`)
+
   // Handle post comment on submit
   const handleSubmit = async (event) => {
     event.preventDefault();
     const data = {
-      "username": "User1",
+      "username": username,
       "text": text,
     }
     //  username":"user1", "email":"carlitos@uw.edu","password":"secrets!", "firstName":"Carlos", "lastName":"Caceres

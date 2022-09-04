@@ -4,10 +4,10 @@ import React from 'react';
 
 function Banner() {
     return (
-      <div className="container">
+      <div className="banner-container">
         <div className="App-header">
           {/* <img src={logo} className="App-logo" alt="logo" /> */}
-          <div className = "container">
+          <div className = "banner-container">
           <h1>
             Fire Tracker App
           </h1>
