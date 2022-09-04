@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Banner from '../components/Banner';
 import { Link } from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 
 // const comments = [
 //     {
@@ -28,6 +29,7 @@ function Posts() {
     const [comments, setComments] = useState(undefined);
     const [isLoading, setIsLoading] = useState(true);
     const [hasError, setHasError] = useState(false);
+    const navigate = useNavigate();
 
     let newObj = window.localStorage.getItem("loginData",);
     let loggedUser = JSON.parse(newObj);
@@ -56,6 +58,11 @@ function Posts() {
 
 
     }, []);
+    const clear = () =>{
+        localStorage.clear()
+        navigate('/')
+        location.reload()
+      }
 
     if (isLoading) {
         return <p>Loading...</p>
@@ -70,7 +77,7 @@ function Posts() {
         <>
             <Banner />
             <nav>
-                <Link to={'/login'}><button type="submit" className="submit-btn">Sign-in/Register</button></Link>
+                <button onClick={clear}>LogOut</button>
                 <Link to={`/`}><button className="submit-btn">Return to Maps</button></Link>
             </nav>
             <div className="posts row">
