@@ -24,8 +24,8 @@ function FireMapApp() {
   const [fires, setFires] = useState(undefined);
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
-  const [month, setMonth] = useState();
-  const [year, setYear] = useState();
+  const [month, setMonth] = useState(getCurrentMonth());
+  const [year, setYear] = useState(getCurrentYear());
 
   const ShowDropDown = (props) => {
     const month = props.month;
@@ -34,13 +34,12 @@ function FireMapApp() {
     const handleMonthChange = (e) => {
       e.preventDefault();
       setMonth(months[e.target.selectedIndex]);
-      LoadData(month, year);
+      console.log('handle')
       console.log(`In Mon - month: ${month} year: ${year}`);
     };
-    const handleYearChange = (evt) => {
-      evt.preventDefault();
-      setYear(years[evt.target.selectedIndex]);
-      LoadData(month, year);
+    const handleYearChange = (e) => {
+      e.preventDefault();
+      setYear(years[e.target.selectedIndex]);
       console.log(`In month: ${month} - year: ${year}`);
     };
 
@@ -67,6 +66,7 @@ function FireMapApp() {
   function getCurrentMonth() {
     const d = new Date();
     const m = months[d.getMonth()];
+
     return m;
   }
   function getCurrentYear() {
@@ -74,33 +74,23 @@ function FireMapApp() {
     const y = d.getFullYear();
     return y;
   }
-
-  function LoadData(mon, yr) {
-    let url = `https://uw-api-2022.herokuapp.com/fires/in/${mon}/${yr}`;
-    console.log("url: ", url);
-    fetch(url)
-      .then((response) => response.json())
-      .then(
-        (data) => {
-          setFires(data);
-          setIsLoading(false);
-        },
-        (error) => {
-          setHasError(true);
-          setIsLoading(false);
-        }
-      );
-  }
-  useEffect(() => {
-    let mm = getCurrentMonth();
-    let yy = getCurrentYear();
-
-    setMonth(mm);
-    setYear(yy);
-
-    LoadData(mm, yy);
-    //LoadData("Mar", yy);
-  }, []);
+  useEffect(()=>{
+    console.log('here')
+    let url = `https://uw-api-2022.herokuapp.com/fires/in/${month}/${year}`;
+      console.log("url: ", url);
+      fetch(url)
+        .then((response) => response.json())
+        .then(
+          (data) => {
+            setFires(data);
+            setIsLoading(false);
+          },
+          (error) => {
+            setHasError(true);
+            setIsLoading(false);
+          }
+        );
+  }, [month, year])
 
   if (isLoading) {
     return <p>Loading...</p>;
