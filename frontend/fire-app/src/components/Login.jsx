@@ -14,7 +14,6 @@ function Login() {
     let pass = document.forms.logInForm.fieldTwo.value
     axios.post('https://uw-api-2022.herokuapp.com/users/login', {usernameOrEmail: username, password: pass})
     .then(response =>{
-      console.log(response.data)
       if (response.data.token !== '' || response.data.token !== null) {
         const loginData = response.data
         localStorage.setItem("authenticated", true);
