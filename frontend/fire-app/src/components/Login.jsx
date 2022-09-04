@@ -1,52 +1,25 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import {useNavigate} from 'react-router-dom';
 import Banner from './Banner';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { solid } from '@fortawesome/fontawesome-svg-core/import.macro';
-
+const axios = require('axios')
 function Login() {
   const navigate = useNavigate();
   // States for login
-  const [usernameOrEmail, setUsernameOrEmail] = useState('');
-  const [password, setUserPassword] = useState('');
+  // const [usernameOrEmail, setUsernameOrEmail] = useState(null);
+  // const [password, setUserPassword] = useState(null);
 
-  console.log(`Email ${usernameOrEmail}`);
-  console.log(`Password ${password}`);
-
-  // Handle the login on submit
-  const handleLogin = async (event) => {
-    event.preventDefault();
-
-    const data = {
-      "usernameOrEmail": usernameOrEmail,
-      "password": password
-    }
- 
-    // process the login
-    fetch('https://uw-api-2022.herokuapp.com/users/login', {
-      method: 'POST', // or 'PUT'
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log('Success:', data);
-
-        if (data.token !== '' || data.token !== null) {
-          const loginData = data
-         localStorage.setItem("authenticated", true);
-         localStorage.setItem("loginData", JSON.stringify(loginData));
-         navigate("/posts");
-       }
-
-      })
-      .catch((error) => {
-        console.error('Error:', error);
-      });
-    }
+  const handleLogin = (e) =>{
+    e.preventDefault()
+    let username = document.forms.logInForm.fieldOne.value
+    let pass = document.forms.logInForm.fieldTwo.value
+    console.log(username, pass)
+    axios.post('https://uw-api-2022.herokuapp.com/users/login', {usernameOrEmail: username, password: pass})
+    .then(response => console.log(response.data))
+    .then(data => console.log(data) )
+  }
     return (
       <section className="login">
         <Banner />
@@ -59,29 +32,25 @@ function Login() {
               </button>
             </Link>
           </div>
-          <form >
+          <form id='logInForm' onSubmit={handleLogin} >
             {/* Labels and inputs for form data */}
             <div className="form-container">
               <label className="register-label">User Name or Email</label>
               <input className="register-input"
-                onChange={(e) => setUsernameOrEmail(e.target.value)}
-                value={usernameOrEmail}
-                type="email"
+                // onChange={(e) => setUsernameOrEmail(e.target.value)}
                 autoComplete="on"
-                required
+                required name='fieldOne'
               />
               <label className="register-label">Password</label>
               <input className="register-input"
-                onChange={(e) => setUserPassword(e.target.value)}
-                value={password}
-                autoComplete="on"
+                // onChange={(e) => setUserPassword(e.target.value)}
                 type="password"
-                required />
+                required name='fieldTwo' />
             </div>
             {/* <div>
         </div> */}
             <div className="row button-container">
-              <button onClick={handleLogin} className="register-btn" type="submit">
+              <button className="register-btn" type="submit">
                 Login
               </button>
               <Link to={`/register`}><button className="register-btn">Register</button></Link>
