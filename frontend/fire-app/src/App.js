@@ -1,7 +1,5 @@
 import React from 'react';
 import './App.css';
-import Posts from './components/Posts';
-import CreatePost from './components/CreatePost';
 import DeletePost from './components/DeletePost';
 import EditPost from './components/EditPost';
 import FireMapApp from './components/FireMapApp';
@@ -31,7 +29,6 @@ function App() {
           return(
             <>
             <button onClick={clear}>LogOut</button>
-            <Link to={`/posts`}><button className="submit-btn">Create a Post</button></Link>
             </>
             )
         }else{
@@ -67,36 +64,6 @@ function App() {
           <div >
             <FireDetails
               fireId={fireId}
-            />
-          </div>
-        </main>
-      </>
-    );
-  }
-
-  const PostsPage = () => {
-    const { username} = useParams();
-    return (
-      <>
-        <main>
-          <div >
-            <Posts
-              username = {username}
-            />
-          </div>
-        </main>
-      </>
-    );
-  }
-
-  const CreatePostPage = () => {
-    const { fireId } = useParams();
-    return (
-      <>
-        <main>
-          <div >
-            <CreatePost
-            fireId = {fireId}
             />
           </div>
         </main>
@@ -172,27 +139,7 @@ function App() {
             path="/map/:fireId"
             element={<FireDetailsPage/>}
           />
-          {/* Page displaying the posts for a user */}
-        <Route
-          path="/posts"
-          element={<PostsPage />}
-          />
-          {/* Page with blank fields to add a post from MyPosts page */}
           <Route
-            path="/createmessage/:fireId"
-            element={<CreatePostPage />}
-          />
-          {/* Do we need a delete route or will this be javascript from the delete button on the My Posts Page? */}
-          <Route
-            path="/posts/:postId"
-            element={<DeletePostPage />}
-          />
-          {/* Page with fields populated for exist post that a user can edit from My Posts Page */}
-          <Route
-            path="/posts/:postId"
-            element={<EditPostPage />}
-          />
-                  <Route
           path="/login"
           element={<LoginPage />}
         />
