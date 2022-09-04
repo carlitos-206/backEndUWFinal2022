@@ -47,6 +47,10 @@ button {
   border: none;
 }
 
+button path {
+  color: rgb(241, 237, 229);
+}
+
 button:hover {
   cursor: pointer;
   background-color: rgb(143, 112, 102);
@@ -210,10 +214,10 @@ height: 80%;
 /* card //////////////////////////////////////////////////////////////////////*/
 
 .card {
-  height: 35rem;
   text-align: center;
   background-color: rgb(152, 121, 111);
   color: rgb(241, 237, 229);
+  padding-bottom: 1rem;
 }
 
 .card h2 {
@@ -222,10 +226,39 @@ height: 80%;
   padding-bottom: 0.4rem;
   color: rgb(241, 237, 229);
   background-color: rgb(119, 94, 85);
+  margin-left: 1rem;
 }
 
 .card label {
   color: rgb(241, 237, 229);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(119, 94, 85);
+}
+
+.card-header button {
+  border: none;
+  background-color: rgb(119, 94, 85);
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+}
+
+.card-header button:hover {
+  background-color: rgb(152, 121, 111);
+}
+
+.card-header button svg {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* ///////////////////////////////////////////////////////////////////////////*/
