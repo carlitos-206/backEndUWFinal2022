@@ -45,6 +45,7 @@ function FireMapApp() {
     };
 
     return (
+
       <div className="map-date-controls">
         <label htmlFor="months">Month</label>
         <select value={month} onChange={handleMonthChange}>
@@ -111,8 +112,10 @@ function FireMapApp() {
 
   return (
     <div>
-      <p class="caption"><b>Available datasets:</b> Jul / 2014 - Aug / 2022</p>
+      <p className="center">Available dataset Jul/2014 - Aug/2022</p>
+      <br />
       <ShowDropDown month={month} year={year}></ShowDropDown>
+      <br />
       <Map places={fires} center={{ lat: 47.444, lng: -120.021 }} />
     </div>
   );

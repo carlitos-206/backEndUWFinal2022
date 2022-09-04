@@ -50,13 +50,13 @@ function App() {
   }
 
   const PostsPage = () => {
-    // const { userId } = useParams();
+    const { username} = useParams();
     return (
       <>
         <main>
           <div >
             <Posts
-              
+              username = {username}
             />
           </div>
         </main>

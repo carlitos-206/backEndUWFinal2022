@@ -5,7 +5,10 @@ import { Link } from 'react-router-dom';
 
 function Banner() {
     return (
-      <Link to = {'/'}>
+          <div className = "banner-container">
+          <h1>
+            Fire Tracker App
+          </h1>
         <header>
           <div className="App-header">
             <h1>
