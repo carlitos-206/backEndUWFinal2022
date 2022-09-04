@@ -33,11 +33,7 @@ function Posts() {
 
     let newObj = window.localStorage.getItem("loginData",);
     let loggedUser = JSON.parse(newObj);
-    console.log(loggedUser);
     const username = loggedUser.username;
-    console.log(username);
-
-    console.log(`https://uw-api-2022.herokuapp.com/fires/comments/user/${username}`)
     useEffect(() => {
         fetch(`https://uw-api-2022.herokuapp.com/fires/comments/user/${username}`)
 

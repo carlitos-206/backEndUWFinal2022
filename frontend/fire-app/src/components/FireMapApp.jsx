@@ -47,15 +47,15 @@ function FireMapApp() {
       <div className="map-date-controls">
         <label htmlFor="months">Month</label>
         <select value={month} onChange={handleMonthChange}>
-          {months.map((mon) => (
-            <option value={mon}>{mon}</option>
+          {months.map((mon, idx) => (
+            <option value={mon} key={idx}>{mon}</option>
           ))}
         </select>
         &nbsp; &nbsp; &nbsp; &nbsp;
         <label htmlFor="years">Year</label>
         <select value={year} onChange={handleYearChange}>
-          {years.map((yr) => (
-            <option value={yr}>{yr}</option>
+          {years.map((yr, idx) => (
+            <option value={yr} key={idx}>{yr}</option>
           ))}
         </select>
       </div>
@@ -74,7 +74,6 @@ function FireMapApp() {
   }
   useEffect(()=>{
     let url = `https://uw-api-2022.herokuapp.com/fires/in/${month}/${year}`;
-      console.log("url: ", url);
       fetch(url)
         .then((response) => response.json())
         .then(
