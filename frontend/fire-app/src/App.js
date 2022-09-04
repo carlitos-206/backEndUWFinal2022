@@ -12,20 +12,45 @@ import Footer from './components/Footer'
 import { Route, Routes, useParams } from 'react-router-dom';
 import SigninButton from './components/SignInButton';
 import Login from './components/Login';
+import logOut from './components/logOut';
 import Register from './components/Register';
 import { Link } from 'react-router-dom';
 
 function App() {
 
   const Home = () => {
-
+    const UserLogin = () =>{
+      if(localStorage.getItem('loginData')){
+        let data = localStorage.getItem('loginData')
+        let dataJSON = JSON.parse(data)
+        if(dataJSON.token){
+          const clear = () =>{
+            localStorage.clear()
+            location.reload()
+          }
+          return(
+            <>
+            <button onClick={clear}>LogOut</button>
+            <Link to={`/posts`}><button className="submit-btn">Create a Post</button></Link>
+            </>
+            )
+        }else{
+          return(
+            <SigninButton />
+          )
+        }
+      }else{
+        return(
+          <SigninButton />
+        )
+      }
+    }
     return (
       <>
         <main>
             <Banner />
             <nav>
-              <SigninButton />
-              <Link to={`/posts`}><button className="submit-btn">Create a Post</button></Link>
+              {UserLogin()}
             </nav>
           <FireMapApp/>
           <Footer />
