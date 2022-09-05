@@ -314,9 +314,19 @@ module.exports.createUser = async (user) => {
     const db = client.db(databaseName);
     const collection = db.collection(users_Collection);
     let emailExist = await collection.findOne({ email: user.email });
+    let usernameExist = await collection.findOne({ username: user.username });
+    let userString = JSON.stringify(user)
     if (emailExist) {
-      return { Error: "Email already exists" };
-    } else {
+      return { Error: "Email already exists"};
+    } 
+    if(usernameExist){
+      return { Error: "Username already exists"};
+    }
+    if(usernameExist && emailExist){
+      return { Error: "Username already exists and Email already exists"};
+
+    }
+    else {
       let hashedPassword = await bcrypt.hash(user.password, 10);
       let vettedUser = {
         username: user.username,
