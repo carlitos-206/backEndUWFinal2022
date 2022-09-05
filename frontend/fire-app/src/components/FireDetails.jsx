@@ -11,9 +11,7 @@ import Banner from './Banner'
 import Footer from './Footer'
 import { Route, Routes, useParams } from 'react-router-dom';
 import SigninButton from './SignInButton';
-import Login from './Login';
-import logOut from './logOut';
-
+const axios = require('axios')
 // import convertToUSD from './logic/converToUSD';
 function FireDetails({ fireId }) {
     const [fire, setFire] = useState(undefined);
@@ -35,9 +33,18 @@ function FireDetails({ fireId }) {
             )
         }
     }
-
-    const closebox = () =>{
-        document.getElementsByClassName("commentForm")[0].reset();
+    const closebox = (e) =>{
+        const showCommentBox = document.getElementsByClassName('commentSection')[0]
+        showCommentBox.setAttribute('style', 'display:none')
+    }
+    const postComment = (e) =>{
+        e.preventDefault()
+        let comment = document.getElementById('commentText').value
+        const localObjString = localStorage.getItem('loginData')
+        const localObj = JSON.parse(localObjString)
+        console.log(localObj)
+        axios.post(`https://uw-api-2022.herokuapp.com/fires/${fireId}/user/${localObj.username}/comments`, {text: comment})
+        closebox()
     }
     useEffect(() => {
         fetch(`https://uw-api-2022.herokuapp.com/fires/${fireId}`)
@@ -91,11 +98,10 @@ function FireDetails({ fireId }) {
                 {userLogIn()}
                 <div className='commentSection' style={{
                     display:'none'}}>
-                    <form className='comentForm'>
-                        <input type="text" name="" id="" placeholder='Enter Title' />
-                        <textarea name="" id="" cols="38" rows="10" placeholder='Enter comment'></textarea>
-                        <button onClick={(e)=>{closebox(e)}}>Cancel</button>
-                        <button>Submit</button>
+                    <form className='comentForm' onSubmit={(e)=>{postComment(e)}} >
+                        <textarea name="comment" id="commentText" cols="38" rows="10" placeholder='Enter comment'></textarea>
+                        <input type="reset"  onClick={closebox} value="Cancel" />
+                        <input type='submit' />
                     </form>
                 </div>
             </div>
