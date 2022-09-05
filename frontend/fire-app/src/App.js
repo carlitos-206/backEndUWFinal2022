@@ -47,9 +47,9 @@ function App() {
       <>
         <main>
             <Banner />
+            <Hamburger />
             <nav id="navbar" className="navigation" role="navigation">
               {UserLogin()}
-              <Hamburger />
             </nav>
           <FireMapApp/>
           <Footer />

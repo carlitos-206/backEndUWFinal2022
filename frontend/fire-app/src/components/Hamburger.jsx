@@ -5,6 +5,14 @@ import '../App.css';
 
 function Hamburger() {
 
+  const handleClick = async (event) => {
+    event.preventDefault();
+    if (window.confirm("Do you really want to delete your account?")) {
+      
+    }
+}
+
+
     return (
         <section className="p-menu1">
         {/* <nav id="navbar" className="navigation" role="navigation"> */}
@@ -16,7 +24,12 @@ function Hamburger() {
           </label>
         
           <div class="menu1">
-            <a className="link1" href="">Delete User Account</a>
+            <a 
+            onClick={(e) => handleClick(e)}
+            className="link1" 
+            href="">
+              Delete Account
+              </a>
           </div>
       {/* </nav> */}
       </section>
