@@ -12,8 +12,11 @@ import Footer from './Footer'
 import SigninButton from './SignInButton';
 import ViewComments from './viewComments';
 const axios = require('axios')
+import {useNavigate} from 'react-router-dom';
 // import convertToUSD from './logic/converToUSD';
 function FireDetails({ fireId }) {
+    const navigate = useNavigate();
+
     const [fire, setFire] = useState(undefined);
     const [isLoading, setIsLoading] = useState(true);
     const [hasError, setHasError] = useState(false);
@@ -54,6 +57,10 @@ function FireDetails({ fireId }) {
             data => {
                 setFire(data);
                 setIsLoading(false);
+                if(data.error){
+                    alert(`${data.error}`)
+                    navigate('/')
+                }
             },
             error => {
                 setHasError(true)
