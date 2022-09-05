@@ -13,6 +13,7 @@ import Login from './components/Login';
 import logOut from './components/logOut';
 import Register from './components/Register';
 import { Link } from 'react-router-dom';
+import Hamburger from './components/Hamburger';
 
 function App() {
 
@@ -24,7 +25,7 @@ function App() {
         if(dataJSON.token){
           const clear = () =>{
             localStorage.clear()
-            location.reload()
+            window.location.reload()
           }
           return(
             <>
@@ -46,8 +47,9 @@ function App() {
       <>
         <main>
             <Banner />
-            <nav>
+            <nav id="navbar" className="navigation" role="navigation">
               {UserLogin()}
+              <Hamburger />
             </nav>
           <FireMapApp/>
           <Footer />
