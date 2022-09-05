@@ -68,8 +68,9 @@ function FireDetails({ fireId }) {
                 <Link to= "/"><button>Return Home</button></Link>
             </nav>
             <div className="container">
+                
                 <div className="column list-info">
-                    <h2><span>Fire Name:</span>{checkVal(fire.incident_name)}</h2>
+                    <h2>{checkVal(fire.incident_name)}</h2>
                     <p>Lattitude:{checkVal(fire.location.latitude)}</p>
                     <p>Longitude:{checkVal(fire.location.longitude)}</p>
                     <p>City:{checkVal(fire.location.city)}</p>
@@ -99,11 +100,10 @@ function FireDetails({ fireId }) {
                 </div>
             </div>
         </div>
-          <Footer />
+            <Footer />
         </main>
-      </>
+        </>
     )
-  
 }
 FireDetails.propTypes = {
     fireId: PropTypes.string.isRequired,
