@@ -3,9 +3,6 @@ import readTheDate from './logic/readTheDate';
 const axios = require('axios')
 export default function ViewComments({fire_id}){
   const [comments, setData] = useState(null)  
-
-
-
     const refresh = () =>{
       axios.get(`https://uw-api-2022.herokuapp.com/fires/${fire_id}/comments`)
       .then(response =>
@@ -37,7 +34,6 @@ export default function ViewComments({fire_id}){
           if(localObj){    
             if(localObj.username === data.username){
               const userBtns = document.getElementsByClassName('userOwnCommentBtn')
-              console.log(userBtns)
               for(let i = 0; i < userBtns.length; i++){
 
                 userBtns[i].setAttribute("style", 'display:block')
