@@ -9,8 +9,8 @@ import EditPost from './EditPost';
 // import FireMapAppData from './components/FireMapAppData';
 import Banner from './Banner'
 import Footer from './Footer'
-import { Route, Routes, useParams } from 'react-router-dom';
 import SigninButton from './SignInButton';
+import ViewComments from './viewComments';
 const axios = require('axios')
 // import convertToUSD from './logic/converToUSD';
 function FireDetails({ fireId }) {
@@ -105,6 +105,7 @@ function FireDetails({ fireId }) {
                     </form>
                 </div>
             </div>
+            <ViewComments fire_id={fireId} />
         </div>
             <Footer />
         </main>
