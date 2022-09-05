@@ -36,6 +36,7 @@ function FireDetails({ fireId }) {
     const closebox = (e) =>{
         const showCommentBox = document.getElementsByClassName('commentSection')[0]
         showCommentBox.setAttribute('style', 'display:none')
+        location.reload()
     }
     const postComment = (e) =>{
         e.preventDefault()
