@@ -37,9 +37,10 @@ function FireDetails({ fireId }) {
         }
     }
     const closebox = (e) =>{
-        const showCommentBox = document.getElementsByClassName('commentSection')[0]
+        let commentText = document.getElementById('commentText')
+        commentText.value = ''
+        let showCommentBox = document.getElementsByClassName('commentSection')[0]
         showCommentBox.setAttribute('style', 'display:none')
-        location.reload()
     }
     const postComment = (e) =>{
         e.preventDefault()
@@ -55,11 +56,12 @@ function FireDetails({ fireId }) {
         .then(response => response.json())
         .then(
             data => {
-                setFire(data);
-                setIsLoading(false);
                 if(data.error){
                     alert(`${data.error}`)
                     navigate('/')
+                }else{
+                setFire(data);
+                setIsLoading(false);
                 }
             },
             error => {
@@ -107,7 +109,7 @@ function FireDetails({ fireId }) {
                 <div className='commentSection' style={{
                     display:'none'}}>
                     <form className='comentForm' onSubmit={(e)=>{postComment(e)}} >
-                        <textarea name="comment" id="commentText" cols="38" rows="10" placeholder='Enter comment'></textarea>
+                        <textarea name="comment" id="commentText" cols="38" rows="10" placeholder='Enter comment' required></textarea>
                         <input type="reset"  onClick={closebox} value="Cancel" />
                         <input type='submit' />
                     </form>
