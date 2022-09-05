@@ -12,7 +12,7 @@ export default function ViewComments({fire_id}){
     }
   setTimeout(()=>{
     refresh()
-  },30000)
+  },3000)
   useEffect(()=>{
       axios.get(`https://uw-api-2022.herokuapp.com/fires/${fire_id}/comments`)
       .then(response =>
@@ -39,19 +39,19 @@ if(comments !== null){
             userBtns[i].setAttribute("style", 'display:block')
           }
         }
-      }
+        }
       return(
-        <div className="fireComments" key={idx}>
-          <div className="commentBody">
-            {data.text}
-          </div>
-          <div className="commentAuthor">
-            Posted By: {data.username} ON {readTheDate(data.createdDate)}
-          </div>
-          <div>
-            <button className="userOwnCommentBtn" style={{"display":"none"}}>Edit</button>
-            <button className="userOwnCommentBtn" style={{"display":"none"}}>Delete</button>
-          </div>
+          <div className="fireComments" key={idx}>
+            <div className="commentBody">
+              {data.text}
+            </div>
+            <div className="commentAuthor">
+              Posted By: {data.username} ON {readTheDate(data.createdDate)}
+            </div>
+            <div>
+              <button className="userOwnCommentBtn" style={{"display":"none"}}>Edit</button>
+              <button className="userOwnCommentBtn" style={{"display":"none"}}>Delete</button>
+            </div>
         </div>
         )}
         )}
