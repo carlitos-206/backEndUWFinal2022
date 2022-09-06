@@ -38,7 +38,7 @@ function Login() {
         <Banner />
         <div className="login-form card">
           <div className="card-header">
-            <h2>Login</h2> 
+            <h2><FontAwesomeIcon icon={solid('right-to-bracket')} /> Login</h2> 
             <Link to={`/`}>
               <button>
                 <FontAwesomeIcon icon={solid('x')} />

@@ -148,6 +148,8 @@ div.container h1 {
 nav {
   display: flex;
   justify-content: flex-end;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
 nav button {
@@ -301,6 +303,7 @@ height: 80%;
 
 .map-date-controls {
   margin-bottom: 1rem;
+  margin-top: 1rem;
 }
 
 .map-date-controls label {
@@ -351,7 +354,7 @@ height: 80%;
 }
 
 .card .primary-btn {
-  border: 1px solid rgb(233, 227, 215);
+  border: 2px solid rgb(233, 227, 215);
 }
 
 .card h2 {
@@ -361,6 +364,14 @@ height: 80%;
   color: rgb(241, 237, 229);
   background-color: rgb(119, 94, 85);
   margin-left: 1rem;
+}
+
+.card h2 > svg {
+  font-size: 1.7rem;
+}
+
+.card h2 > svg > path {
+  color: rgb(241, 237, 229);
 }
 
 .card label {
@@ -499,9 +510,11 @@ footer {
 }
 
 .button-container {
+  display: flex;
   align-content: center;
   justify-content: center;
   padding-top: 1rem;
+  gap: 1rem;
 }
 
 .comment-container {
@@ -510,11 +523,6 @@ footer {
 
 .card, .comment-card {
   margin-bottom: 1rem;
-}
-
-.card button {
-  padding: 0.5rem 1rem;
-  
 }
 
 .comment-btn-container {

@@ -85,7 +85,7 @@ function FireDetails({ fireId }) {
         <main>
             <Banner />
             <nav>
-                <Link to= "/"><button>Return Home</button></Link>
+                <Link to= "/"><button><FontAwesomeIcon icon={solid('map-location-dot')} /> Home</button></Link>
             </nav>
             <div className="card">
                 <div className="card-header">

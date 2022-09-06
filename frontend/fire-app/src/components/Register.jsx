@@ -58,7 +58,7 @@ function Register() {
       <Banner />
       <div className="register-form card">
         <div className="card-header">
-          <h2>Register</h2> 
+          <h2><FontAwesomeIcon icon={solid('right-to-bracket')} /> Register</h2> 
           <Link to={`/`}>
             <button>
               <FontAwesomeIcon icon={solid('x')} />
