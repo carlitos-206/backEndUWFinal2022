@@ -4,9 +4,8 @@ import '../App.css';
 
 
 function Hamburger() {
-
-  const handleClick = async (event) => {
-    event.preventDefault();
+  const handleClick = async (e) => {
+    e.preventDefault();
     if (window.confirm("Do you really want to delete your account?")) {
       
     }
@@ -22,7 +21,6 @@ function Hamburger() {
             <div className="meat"></div>
             <div className="bottom"></div>
           </label>
-        
           <div class="menu1">
             <a 
             onClick={(e) => handleClick(e)}

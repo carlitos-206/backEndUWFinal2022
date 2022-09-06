@@ -17,8 +17,15 @@ import Hamburger from './components/Hamburger';
 import Bookmark from './components/Bookmark';
 
 function App() {
-
   const Home = () => {
+    const isLoggin = () =>{
+      let local = localStorage.getItem('loginData')
+      if(local){
+        return {display: 'block'}
+      }else{
+        return {display: 'none'}
+      }
+    }
     const UserLogin = () =>{
       if(localStorage.getItem('loginData')){
         let data = localStorage.getItem('loginData')
@@ -48,7 +55,9 @@ function App() {
       <>
         <main>
             <Banner />
-            <Hamburger />
+            <div className='burger' style={isLoggin()} >
+              <Hamburger/>
+            </div>
             <nav id="navbar" className="navigation" role="navigation">
               {UserLogin()}
             </nav>
@@ -64,7 +73,7 @@ function App() {
     return (
       <>
         <main>
-          <div >
+          <div>
             <Bookmark />
             <FireDetails
               fireId={fireId}
@@ -75,35 +84,35 @@ function App() {
     );
   }
 
-  const DeletePostPage = () => {
-    const { id} = useParams();
-    return (
-      <>
-        <main>
-          <div >
-            <DeletePost
-              id={id}
-            />
-          </div>
-        </main>
-      </>
-    );
-  }
+  // const DeletePostPage = () => {
+  //   const { id} = useParams();
+  //   return (
+  //     <>
+  //       <main>
+  //         <div >
+  //           <DeletePost
+  //             id={id}
+  //           />
+  //         </div>
+  //       </main>
+  //     </>
+  //   );
+  // }
 
-  const EditPostPage = () => {
-    const { postId } = useParams();
-    return (
-      <>
-        <main>
-          <div >
-            <EditPost
-              postId={postId}
-            />
-          </div>
-        </main>
-      </>
-    );
-  }
+  // const EditPostPage = () => {
+  //   const { postId } = useParams();
+  //   return (
+  //     <>
+  //       <main>
+  //         <div >
+  //           <EditPost
+  //             postId={postId}
+  //           />
+  //         </div>
+  //       </main>
+  //     </>
+  //   );
+  // }
 
   const LoginPage = () => {
     return (

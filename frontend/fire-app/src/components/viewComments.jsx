@@ -95,7 +95,7 @@ if(comments !== null){
               <div className="commentAuthor">
                 Posted By: {data.username} ON {readTheDate(data.createdDate)}
               </div>
-              <div>
+              <div className="row user-comment-btn">
                 <button className="userOwnCommentBtn" style={{"display":"none"}} onClick={(e)=>{updateComment(e, data._id, localObj.username, data.username , data.text)}} >Edit</button>
                 <button className="userOwnCommentBtn" style={{"display":"none"}} onClick={(e)=>{deleteComment(e, data._id, localObj.username, data.username)}}>Delete</button>
               </div>
