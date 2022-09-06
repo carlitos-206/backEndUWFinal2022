@@ -63,10 +63,10 @@ function Login() {
             {/* <div>
         </div> */}
             <div className="row button-container">
-              <button className="register-btn" type="submit">
+              <Link to={`/register`}><button>Register</button></Link>
+              <button className="primary-btn" type="submit">
                 Login
               </button>
-              <Link to={`/register`}><button className="register-btn">Register</button></Link>
             </div>
           </form>
         </div>

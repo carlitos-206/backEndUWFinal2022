@@ -37,14 +37,16 @@ main {
 
 /* input elements ////////////////////////////////////////////////////////////*/
 
-button {
-  padding-top: 0.6rem;
-  padding-bottom: 0.6rem;
+button, .card button, nav button {
+  font-size: 1.2rem;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
   padding-left: 1rem;
   padding-right: 1rem;
   color: rgb(241, 237, 229);
   background-color: rgb(152, 121, 111);
   border: none;
+  border-radius: 1rem !important;
 }
 
 button path {
@@ -144,14 +146,17 @@ div.container h1 {
 /* nav ///////////////////////////////////////////////////////////////////////*/
 
 nav {
-  background-color: rgb(119, 94, 85);
   display: flex;
   justify-content: flex-end;
 }
 
+nav button {
+  color: rgb(233, 227, 215);
+}
+
 .banner-container {
   height: 10em;
-  position: relative
+  position: relative;
 }
 
 .banner-container h1 {
@@ -341,6 +346,14 @@ height: 80%;
   padding-bottom: 1rem;
 }
 
+.card button {
+  color: rgb(241, 237, 229);
+}
+
+.card .primary-btn {
+  border: 1px solid rgb(233, 227, 215);
+}
+
 .card h2 {
   font-size: 2rem;
   padding-top: 0.4rem;
@@ -380,6 +393,11 @@ height: 80%;
 .card-header button svg {
   margin-left: auto;
   margin-right: auto;
+}
+
+.fire-details {
+  color: rgb(54, 34, 71);
+  background-color: rgb(233, 227, 215);
 }
 
 /* ///////////////////////////////////////////////////////////////////////////*/
@@ -424,13 +442,6 @@ height: 80%;
   align-content: center;
   height: 100%;
   margin-right: 1.5rem;
-}
- 
-.button-container {
-  padding-top: 2rem;
-  flex-wrap: nowrap;
-  margin-left: 35%;
-  width: 30%;
 }
 
 .register-label, .login-label {
@@ -488,17 +499,13 @@ footer {
 }
 
 .button-container {
-  width: 30%;
   align-content: center;
   justify-content: center;
+  padding-top: 1rem;
 }
 
 .comment-container {
   width: 60%;
-}
-
-.button-container button {
-  width: 100%;
 }
 
 .card, .comment-card {

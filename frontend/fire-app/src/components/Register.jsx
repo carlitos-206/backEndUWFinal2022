@@ -110,10 +110,10 @@ function Register() {
 
           </div>
           <div className="row button-container">
-            <button onClick={handleSubmit} className="register-btn" type="submit">
+            <Link to={`/login`}><button>Login</button></Link>
+            <button className="primary-btn" onClick={handleSubmit} type="submit">
               Register
             </button>
-            <Link to={`/login`}><button className="register-btn">Login</button></Link>
           </div>
         </form>
       </div>

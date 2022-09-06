@@ -96,21 +96,23 @@ function FireDetails({ fireId }) {
                         </button>
                     </Link>
                 </div>
-                <p>Lattitude:{checkVal(fire.location.latitude)}</p>
-                <p>Longitude:{checkVal(fire.location.longitude)}</p>
-                <p>City:{checkVal(fire.location.city)}</p>
-                <p>County: {checkVal(fire.location.county)}</p>
-                <p>State:{checkVal(fire.location.state)}</p>
-                <p>Discovered:{readTheDate(fire.fire_discovery_datetime)}</p>
-                <p>Contained:{readTheDate(fire.containment_datetime)}</p>
-                <p>Controlled:{readTheDate(fire.control_datetime)}</p>
-                <p>Fire Out Date:{readTheDate(fire.fire_out_datetime)}</p>
-                <p>Daily Acres:{checkVal(fire.daily_acres)}</p>
-                <p>Total Acres:{totalAcres(fire.containment_datetime, fire.control_datetime, fire.daily_acres, fire.total_acres)}</p>
-                <p>Cause:{checkVal(fire.fire_origin.cause)} Activity</p>
-                <p>Predominant Fuel: {checkVal(fire.predominant_fuel_group)} </p>
-                <p>Cost:{fire.estimated_cost_to_date}</p>
-                <p>Source: {checkVal(fire.source)}</p>
+                <div className="fire-details">
+                    <p>Lattitude:{checkVal(fire.location.latitude)}</p>
+                    <p>Longitude:{checkVal(fire.location.longitude)}</p>
+                    <p>City:{checkVal(fire.location.city)}</p>
+                    <p>County: {checkVal(fire.location.county)}</p>
+                    <p>State:{checkVal(fire.location.state)}</p>
+                    <p>Discovered:{readTheDate(fire.fire_discovery_datetime)}</p>
+                    <p>Contained:{readTheDate(fire.containment_datetime)}</p>
+                    <p>Controlled:{readTheDate(fire.control_datetime)}</p>
+                    <p>Fire Out Date:{readTheDate(fire.fire_out_datetime)}</p>
+                    <p>Daily Acres:{checkVal(fire.daily_acres)}</p>
+                    <p>Total Acres:{totalAcres(fire.containment_datetime, fire.control_datetime, fire.daily_acres, fire.total_acres)}</p>
+                    <p>Cause:{checkVal(fire.fire_origin.cause)} Activity</p>
+                    <p>Predominant Fuel: {checkVal(fire.predominant_fuel_group)} </p>
+                    <p>Cost:{fire.estimated_cost_to_date}</p>
+                    <p>Source: {checkVal(fire.source)}</p>
+                </div>
             <div className ="link-buttons">
                 {userLogIn()}
                 <div className='commentSection' style={{
