@@ -12,7 +12,7 @@ export default function ViewComments({fire_id}){
     }
   setTimeout(()=>{
     refresh()
-  },5000)
+  },8000)
   useEffect(()=>{
       axios.get(`https://uw-api-2022.herokuapp.com/fires/${fire_id}/comments`)
       .then(response =>
@@ -30,17 +30,48 @@ const deleteComment = (e, comment_id, local_username, owner_username)=>{
   e.preventDefault()
   if(local_username === owner_username){
     axios.delete(`https://uw-api-2022.herokuapp.com/fires/comments/${comment_id}`)
-    .then(res => console.log(res.data))
+    .then(res =>{ 
+      if(res.data.Error){
+        alert('Fail to delete')
+      }
+    })
   }else{
     alert(`You aren't comment owner @${local_username}`)
   }
 
 }
+  const closebox = (e) =>{
+    // e.preventDefault()
+        let showCommentBox = document.getElementsByClassName('editCommentBox')[0]
+        showCommentBox.setAttribute('style', 'display:none')
+      }
+      
+  const local = localStorage.getItem('loginData')
+  const localObj = JSON.parse(local)
+  const sendUpdatedComment = (e) =>{
+    e.preventDefault()
+    let comment = document.getElementById('commentBox').value
+    let commentID = document.getElementById('commentID').value
+    axios.put(`https://uw-api-2022.herokuapp.com/fires/comments/${commentID}`, {text: comment}, {'Content-Type': 'application/json'})
+    .then(res =>{
+      if(res.error){
+        alert('Failed to update')
+        closebox()
+      }else{
+        closebox()
+      }
+    })
+  }
 
-
-
-const local = localStorage.getItem('loginData')
-const localObj = JSON.parse(local)
+const updateComment = async (e, comment_id, local_username, owner_username, current_comment) =>{
+  if(local_username === owner_username){
+    document.getElementsByClassName('editCommentBox')[0].setAttribute('style', 'display:block')
+    let comment = document.getElementById('commentBox')
+    comment.value = current_comment
+    let commentID = document.getElementById('commentID')
+    commentID.value = comment_id
+  }
+}
 if(comments !== null){
   let reverseList = comments.reverse()
   return (
@@ -56,17 +87,27 @@ if(comments !== null){
         }
         }
       return(
-          <div className="fireComments" key={idx}>
-            <h2 className="user-comments">User Comments</h2>
-            <div className="commentBody">
-              {data.text}
+        <div>
+            <div className="fireComments" key={idx}>
+              <div className="commentBody">
+                {data.text}
+              </div>
+              <div className="commentAuthor">
+                Posted By: {data.username} ON {readTheDate(data.createdDate)}
+              </div>
+              <div>
+                <button className="userOwnCommentBtn" style={{"display":"none"}} onClick={(e)=>{updateComment(e, data._id, localObj.username, data.username , data.text)}} >Edit</button>
+                <button className="userOwnCommentBtn" style={{"display":"none"}} onClick={(e)=>{deleteComment(e, data._id, localObj.username, data.username)}}>Delete</button>
+              </div>
             </div>
-            <div className="commentAuthor">
-              Posted By: {data.username} ON {readTheDate(data.createdDate)}
-            </div>
-            <div className ="row user-comment-btn">
-              <button className="userOwnCommentBtn" style={{"display":"none"}} >Edit</button>
-              <button className="userOwnCommentBtn" style={{"display":"none"}} onClick={(e)=>{deleteComment(e, data._id, localObj.username, data.username)}}>Delete</button>
+            <div className="editCommentBox" style={{display: 'none'}}>
+                <form onSubmit={(e)=>{sendUpdatedComment(e)}}>
+                  <input type="hidden" id="commentID" />
+                  <textarea id="commentBox" name="comment" cols="30" rows="10"></textarea>
+                  <button onClick={(e)=>{closebox(e)}}>Cancel</button>
+                  <button type="Submit">Submit</button>
+                </form>
+
             </div>
         </div>
         )}
