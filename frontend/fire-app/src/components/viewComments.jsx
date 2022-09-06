@@ -25,6 +25,13 @@ export default function ViewComments({fire_id}){
       setData(response.data)
     )
 },[])
+
+const deleteComment = (e, comment_id, username)=>{
+
+}
+
+
+
 const local = localStorage.getItem('loginData')
 const localObj = JSON.parse(local)
 if(comments !== null){
@@ -32,6 +39,7 @@ if(comments !== null){
   return (
     <div className="fireCommentSection">
       {reverseList.map((data, idx)=>{
+        console.log(data)
       if(localObj){    
         if(localObj.username === data.username){
           const userBtns = document.getElementsByClassName('userOwnCommentBtn')
@@ -49,7 +57,7 @@ if(comments !== null){
               Posted By: {data.username} ON {readTheDate(data.createdDate)}
             </div>
             <div>
-              <button className="userOwnCommentBtn" style={{"display":"none"}}>Edit</button>
+              <button className="userOwnCommentBtn" style={{"display":"none"}} >Edit</button>
               <button className="userOwnCommentBtn" style={{"display":"none"}}>Delete</button>
             </div>
         </div>
