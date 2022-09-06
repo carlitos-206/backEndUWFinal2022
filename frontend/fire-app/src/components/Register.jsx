@@ -44,6 +44,9 @@ function Register() {
       .then((response) => response.json())
       .then((data) => {
         console.log('Success:', data);
+        if(data.Error){
+          alert(`${data.Error}`)
+        }
       })
       .catch((error) => {
         console.error('Error:', error);

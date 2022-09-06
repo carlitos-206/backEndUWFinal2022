@@ -9,18 +9,6 @@ router.use(bodyParser.json());
 
 // "GET" requests --- READ
 
-
-  // curl http://localhost:8000/fires/:id
-  /**
-    router.get('/:id', async(req, res)=>{
-     const result = await mongoConnection.getFireById(req.params.id)
-       if(result){
-         res.status(200).send(result)
-       }else{
-         res.status(200).send({message: 'Failed'})
-       }
-     })
-  **/
  // get all fires
 // curl http://localhost:8000/fires/
 router.get("/", async (req, res) => {

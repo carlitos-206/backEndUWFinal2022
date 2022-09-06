@@ -42,12 +42,12 @@ describe("/users routes", () => {
       expect(res.statusCode).toEqual(200);
       expect(res.body.error).not.toBeDefined();
     });
-    it("should return a status code of 500 on failure", async () => {
+    it("should return a status code of 404 on failure", async () => {
       mongoData.signIn.mockResolvedValue({
         "error": "Failed to locate user"
       });
       const res = await request(server).post("/users/login");
-      expect(res.statusCode).toEqual(500);
+      expect(res.statusCode).toEqual(404);
       expect(res.body.error).toBeDefined();
     });
   });

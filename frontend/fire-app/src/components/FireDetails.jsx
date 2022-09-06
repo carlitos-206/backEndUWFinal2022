@@ -12,8 +12,11 @@ import Footer from './Footer'
 import SigninButton from './SignInButton';
 import ViewComments from './viewComments';
 const axios = require('axios')
+import {useNavigate} from 'react-router-dom';
 // import convertToUSD from './logic/converToUSD';
 function FireDetails({ fireId }) {
+    const navigate = useNavigate();
+
     const [fire, setFire] = useState(undefined);
     const [isLoading, setIsLoading] = useState(true);
     const [hasError, setHasError] = useState(false);
@@ -34,9 +37,10 @@ function FireDetails({ fireId }) {
         }
     }
     const closebox = (e) =>{
-        const showCommentBox = document.getElementsByClassName('commentSection')[0]
+        let commentText = document.getElementById('commentText')
+        commentText.value = ''
+        let showCommentBox = document.getElementsByClassName('commentSection')[0]
         showCommentBox.setAttribute('style', 'display:none')
-        location.reload()
     }
     const postComment = (e) =>{
         e.preventDefault()
@@ -52,8 +56,13 @@ function FireDetails({ fireId }) {
         .then(response => response.json())
         .then(
             data => {
+                if(data.error){
+                    alert(`${data.error}`)
+                    navigate('/')
+                }else{
                 setFire(data);
                 setIsLoading(false);
+                }
             },
             error => {
                 setHasError(true)
@@ -100,7 +109,7 @@ function FireDetails({ fireId }) {
                 <div className='commentSection' style={{
                     display:'none'}}>
                     <form className='comentForm' onSubmit={(e)=>{postComment(e)}} >
-                        <textarea name="comment" id="commentText" cols="38" rows="10" placeholder='Enter comment'></textarea>
+                        <textarea name="comment" id="commentText" cols="38" rows="10" placeholder='Enter comment' required></textarea>
                         <input type="reset"  onClick={closebox} value="Cancel" />
                         <input type='submit' />
                     </form>
