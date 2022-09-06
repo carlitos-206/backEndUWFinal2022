@@ -14,7 +14,7 @@ a {
 }
 
 body {
-  background-color: rgb(233, 227, 215);
+  background-color: rgb(233, 227, 215) !important;
   padding-bottom: 50px;
 }
 
@@ -274,10 +274,6 @@ nav {
   transition: all 0.3s ease;
 }
 
-body {
-  background-color: rgb(233, 227, 215);
-  padding-bottom: 50px;
-}
 nav button {
   border: none;
 }
