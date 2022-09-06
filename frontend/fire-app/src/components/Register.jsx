@@ -58,7 +58,7 @@ function Register() {
       <Banner />
       <div className="register-form card">
         <div className="card-header">
-          <h2>Register</h2> 
+          <h2><FontAwesomeIcon icon={solid('right-to-bracket')} /> Register</h2> 
           <Link to={`/`}>
             <button>
               <FontAwesomeIcon icon={solid('x')} />
@@ -110,10 +110,10 @@ function Register() {
 
           </div>
           <div className="row button-container">
-            <button onClick={handleSubmit} className="register-btn" type="submit">
+            <Link to={`/login`}><button>Login</button></Link>
+            <button className="primary-btn" onClick={handleSubmit} type="submit">
               Register
             </button>
-            <Link to={`/login`}><button className="register-btn">Login</button></Link>
           </div>
         </form>
       </div>

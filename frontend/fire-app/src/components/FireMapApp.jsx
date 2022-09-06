@@ -98,10 +98,8 @@ function FireMapApp() {
 
   return (
     <div>
-      <p className="center">Available dataset Jul/2014 - Aug/2022</p>
-      <br />
+      <p><b>Available dataset:</b> Jul / 2014 - Aug / 2022</p>
       <ShowDropDown month={month} year={year}></ShowDropDown>
-      <br />
       <Map places={fires} center={{ lat: 47.444, lng: -120.021 }} />
     </div>
   );

@@ -38,7 +38,7 @@ function Login() {
         <Banner />
         <div className="login-form card">
           <div className="card-header">
-            <h2>Login</h2> 
+            <h2><FontAwesomeIcon icon={solid('right-to-bracket')} /> Login</h2> 
             <Link to={`/`}>
               <button>
                 <FontAwesomeIcon icon={solid('x')} />
@@ -48,7 +48,7 @@ function Login() {
           <form id='logInForm' onSubmit={handleLogin} >
             {/* Labels and inputs for form data */}
             <div className="form-container">
-              <label className="register-label">User Name or Email</label>
+              <label className="register-label">User Name / Email</label>
               <input className="register-input"
                 // onChange={(e) => setUsernameOrEmail(e.target.value)}
                 autoComplete="on"
@@ -63,10 +63,10 @@ function Login() {
             {/* <div>
         </div> */}
             <div className="row button-container">
-              <button className="register-btn" type="submit">
+              <Link to={`/register`}><button>Register</button></Link>
+              <button className="primary-btn" type="submit">
                 Login
               </button>
-              <Link to={`/register`}><button className="register-btn">Register</button></Link>
             </div>
           </form>
         </div>

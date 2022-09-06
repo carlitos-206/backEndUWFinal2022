@@ -9,8 +9,9 @@
   box-sizing: border-box;
 }
 
-a {
-  text-decoration: none;
+a, a:hover, a:active, a:visited {
+  text-decoration: none !important;
+  outline: none !important;
 }
 
 body {
@@ -37,14 +38,16 @@ main {
 
 /* input elements ////////////////////////////////////////////////////////////*/
 
-button {
-  padding-top: 0.6rem;
-  padding-bottom: 0.6rem;
+button, .card button, nav button {
+  font-size: 1.2rem;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
   padding-left: 1rem;
   padding-right: 1rem;
   color: rgb(241, 237, 229);
   background-color: rgb(152, 121, 111);
   border: none;
+  border-radius: 1rem !important;
 }
 
 button path {
@@ -96,6 +99,7 @@ header {
   background-image: url("./images/wildfire.jpg");
   background-size: cover;
   height: 20vh;
+  min-height: 6rem;
   width: 100%;
   border: 0.3rem outset rgb(119, 94, 85);
   display: flex;
@@ -111,6 +115,7 @@ header h1 {
   color: rgb(241, 237, 229);
   text-shadow: 2px 2px 8px #000;
   outline: none;
+  text-decoration: none;
 }
 
 /* forms /////////////////////////////////////////////////////////////////////*/
@@ -144,14 +149,19 @@ div.container h1 {
 /* nav ///////////////////////////////////////////////////////////////////////*/
 
 nav {
-  background-color: rgb(119, 94, 85);
   display: flex;
   justify-content: flex-end;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+nav button {
+  color: rgb(233, 227, 215);
 }
 
 .banner-container {
   height: 10em;
-  position: relative
+  position: relative;
 }
 
 .banner-container h1 {
@@ -296,14 +306,9 @@ height: 80%;
 
 .map-date-controls {
   margin-bottom: 1rem;
+  margin-top: 1rem;
 }
 
-.register-form, .login-form, .card {
-  width: 60%;
-  height: 35rem;
-  margin-left: 20%;
-  margin-top:7%;
-}
 .map-date-controls label {
   background-color: rgb(152, 121, 111);
   border-radius: 1rem 0px 0px 1rem;
@@ -344,7 +349,14 @@ height: 80%;
   text-align: center;
   background-color: rgb(152, 121, 111);
   color: rgb(241, 237, 229);
-  padding-bottom: 1rem;
+}
+
+.card button {
+  color: rgb(241, 237, 229);
+}
+
+.card .primary-btn {
+  border: 2px solid rgb(233, 227, 215);
 }
 
 .card h2 {
@@ -354,6 +366,14 @@ height: 80%;
   color: rgb(241, 237, 229);
   background-color: rgb(119, 94, 85);
   margin-left: 1rem;
+}
+
+.card h2 > svg {
+  font-size: 1.7rem;
+}
+
+.card h2 > svg > path {
+  color: rgb(241, 237, 229);
 }
 
 .card label {
@@ -386,6 +406,29 @@ height: 80%;
 .card-header button svg {
   margin-left: auto;
   margin-right: auto;
+}
+
+.fire-details {
+  color: rgb(54, 34, 71);
+  background-color: rgb(241, 237, 229);
+  list-style: none;
+  text-align: left;
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-bottom: 0px;
+}
+
+.fire-details em {
+  font-weight: bold;
+  font-style: normal;
+  text-decoration: underline dotted;
+}
+
+.fire-details li {
+  margin-top: 0.24rem;
+  margin-bottom: 0.24rem;
 }
 
 /* ///////////////////////////////////////////////////////////////////////////*/
@@ -430,13 +473,6 @@ height: 80%;
   align-content: center;
   height: 100%;
   margin-right: 1.5rem;
-}
- 
-.button-container {
-  padding-top: 2rem;
-  flex-wrap: nowrap;
-  margin-left: 35%;
-  width: 30%;
 }
 
 .register-label, .login-label {
@@ -494,26 +530,23 @@ footer {
 }
 
 .button-container {
-  width: 30%;
+  display: flex;
   align-content: center;
   justify-content: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  gap: 1rem;
 }
 
 .comment-container {
   width: 60%;
 }
 
-.button-container button {
-  width: 100%;
-}
-
 .card, .comment-card {
   margin-bottom: 1rem;
-}
-
-.card button {
-  padding: 0.5rem 1rem;
-  
+  margin-top: 1rem;
+  border-radius: 1rem;
+  overflow: hidden;
 }
 
 .comment-btn-container {
@@ -566,18 +599,55 @@ footer {
 
 }
 .commentSection {
-  background: gray;
-  padding: 10%;
-  width:120%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   position:relative;
-  top:-50px;
-  right:50%;
+}
+
+.commentSection textarea {
+  width: 100%;
+  background-color: rgb(241, 237, 229);
+  font-size: 1rem;
+  border-radius: 1rem;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  border: none;
+  resize: none;
+  box-shadow: 0 0 rgb(73, 46, 96);
+  transition: box-shadow, 0.2s;
+}
+
+.commentSection textarea:hover {
+  box-shadow: 0 0.3rem rgb(119, 94, 85);
+}
+
+.commentSection textarea:focus {
+  box-shadow: 0 0.3rem rgb(73, 46, 96);
+  background-color: rgb(248, 246, 242);
+  outline: none;
 }
 
 /* Fire Comments */
 .fireComments {
-  margin-top: 3rem;
-  margin-left: 20%;
+  padding-left: 1em;
+  padding-right: 1em;
+  color: rgb(241, 237, 229) !important;
+}
+
+.fireComments h3 path {
+  color: rgb(241, 237, 229) !important;
+}
+
+.commentAuthor, .commentAuthor path {
+  color: rgb(241, 237, 229) !important;
+}
+
+.commentBody {
+  color: rgb(241, 237, 229) !important;
 }
 
 .user-comments {
