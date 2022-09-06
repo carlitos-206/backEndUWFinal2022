@@ -1,5 +1,8 @@
 import React, {useState, useEffect} from "react";
 import readTheDate from './logic/readTheDate';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { solid } from '@fortawesome/fontawesome-svg-core/import.macro';
+
 const axios = require('axios')
 export default function ViewComments({fire_id}){
   const [comments, setData] = useState(null)  
@@ -73,7 +76,7 @@ const updateComment = async (e, comment_id, local_username, owner_username, curr
   }
 }
 if(comments !== null){
-  let reverseList = comments.reverse()
+  let reverseList = comments.reverse();
   return (
     <div className="fireCommentSection">
       {reverseList.map((data, idx)=>{
@@ -93,7 +96,7 @@ if(comments !== null){
                 {data.text}
               </div>
               <div className="commentAuthor">
-                Posted By: {data.username} ON {readTheDate(data.createdDate)}
+                <FontAwesomeIcon icon={solid('user')} /> {data.username} <FontAwesomeIcon icon={solid('calendar')} /> {readTheDate(data.createdDate)}
               </div>
               <div className="row user-comment-btn">
                 <button className="userOwnCommentBtn" style={{"display":"none"}} onClick={(e)=>{updateComment(e, data._id, localObj.username, data.username , data.text)}} >Edit</button>
@@ -107,7 +110,6 @@ if(comments !== null){
                   <button onClick={(e)=>{closebox(e)}}>Cancel</button>
                   <button type="Submit">Submit</button>
                 </form>
-
             </div>
         </div>
         )}
