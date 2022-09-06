@@ -9,8 +9,9 @@
   box-sizing: border-box;
 }
 
-a {
-  text-decoration: none;
+a, a:hover, a:active, a:visited {
+  text-decoration: none !important;
+  outline: none !important;
 }
 
 body {
@@ -98,6 +99,7 @@ header {
   background-image: url("./images/wildfire.jpg");
   background-size: cover;
   height: 20vh;
+  min-height: 6rem;
   width: 100%;
   border: 0.3rem outset rgb(119, 94, 85);
   display: flex;
@@ -113,6 +115,7 @@ header h1 {
   color: rgb(241, 237, 229);
   text-shadow: 2px 2px 8px #000;
   outline: none;
+  text-decoration: none;
 }
 
 /* forms /////////////////////////////////////////////////////////////////////*/
