@@ -1,14 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../App.css';
-
+const axios = require('axios')
 
 function Hamburger() {
-
-  const handleClick = async (event) => {
-    event.preventDefault();
+  const handleClick = async (e) => {
+    e.preventDefault();
+    let local = localStorage.getItem('loginData')
+    let localObj = JSON.parse(local)
     if (window.confirm("Do you really want to delete your account?")) {
-      
+      axios.delete(`https://uw-api-2022.herokuapp.com/users/delete/${localObj.username}`)
+      .then(localStorage.clear(), location.reload())
+      .catch(error=> alert(error))
     }
 }
 
@@ -22,14 +25,8 @@ function Hamburger() {
             <div className="meat"></div>
             <div className="bottom"></div>
           </label>
-        
           <div class="menu1">
-            <a 
-            onClick={(e) => handleClick(e)}
-            className="link1" 
-            href="">
-              Delete Account
-              </a>
+            <button onClick={(e) => handleClick(e)} className="link1"> Delete Account</button>
           </div>
       {/* </nav> */}
       </section>

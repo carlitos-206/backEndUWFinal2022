@@ -29,6 +29,15 @@ const mongoConnection = require("../dataInterface/mongoDB")
           res.status(500).send(result)
         }
     }),
+    // curl -X DELETE http://localhost:8000/users/delete/:username
+    router.delete('/delete/:username', cors(), async(req, res)=>{
+      let result = await mongoConnection.deleteAccount(req.params.username)
+      if(!result.Error){
+        res.status(200).send(result)
+      }else{
+        res.status(500).send(result)      
+      }
+    })
 
 
 

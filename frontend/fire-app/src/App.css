@@ -676,3 +676,10 @@ footer {
   margin-left: 0;
   margin-right: 3rem;
 }
+
+.bookMark{
+  position: relative;
+  top: 340px;
+  left: 30%;
+  width: fit-content;
+}

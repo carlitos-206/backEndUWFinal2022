@@ -98,9 +98,9 @@ if(comments !== null){
               <div className="commentAuthor">
                 <FontAwesomeIcon icon={solid('user')} /> {data.username} <FontAwesomeIcon icon={solid('calendar')} /> {readTheDate(data.createdDate)}
               </div>
-              <div>
-                <button className="primary-btn" style={{"display":"none"}} onClick={(e)=>{deleteComment(e, data._id, localObj.username, data.username)}}><FontAwesomeIcon icon={solid('trash')} /> Delete</button>
-                <button style={{"display":"none"}} onClick={(e)=>{updateComment(e, data._id, localObj.username, data.username , data.text)}} ><FontAwesomeIcon icon={solid('pen-to-square')} /> Edit</button>
+              <div className="row user-comment-btn">
+                <button className="userOwnCommentBtn" style={{"display":"none"}} onClick={(e)=>{updateComment(e, data._id, localObj.username, data.username , data.text)}} >Edit</button>
+                <button className="userOwnCommentBtn" style={{"display":"none"}} onClick={(e)=>{deleteComment(e, data._id, localObj.username, data.username)}}>Delete</button>
               </div>
             </div>
             <div className="editCommentBox" style={{display: 'none'}}>

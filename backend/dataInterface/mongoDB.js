@@ -246,14 +246,14 @@ module.exports.getAllBookmarksByFireId = async (id) => {
     const db = client.db(databaseName);
     const collection = db.collection(bookmarks_Collection);
     const result = await collection.find({ fire_id: ObjectId(id) });
-    return result
-    ? result.toArray()
-    : {
-      error: `We've encountered an error. Please try again later.`,
-    };
+    if(result){
+      return result
+    }else{
+      return {error: 'could not locate'}
+    }
 
   } catch (err) {
-    return { error: "Failed to retrieve bookmarks for fire_id: ${id} and username: ${userName}" };
+    return { error: `Failed to retrieve bookmarks for fire_id: ${id} and username: ${userName}` };
   }
 }
 
@@ -264,14 +264,14 @@ module.exports.getBookmarksByFireIdUserName = async (id, userName) => {
     const db = client.db(databaseName);
     const collection = db.collection(bookmarks_Collection);
     const result = await collection.findOne({ fire_id: ObjectId(id), username: userName });
+  if(result){
     return result
-    ? result
-    : {
-      error: `We've encountered an error. Please try again later.`,
-    };
+  }else{
+    return {error: `Book mark does not exist.`}
+  }
 
   } catch (err) {
-    return { error: "Failed to retrieve bookmarks for fire_id: ${id}" };
+    return { error: `Failed to retrieve bookmarks for fire_id: ${id}` };
   }
 }
 // create a bookmark by fireid and username
@@ -398,6 +398,29 @@ module.exports.signIn = async (user) => {
     }
   } catch (err) {
     return { error: "Failed to locate user" };
+  } finally {
+    await client.close();
+  }
+};
+
+//delete a bookmark by bookmarkid
+module.exports.deleteAccount = async (username) => {
+  try {
+    await client.connect();
+    const db = client.db(databaseName);
+    const collection = db.collection(users_Collection);
+    const deletionRules = {username: username };
+    const result = await collection.deleteOne(deletionRules);
+    if (result.deletedCount != 1) {
+      return {
+        error: `Failed to delete account`,
+      };
+    }
+
+    return { message: `Account` };
+
+  } catch (err) {
+    return { Error: "Failed to delete account" };
   } finally {
     await client.close();
   }
