@@ -47,7 +47,7 @@ describe("/users routes", () => {
         "error": "Failed to locate user"
       });
       const res = await request(server).post("/users/login");
-      expect(res.statusCode).toEqual(404);
+      expect(res.statusCode).toEqual(500);
       expect(res.body.error).toBeDefined();
     });
   });
