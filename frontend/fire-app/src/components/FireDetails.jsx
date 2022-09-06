@@ -129,7 +129,6 @@ function FireDetails({ fireId }) {
                     <ViewComments fire_id={fireId} />
                 </div>
             </main>
-            <Footer />
         </>
     )
 }

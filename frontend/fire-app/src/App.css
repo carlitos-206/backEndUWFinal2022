@@ -16,7 +16,6 @@ a, a:hover, a:active, a:visited {
 
 body {
   background-color: rgb(233, 227, 215) !important;
-  padding-bottom: 50px;
 }
 
 .alert {
@@ -296,8 +295,9 @@ nav button {
 }
 
 .map-container {
-width: 80%;
-height: 80%;
+  width: 61.8vw;
+  height: 61.8vw;
+  margin-bottom: 1rem;
 }
 
 .map-text {
@@ -522,11 +522,26 @@ height: 80%;
 }
 
 footer {
-  height: 50px;
   display: block;
   text-align: center;
   position: relative;
-  top: 1000px;
+  margin-bottom: 1em;
+}
+
+footer a {
+  color: rgb(119, 94, 85);
+}
+
+footer a > svg > path {
+  color: rgb(119, 94, 85);
+}
+
+footer a:hover {
+  color: rgb(143, 112, 102);
+}
+
+footer a:focus {
+  color: rgb(131, 103, 93);
 }
 
 .button-container {
