@@ -349,7 +349,6 @@ height: 80%;
   text-align: center;
   background-color: rgb(152, 121, 111);
   color: rgb(241, 237, 229);
-  padding-bottom: 1rem;
 }
 
 .card button {
@@ -411,7 +410,24 @@ height: 80%;
 
 .fire-details {
   color: rgb(54, 34, 71);
-  background-color: rgb(233, 227, 215);
+  background-color: rgb(241, 237, 229);
+  list-style: none;
+  text-align: left;
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-bottom: 0px;
+}
+
+.fire-details em {
+  font-weight: bold;
+  font-style: normal;
+}
+
+.fire-details li {
+  margin-top: 0.24rem;
+  margin-bottom: 0.24rem;
 }
 
 /* ///////////////////////////////////////////////////////////////////////////*/
@@ -517,6 +533,7 @@ footer {
   align-content: center;
   justify-content: center;
   padding-top: 1rem;
+  padding-bottom: 1rem;
   gap: 1rem;
 }
 
@@ -526,6 +543,9 @@ footer {
 
 .card, .comment-card {
   margin-bottom: 1rem;
+  margin-top: 1rem;
+  border-radius: 1rem;
+  overflow: hidden;
 }
 
 .comment-btn-container {
