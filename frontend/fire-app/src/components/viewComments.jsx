@@ -40,11 +40,28 @@ const deleteComment = (e, comment_id, local_username, owner_username)=>{
   }
 
 }
-
-const sendUpdatedComment = () =>{
-  let comment = document.getElementById('commentBox')
-  comment.value = current_comment
-}
+  const closebox = (e) =>{
+    // e.preventDefault()
+        let showCommentBox = document.getElementsByClassName('editCommentBox')[0]
+        showCommentBox.setAttribute('style', 'display:none')
+      }
+      
+  const local = localStorage.getItem('loginData')
+  const localObj = JSON.parse(local)
+  const sendUpdatedComment = (e) =>{
+    e.preventDefault()
+    let comment = document.getElementById('commentBox').value
+    let commentID = document.getElementById('commentID').value
+    axios.put(`https://uw-api-2022.herokuapp.com/fires/comments/${commentID}`, {text: comment}, {'Content-Type': 'application/json'})
+    .then(res =>{
+      if(res.error){
+        alert('Failed to update')
+        closebox()
+      }else{
+        closebox()
+      }
+    })
+  }
 
 const updateComment = async (e, comment_id, local_username, owner_username, current_comment) =>{
   if(local_username === owner_username){
@@ -55,9 +72,6 @@ const updateComment = async (e, comment_id, local_username, owner_username, curr
     commentID.value = comment_id
   }
 }
-
-const local = localStorage.getItem('loginData')
-const localObj = JSON.parse(local)
 if(comments !== null){
   let reverseList = comments.reverse()
   return (
@@ -87,10 +101,10 @@ if(comments !== null){
               </div>
             </div>
             <div className="editCommentBox" style={{display: 'none'}}>
-                <form >
+                <form onSubmit={(e)=>{sendUpdatedComment(e)}}>
                   <input type="hidden" id="commentID" />
                   <textarea id="commentBox" name="comment" cols="30" rows="10"></textarea>
-                  <button type="reset">Cancel</button>
+                  <button onClick={(e)=>{closebox(e)}}>Cancel</button>
                   <button type="Submit">Submit</button>
                 </form>
             </div>
