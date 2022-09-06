@@ -253,6 +253,24 @@ module.exports.getAllBookmarksByFireId = async (id) => {
     };
 
   } catch (err) {
+    return { error: "Failed to retrieve bookmarks for fire_id: ${id} and username: ${userName}" };
+  }
+}
+
+// get all bookmarks by fireid and a username
+module.exports.getBookmarksByFireIdUserName = async (id, userName) => {
+  try {
+    await client.connect();
+    const db = client.db(databaseName);
+    const collection = db.collection(bookmarks_Collection);
+    const result = await collection.findOne({ fire_id: ObjectId(id), username: userName });
+    return result
+    ? result
+    : {
+      error: `We've encountered an error. Please try again later.`,
+    };
+
+  } catch (err) {
     return { error: "Failed to retrieve bookmarks for fire_id: ${id}" };
   }
 }

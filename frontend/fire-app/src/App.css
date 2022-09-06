@@ -177,7 +177,11 @@ nav {
 }
 
 
-
+/* Bookmark */
+.bookmark-icon {
+  width: 30px;
+  height: 30px;
+}
 
 /* Hamburger */
 .hamburger1 {
