@@ -11,6 +11,7 @@ import Banner from './Banner'
 import Footer from './Footer'
 import SigninButton from './SignInButton';
 import ViewComments from './viewComments';
+
 const axios = require('axios')
 import {useNavigate} from 'react-router-dom';
 // import convertToUSD from './logic/converToUSD';

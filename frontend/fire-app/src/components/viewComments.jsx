@@ -107,6 +107,7 @@ if(comments !== null){
                   <button onClick={(e)=>{closebox(e)}}>Cancel</button>
                   <button type="Submit">Submit</button>
                 </form>
+
             </div>
         </div>
         )}
