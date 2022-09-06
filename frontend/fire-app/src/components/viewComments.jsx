@@ -12,7 +12,7 @@ export default function ViewComments({fire_id}){
     }
   setTimeout(()=>{
     refresh()
-  },3000)
+  },5000)
   useEffect(()=>{
       axios.get(`https://uw-api-2022.herokuapp.com/fires/${fire_id}/comments`)
       .then(response =>
@@ -25,6 +25,20 @@ export default function ViewComments({fire_id}){
       setData(response.data)
     )
 },[])
+
+const deleteComment = (e, comment_id, local_username, owner_username)=>{
+  e.preventDefault()
+  if(local_username === owner_username){
+    axios.delete(`https://uw-api-2022.herokuapp.com/fires/comments/${comment_id}`)
+    .then(res => console.log(res.data))
+  }else{
+    alert(`You aren't comment owner @${local_username}`)
+  }
+
+}
+
+
+
 const local = localStorage.getItem('loginData')
 const localObj = JSON.parse(local)
 if(comments !== null){
@@ -32,6 +46,7 @@ if(comments !== null){
   return (
     <div className="fireCommentSection">
       {reverseList.map((data, idx)=>{
+        console.log(data)
       if(localObj){    
         if(localObj.username === data.username){
           const userBtns = document.getElementsByClassName('userOwnCommentBtn')
@@ -49,8 +64,8 @@ if(comments !== null){
               Posted By: {data.username} ON {readTheDate(data.createdDate)}
             </div>
             <div>
-              <button className="userOwnCommentBtn" style={{"display":"none"}}>Edit</button>
-              <button className="userOwnCommentBtn" style={{"display":"none"}}>Delete</button>
+              <button className="userOwnCommentBtn" style={{"display":"none"}} >Edit</button>
+              <button className="userOwnCommentBtn" style={{"display":"none"}} onClick={(e)=>{deleteComment(e, data._id, localObj.username, data.username)}}>Delete</button>
             </div>
         </div>
         )}
