@@ -423,6 +423,8 @@ height: 80%;
 .fire-details em {
   font-weight: bold;
   font-style: normal;
+  text-decoration: underline dotted;
+  text-decoration-skip: ink;
 }
 
 .fire-details li {
@@ -598,18 +600,55 @@ footer {
 
 }
 .commentSection {
-  background: gray;
-  padding: 10%;
-  width:120%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   position:relative;
-  top:-50px;
-  right:50%;
+}
+
+.commentSection textarea {
+  width: 100%;
+  background-color: rgb(241, 237, 229);
+  font-size: 1rem;
+  border-radius: 1rem;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  border: none;
+  resize: none;
+  box-shadow: 0 0 rgb(73, 46, 96);
+  transition: box-shadow, 0.2s;
+}
+
+.commentSection textarea:hover {
+  box-shadow: 0 0.3rem rgb(119, 94, 85);
+}
+
+.commentSection textarea:focus {
+  box-shadow: 0 0.3rem rgb(73, 46, 96);
+  background-color: rgb(248, 246, 242);
+  outline: none;
 }
 
 /* Fire Comments */
 .fireComments {
-  margin-top: 3rem;
-  margin-left: 20%;
+  padding-left: 1em;
+  padding-right: 1em;
+  color: rgb(241, 237, 229) !important;
+}
+
+.fireComments h3 path {
+  color: rgb(241, 237, 229) !important;
+}
+
+.commentAuthor, .commentAuthor path {
+  color: rgb(241, 237, 229) !important;
+}
+
+.commentBody {
+  color: rgb(241, 237, 229) !important;
 }
 
 .user-comments {

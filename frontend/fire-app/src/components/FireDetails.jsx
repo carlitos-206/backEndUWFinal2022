@@ -82,52 +82,54 @@ function FireDetails({ fireId }) {
 
     return (
         <>
-        <main>
-            <Banner />
-            <nav>
-                <Link to= "/"><button><FontAwesomeIcon icon={solid('map-location-dot')} /> Home</button></Link>
-            </nav>
-            <div className="card">
-                <div className="card-header">
-                    <h2><FontAwesomeIcon icon={solid('fire-flame-curved')} /> {checkVal(fire.incident_name)}</h2>
-                    <Link to={`/`}>
-                        <button>
-                            <FontAwesomeIcon icon={solid('x')} />
-                        </button>
-                    </Link>
+            <main>
+                <Banner />
+                <nav>
+                    <Link to= "/"><button><FontAwesomeIcon icon={solid('map-location-dot')} /> Home</button></Link>
+                </nav>
+                <div className="card">
+                    <div className="card-header">
+                        <h2><FontAwesomeIcon icon={solid('fire-flame-curved')} /> {checkVal(fire.incident_name)}</h2>
+                        <Link to={`/`}>
+                            <button>
+                                <FontAwesomeIcon icon={solid('x')} />
+                            </button>
+                        </Link>
+                    </div>
+                    <ul className="fire-details">
+                        <li><em>Latitude:</em> {checkVal(fire.location.latitude)}</li>
+                        <li><em>Longitude:</em> {checkVal(fire.location.longitude)}</li>
+                        <li><em>City:</em> {checkVal(fire.location.city)}</li>
+                        <li><em>County:</em> {checkVal(fire.location.county)}</li>
+                        <li><em>State:</em> {checkVal(fire.location.state)}</li>
+                        <li><em>Discovered:</em> {readTheDate(fire.fire_discovery_datetime)}</li>
+                        <li><em>Contained:</em> {readTheDate(fire.containment_datetime)}</li>
+                        <li><em>Controlled:</em> {readTheDate(fire.control_datetime)}</li>
+                        <li><em>Fire Out Date:</em> {readTheDate(fire.fire_out_datetime)}</li>
+                        <li><em>Daily Acres:</em> {checkVal(fire.daily_acres)}</li>
+                        <li><em>Total Acres:</em> {totalAcres(fire.containment_datetime, fire.control_datetime, fire.daily_acres, fire.total_acres)}</li>
+                        <li><em>Cause:</em> {checkVal(fire.fire_origin.cause)} Activity</li>
+                        <li><em>Predominant Fuel:</em> {checkVal(fire.predominant_fuel_group)} </li>
+                        <li><em>Cost:</em> {fire.estimated_cost_to_date}</li>
+                        <li><em>Source:</em> {checkVal(fire.source)}</li>
+                    </ul>
+                    <div className ="button-container">
+                        {userLogIn()}
+                    </div>
+                    <div className='commentSection' style={{
+                        display:'none'}}>
+                        <form className='comentForm' onSubmit={(e)=>{postComment(e)}} >
+                            <textarea name="comment" id="commentText" cols="38" rows="10" placeholder='Enter comment' required></textarea>
+                            <div className="button-container">
+                                <button type="reset" onClick={closebox} value="Cancel">Cancel</button>
+                                <button type='submit' className='primary-btn'>Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                    <ViewComments fire_id={fireId} />
                 </div>
-                <ul className="fire-details">
-                    <li><em>Lattitude:</em> {checkVal(fire.location.latitude)}</li>
-                    <li><em>Longitude:</em> {checkVal(fire.location.longitude)}</li>
-                    <li><em>City:</em> {checkVal(fire.location.city)}</li>
-                    <li><em>County:</em> {checkVal(fire.location.county)}</li>
-                    <li><em>State:</em> {checkVal(fire.location.state)}</li>
-                    <li><em>Discovered:</em> {readTheDate(fire.fire_discovery_datetime)}</li>
-                    <li><em>Contained:</em> {readTheDate(fire.containment_datetime)}</li>
-                    <li><em>Controlled:</em> {readTheDate(fire.control_datetime)}</li>
-                    <li><em>Fire Out Date:</em> {readTheDate(fire.fire_out_datetime)}</li>
-                    <li><em>Daily Acres:</em> {checkVal(fire.daily_acres)}</li>
-                    <li><em>Total Acres:</em> {totalAcres(fire.containment_datetime, fire.control_datetime, fire.daily_acres, fire.total_acres)}</li>
-                    <li><em>Cause:</em> {checkVal(fire.fire_origin.cause)} Activity</li>
-                    <li><em>Predominant Fuel:</em> {checkVal(fire.predominant_fuel_group)} </li>
-                    <li><em>Cost:</em> {fire.estimated_cost_to_date}</li>
-                    <li><em>Source:</em> {checkVal(fire.source)}</li>
-                </ul>
-            <div className ="button-container">
-                {userLogIn()}
-                <div className='commentSection' style={{
-                    display:'none'}}>
-                    <form className='comentForm' onSubmit={(e)=>{postComment(e)}} >
-                        <textarea name="comment" id="commentText" cols="38" rows="10" placeholder='Enter comment' required></textarea>
-                        <input type="reset"  onClick={closebox} value="Cancel" />
-                        <input type='submit' />
-                    </form>
-                </div>
-            </div>
-            <ViewComments fire_id={fireId} />
-        </div>
+            </main>
             <Footer />
-        </main>
         </>
     )
 }

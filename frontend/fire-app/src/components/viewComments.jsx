@@ -1,5 +1,8 @@
 import React, {useState, useEffect} from "react";
 import readTheDate from './logic/readTheDate';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { solid } from '@fortawesome/fontawesome-svg-core/import.macro';
+
 const axios = require('axios')
 export default function ViewComments({fire_id}){
   const [comments, setData] = useState(null)  
@@ -42,7 +45,7 @@ const deleteComment = (e, comment_id, local_username, owner_username)=>{
 const local = localStorage.getItem('loginData')
 const localObj = JSON.parse(local)
 if(comments !== null){
-  let reverseList = comments.reverse()
+  let reverseList = comments.reverse();
   return (
     <div className="fireCommentSection">
       {reverseList.map((data, idx)=>{
@@ -57,16 +60,16 @@ if(comments !== null){
         }
       return(
           <div className="fireComments" key={idx}>
-            <h2 className="user-comments">User Comments</h2>
+            <h3 className="user-comments"><FontAwesomeIcon icon={solid('comments')} /> Comments</h3>
             <div className="commentBody">
               {data.text}
             </div>
             <div className="commentAuthor">
-              Posted By: {data.username} ON {readTheDate(data.createdDate)}
+              <FontAwesomeIcon icon={solid('user')} /> {data.username} <FontAwesomeIcon icon={solid('calendar')} /> {readTheDate(data.createdDate)}
             </div>
-            <div className ="row user-comment-btn">
-              <button className="userOwnCommentBtn" style={{"display":"none"}} >Edit</button>
-              <button className="userOwnCommentBtn" style={{"display":"none"}} onClick={(e)=>{deleteComment(e, data._id, localObj.username, data.username)}}>Delete</button>
+            <div className ="button-container">
+              <button style={{"display":"none"}} onClick={(e)=>{deleteComment(e, data._id, localObj.username, data.username)}}><FontAwesomeIcon icon={solid('trash')} /> Delete</button>
+              <button className="primary-btn" style={{"display":"none"}} ><FontAwesomeIcon icon={solid('pen-to-square')} /> Edit</button>
             </div>
         </div>
         )}
