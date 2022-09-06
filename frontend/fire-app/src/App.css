@@ -424,7 +424,6 @@ height: 80%;
   font-weight: bold;
   font-style: normal;
   text-decoration: underline dotted;
-  text-decoration-skip: ink;
 }
 
 .fire-details li {
