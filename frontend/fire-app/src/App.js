@@ -53,7 +53,6 @@ function App() {
               {UserLogin()}
             </nav>
           <FireMapApp/>
-          <Footer />
         </main>
       </>
     )
@@ -153,7 +152,7 @@ function App() {
           element={<RegisterPage />}
         />
         </Routes>
-  
+        <Footer />
       </div>
     );
   }
