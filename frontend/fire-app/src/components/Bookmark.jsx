@@ -22,6 +22,17 @@ function Bookmark({fire_id}) {
         setBookMark(null)
       }
     })
+  }, [])
+  useEffect(()=>{
+    axios.get(`https://uw-api-2022.herokuapp.com/fires/${fire_id}/user/${username}/bookmarks`)
+    .then(res =>{
+      if(res.data._id){
+        console.log('here usf')
+        setBookMark(res.data._id)
+      }else{
+        setBookMark(null)
+      }
+    })
   }, [bookMark])
   // bookmarkExist()
   console.log(bookMark)
