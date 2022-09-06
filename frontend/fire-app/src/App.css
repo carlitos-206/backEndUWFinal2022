@@ -573,3 +573,36 @@ footer {
   top:-50px;
   right:50%;
 }
+
+/* Fire Comments */
+.fireComments {
+  margin-top: 3rem;
+  margin-left: 20%;
+}
+
+.user-comments {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.commentAuthor, .commentBody {
+  font-size: 1.1rem;
+} 
+
+.user-comment-btn {
+  justify-content: flex-start;
+  margin-top: 2rem;
+
+}
+
+.userOwnCommentBtn {
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  color: rgb(241, 237, 229);
+  background-color: rgb(152, 121, 111);
+  border: none;
+  margin-left: 0;
+  margin-right: 3rem;
+}

@@ -57,13 +57,14 @@ if(comments !== null){
         }
       return(
           <div className="fireComments" key={idx}>
+            <h2 className="user-comments">User Comments</h2>
             <div className="commentBody">
               {data.text}
             </div>
             <div className="commentAuthor">
               Posted By: {data.username} ON {readTheDate(data.createdDate)}
             </div>
-            <div>
+            <div className ="row user-comment-btn">
               <button className="userOwnCommentBtn" style={{"display":"none"}} >Edit</button>
               <button className="userOwnCommentBtn" style={{"display":"none"}} onClick={(e)=>{deleteComment(e, data._id, localObj.username, data.username)}}>Delete</button>
             </div>
