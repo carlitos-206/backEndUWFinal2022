@@ -298,12 +298,6 @@ height: 80%;
   margin-bottom: 1rem;
 }
 
-.register-form, .login-form, .card {
-  width: 60%;
-  height: 35rem;
-  margin-left: 20%;
-  margin-top:7%;
-}
 .map-date-controls label {
   background-color: rgb(152, 121, 111);
   border-radius: 1rem 0px 0px 1rem;
