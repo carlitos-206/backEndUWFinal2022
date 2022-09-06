@@ -74,7 +74,7 @@ function App() {
       <>
         <main>
           <div>
-            <Bookmark />
+            <Bookmark fire_id={fireId} />
             <FireDetails
               fireId={fireId}
             />

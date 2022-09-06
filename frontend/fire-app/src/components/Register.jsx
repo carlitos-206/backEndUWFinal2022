@@ -3,8 +3,10 @@ import { Link } from 'react-router-dom';
 import Banner from './Banner';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { solid } from '@fortawesome/fontawesome-svg-core/import.macro';
+import {useNavigate} from 'react-router-dom';
 
 function Register() {
+  const navigate = useNavigate();
 
 
   // States for registration
@@ -46,6 +48,8 @@ function Register() {
         console.log('Success:', data);
         if(data.Error){
           alert(`${data.Error}`)
+        }else{
+          navigate('/login')
         }
       })
       .catch((error) => {

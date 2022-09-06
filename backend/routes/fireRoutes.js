@@ -228,7 +228,7 @@ router.post(
       //Check if bookmark exist for the fireid and username
       const result = await mongoConnection.getBookmarksByFireIdUserName(req.params.id, req.params.userName)
       //if no bookmark exist for fireid and username then create
-      if (!result) {
+      if (result.error) {
       const  result = await mongoConnection.createBookmark(req.params);
         if (result.error) {
           resultStatus = 500;
