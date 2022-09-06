@@ -105,7 +105,7 @@ describe("/fires routes", () => {
       it("should return a status code of 404 on failure", async () => {
         mongoData.getFireById.mockResolvedValue(null);
         const res = await request(server).get(
-          "/fires/62fb42131c5b7ea309f7e0e0"
+          "/fires/62fb42131c5b7ea309f7e2e2"
         );
         expect(res.statusCode).toEqual(404);
         expect(res.body.error).toBeDefined();
@@ -235,7 +235,7 @@ describe("/fires routes", () => {
     });
   });
   // test create comment by fire id , username
-  // curl -X POST -H "Content-Type: application/json" -d '{"text":"Khanh test creating comment"}' http://localhost:5000/fires/62fb42131c5b7ea309f7e0e0/user/User1/comments
+  // curl -X POST -H "Content-Type: application/json" -d '{"text":"Khanh test creating comment"}' http://localhost:8000/fires/62fb42131c5b7ea309f7e0e0/user/User1/comments
   describe("POST /:id/user/:username/comments", () => {
     it("should return the comment for a fireid and username on success", async () => {
       mongoData.createComment.mockResolvedValue({
@@ -277,7 +277,7 @@ describe("/fires routes", () => {
     });
   });
   // test modify comment by comment id
-  // curl -X PUT -H "Content-Type: application/json" -d '{"text": "Updated comment..."}' http://localhost:5000/fires/comments/6303d66a816e5c3e74ac0980
+  // curl -X PUT -H "Content-Type: application/json" -d '{"text": "Updated comment..."}' http://localhost:8000/fires/comments/6303d66a816e5c3e74ac0980
   describe("PUT /comments/:id", () => {
     it("should return the updated comment on success", async () => {
       mongoData.updateComment.mockResolvedValue({
@@ -301,7 +301,7 @@ describe("/fires routes", () => {
     });
   });
   // test delete comment by comment id
-  //  curl -X DELETE http://localhost:5000/fires/comments/6303d66a816e5c3e74ac0980
+  //  curl -X DELETE http://localhost:8000/fires/comments/6303d66a816e5c3e74ac0980
   describe("DELETE /comments/:id", () => {
     it("should return a message on success", async () => {
       mongoData.deleteComment.mockResolvedValue({
@@ -396,8 +396,35 @@ describe("/fires routes", () => {
       expect(res.body.error).toBeDefined();
     });
   });
+   // test get all bookmarks by fireid and username
+   describe("GET /fires/:id/user/:username/bookmarks", () => {
+    it("should return all bookmarks belong to a fireid on success", async () => {
+      mongoData.getBookmarksByFireIdUserName.mockResolvedValue([
+        {
+          _id: "6303ec16a84112a7a4be6753",
+          username: "User1",
+          fire_id: "62fb42181c5b7ea309f7e0e8",
+          createdDate: "2022-08-21T07:00:00.000Z",
+        },
+      ]);
+      const res = await request(server).get(
+        "/fires/62fb42181c5b7ea309f7e0e8/user/User1/bookmarks"
+      );
+      expect(res.statusCode).toEqual(200);
+      expect(Array.isArray(res.body)).toEqual(true);
+      expect(res.body.error).not.toBeDefined();
+    });
+    it("should return a status code of 404 if bookmark not found", async () => {
+      mongoData.getBookmarksByFireIdUserName.mockResolvedValue(null);
+      const res = await request(server).get(
+        "/fires/62fb42181c5b7ea309f7e2e2/user/User1/bookmarks"
+      )
+      expect(res.statusCode).toEqual(404);
+      expect(res.body.error).toBeDefined();
+    });
+  });
   // create a bookmark by fireid and username
-  // curl -X POST -H "Content-Type: application/json" -d '{}' http://localhost:5000/fires/62fb42181c5b7ea309f7e0e9/user/User1/bookmarks
+  // curl -X POST -H "Content-Type: application/json" -d '{}' http://localhost:8000/fires/62fb42181c5b7ea309f7e0e9/user/User1/bookmarks
   describe("POST /", () => {
     it("should return the bookmark for a fireid and userid on success", async () => {
       mongoData.createBookmark.mockResolvedValue({

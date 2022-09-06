@@ -14,6 +14,7 @@ import logOut from './components/logOut';
 import Register from './components/Register';
 import { Link } from 'react-router-dom';
 import Hamburger from './components/Hamburger';
+import Bookmark from './components/Bookmark';
 
 function App() {
 
@@ -64,6 +65,7 @@ function App() {
       <>
         <main>
           <div >
+            <Bookmark />
             <FireDetails
               fireId={fireId}
             />

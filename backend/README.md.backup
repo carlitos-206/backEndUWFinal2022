@@ -101,21 +101,21 @@ causes, cost of damages, location, and more
 Get **all fires**:
 
 ```bash
-curl http://localhost:5000/fires/
+curl http://localhost:8000/fires/
 ```
 
 Get fires by **specific month and year**:
 
 ```bash
 # Note the /in/:month/:year format:
-curl http://localhost:5000/fires/in/Jul/2014
+curl http://localhost:8000/fires/in/Jul/2014
 ```
 
 Get a **single fire event**:
 
 ```bash
 # /fires/:fireId format, :fireId being a fire's unique id:
-curl http://localhost:5000/fires/62fb42181c5b7ea309f7e0e8
+curl http://localhost:8000/fires/62fb42181c5b7ea309f7e0e8
 ```
 
 ##### 🗨️ Comments
@@ -124,21 +124,21 @@ Get **all comments** for a **single fire event**:
 
 ```bash
 # Use /fires/:fireId/comments to get the comments of the fire with :fireId:
-curl http://localhost:5000/fires/62fb42131c5b7ea309f7e0e0/comments
+curl http://localhost:8000/fires/62fb42131c5b7ea309f7e0e0/comments
 ```
 
 Get a **single comment**:
 
 ```bash
 # Use /fires/comments/commentId to get the comment with the same :commentId:
-curl http://localhost:5000/fires/comments/630250491f3d48c59da2eec7
+curl http://localhost:8000/fires/comments/630250491f3d48c59da2eec7
 ```
 
 Get **all comments** posted by a **single user**:
 
 ```bash
 # Use /fires/comments/user/:username to get all comments posted by :username:
-curl http://localhost:5000/fires/comments/user/User1
+curl http://localhost:8000/fires/comments/user/User1
 ```
 
 **Create** a **new comment**:
@@ -146,7 +146,7 @@ curl http://localhost:5000/fires/comments/user/User1
 ```bash
 # REQUIRED: JSON object with a "text" property containing comment's text.
 # (/fires/:fireId/user/:userId/comments)
-curl -X POST -H "Content-Type: application/json" -d '{"text":"Wow! What a hot fire!"}' http://localhost:5000/fires/62fb42131c5b7ea309f7e0e0/user/User1/comments
+curl -X POST -H "Content-Type: application/json" -d '{"text":"Wow! What a hot fire!"}' http://localhost:8000/fires/62fb42131c5b7ea309f7e0e0/user/User1/comments
 ```
 
 **Edit** a **comment**:
@@ -154,7 +154,7 @@ curl -X POST -H "Content-Type: application/json" -d '{"text":"Wow! What a hot fi
 ```bash
 # Edit a comment specified by its :commentId.
 # (/fires/comments/:commentId)
-curl -X PUT -H "Content-Type: application/json" -d '{"text": "Updated comment..."}' http://localhost:5000/fires/comments/6303d66a816e5c3e74ac0980
+curl -X PUT -H "Content-Type: application/json" -d '{"text": "Updated comment..."}' http://localhost:8000/fires/comments/6303d66a816e5c3e74ac0980
 ```
 
 **Delete** a **comment**:
@@ -162,7 +162,7 @@ curl -X PUT -H "Content-Type: application/json" -d '{"text": "Updated comment...
 ```bash
 # Delete a comment specified by its :commentId.
 # (/fires/comments/:commentId)
-curl -X DELETE http://localhost:5000/fires/comments/6303d66a816e5c3e74ac0980
+curl -X DELETE http://localhost:8000/fires/comments/6303d66a816e5c3e74ac0980
 ```
 
 ##### 🔖 Bookmarks
@@ -172,21 +172,21 @@ Get a **bookmark**:
 ```bash
 # Get a bookmark specified by its :bookmarkId.
 # (/fires/bookmarks/bookmarkId)
-curl http://localhost:5000/fires/bookmarks/6303ec16a84112a7a4be6753
+curl http://localhost:8000/fires/bookmarks/6303ec16a84112a7a4be6753
 ```
 
 Get **all of a user's bookmarks**:
 
 ```bash
 # Get :username's bookmarks using /fires/user/:username/bookmarks:
-curl http://localhost:5000/fires/user/User1/bookmarks
+curl http://localhost:8000/fires/user/User1/bookmarks
 ```
 
 Get **all of a fire's bookmarks**:
 
 ```bash
 # Get :fireId's bookmarks using /fires/:fireId/bookmarks:
-curl http://localhost:5000/fires/62fb42181c5b7ea309f7e0e8/bookmarks
+curl http://localhost:8000/fires/62fb42181c5b7ea309f7e0e8/bookmarks
 ```
 
 **Create** a **new bookmark**:
@@ -194,14 +194,14 @@ curl http://localhost:5000/fires/62fb42181c5b7ea309f7e0e8/bookmarks
 ```bash
 # REQUIRES: Empty JSON object ('{}').
 # URI FORMAT: /fires/:fireId/user/:userId/bookmarks
-curl -X POST -H "Content-Type: application/json" -d '{}' http://localhost:5000/fires/62fb42131c5b7ea309f7e0e0/user/User1/bookmarks
+curl -X POST -H "Content-Type: application/json" -d '{}' http://localhost:8000/fires/62fb42131c5b7ea309f7e0e0/user/User1/bookmarks
 ```
 
 **Delete** a **bookmark**:
 
 ```bash
 # Delete :bookmarkId's bookmark using /fires/bookmarks/:bookmarkId.
-curl -X DELETE http://localhost:5000/fires/bookmarks/6303e187a84112a7a4be6752
+curl -X DELETE http://localhost:8000/fires/bookmarks/6303e187a84112a7a4be6752
 ```
 
 ##### 👥 Users
@@ -209,7 +209,7 @@ curl -X DELETE http://localhost:5000/fires/bookmarks/6303e187a84112a7a4be6752
 **Register** a user:
 
 ``` bash
-curl -X POST -H "Content-Type: application/json" -d '{"username":"example", "email":"example@example.com","password":"supersecretpswd!", "firstName":"Carlos", "lastName":"Caceres"}' http://localhost:5000/users/register
+curl -X POST -H "Content-Type: application/json" -d '{"username":"example", "email":"example@example.com","password":"supersecretpswd!", "firstName":"Carlos", "lastName":"Caceres"}' http://localhost:8000/users/register
 ```
 
 <details><summary>CLICK ME</summary>
@@ -225,7 +225,7 @@ curl -X POST -H "Content-Type: application/json" -d '{"username":"example", "ema
 **Sign in** a user:
 
 ```bash
-curl -X POST -H "Content-Type: application/json" -d '{"usernameOrEmail":"user1","password":"secrets!"}' http://localhost:5000/users/login
+curl -X POST -H "Content-Type: application/json" -d '{"usernameOrEmail":"user1","password":"secrets!"}' http://localhost:8000/users/login
 ```
 
 ### For Developers
@@ -238,7 +238,7 @@ develop its functionality.
 1. **Serve the backend:**
   * Enter `/backend`: `cd backend`
   * `npm install` to install all backend packages
-  * `npm start` to serve the backend at `https://localhost:5000`
+  * `npm start` to serve the backend at `https://localhost:8000`
 2. **Serve the frontend:**
   * Enter `/frontend/fire-app`: `cd frontend/fire-app`
   * `npm install` to install all frontend packages
@@ -248,7 +248,7 @@ You should now be able to access the app's frontend at `http://localhost:3000`
 and use the app's full functionality.
 
 **‽** *Frontend isn't getting data* - Confirm backend is being served @ 
-`https://localhost:5000`. If it's not, run `npm start` in `/backend`.
+`https://localhost:8000`. If it's not, run `npm start` in `/backend`.
 
 **‽** *Backend/frontend won't serve* - Confirm your `5000` & `3000` ports
 aren't being used by other applications. If they are, quit the other

@@ -76,7 +76,7 @@ function FireDetails({ fireId }) {
                 <Link to= "/"><button>Return Home</button></Link>
             </nav>
             <div className="container">
-                
+            
                 <div className="column list-info">
                     <h2>{checkVal(fire.incident_name)}</h2>
                     <p>Lattitude:{checkVal(fire.location.latitude)}</p>

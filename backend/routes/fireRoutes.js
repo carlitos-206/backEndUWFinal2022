@@ -10,7 +10,8 @@ router.use(bodyParser.json());
 // "GET" requests --- READ
 
 
-  // curl http://localhost:5001/fires/:id
+  // curl http://localhost:8000/fires/:id
+  /**
     router.get('/:id', async(req, res)=>{
      const result = await mongoConnection.getFireById(req.params.id)
        if(result){
@@ -19,7 +20,9 @@ router.use(bodyParser.json());
          res.status(200).send({message: 'Failed'})
        }
      })
-// curl http://localhost:5000/fires/
+  **/
+ // get all fires
+// curl http://localhost:8000/fires/
 router.get("/", async (req, res) => {
   let statusCode = 500
   const result = await mongoConnection.getAllFires();
@@ -32,8 +35,8 @@ router.get("/", async (req, res) => {
 });
 
 //get all fires by month and year
-// curl http://localhost:5000/fires/in/:month/:year
-// curl http://localhost:5000/fires/in/Jul/2014
+// curl http://localhost:8000/fires/in/:month/:year
+// curl http://localhost:8000/fires/in/Jul/2014
 
 router.get("/in/:month/:year", async(req, res) => {
 
@@ -49,8 +52,8 @@ router.get("/in/:month/:year", async(req, res) => {
 
 });
 
-// curl http://localhost:5000/fires/:id
-// curl http://localhost:5000/fires/62fb42181c5b7ea309f7e0e8
+// curl http://localhost:8000/fires/:id
+// curl http://localhost:8000/fires/62fb42181c5b7ea309f7e0e8
 router.get("/:id([0-9a-fA-F]{24})", async (req, res, next) => {
   let statusCode
   const result = await mongoConnection.getFireById(req.params.id);
@@ -65,8 +68,8 @@ router.get("/:id([0-9a-fA-F]{24})", async (req, res, next) => {
 });
 
 // get all comments by fire id
-// curl http://localhost:5000/fires/:id/comments
-// curl http://localhost:5000/fires/62fb42131c5b7ea309f7e0e0/comments
+// curl http://localhost:8000/fires/:id/comments
+// curl http://localhost:8000/fires/62fb42131c5b7ea309f7e0e0/comments
 router.get("/:id/comments", async (req, res, next) => {
   let statusCode;
   const result = await mongoConnection.getFireComments(req.params.id);
@@ -79,8 +82,8 @@ router.get("/:id/comments", async (req, res, next) => {
   }
 });
 // get comments by comment id
-// curl http://localhost:5000/fires/comments/:id
-// curl http://localhost:5000/fires/comments/630250491f3d48c59da2eec7
+// curl http://localhost:8000/fires/comments/:id
+// curl http://localhost:8000/fires/comments/630250491f3d48c59da2eec7
 router.get("/comments/:id", async (req, res) => {
   const result = await mongoConnection.getFireCommentByCommentId(req.params.id);
   if (result) {
@@ -92,8 +95,8 @@ router.get("/comments/:id", async (req, res) => {
   }
 });
 //get all fire comments by username
-// curl http://localhost:5000/fires/comments/user/:username
-// curl http://localhost:5000/fires/comments/user/User1
+// curl http://localhost:8000/fires/comments/user/:username
+// curl http://localhost:8000/fires/comments/user/User1
 router.get("/comments/user/:username", async (req, res) => {
   const result = await mongoConnection.getFireCommentsByUser(req.params.username);
   if (result) {
@@ -105,7 +108,7 @@ router.get("/comments/user/:username", async (req, res) => {
   }
 });
 //create new comment
-// curl -X POST -H "Content-Type: application/json" -d '{"text":"Khanh test creating comment"}' http://localhost:5000/fires/62fb42131c5b7ea309f7e0e0/user/User1/comments
+// curl -X POST -H "Content-Type: application/json" -d '{"text":"Khanh test creating comment"}' http://localhost:8000/fires/62fb42131c5b7ea309f7e0e0/user/User1/comments
 router.post(
   "/:id([0-9a-fA-F]{24})/user/:userName/comments",
   async (req, res) => {
@@ -133,8 +136,8 @@ router.post(
   }
 );
 //modify comment
-// curl -X PUT -H "Content-Type: application/json" -d '{"text": "Updated comment..."}' http://localhost:5000/fires/comments/:id
-// curl -X PUT -H "Content-Type: application/json" -d '{"text": "Updated comment..."}' http://localhost:5000/fires/comments/6303d66a816e5c3e74ac0980
+// curl -X PUT -H "Content-Type: application/json" -d '{"text": "Updated comment..."}' http://localhost:8000/fires/comments/:id
+// curl -X PUT -H "Content-Type: application/json" -d '{"text": "Updated comment..."}' http://localhost:8000/fires/comments/6303d66a816e5c3e74ac0980
 router.put("/comments/:id([0-9a-fA-F]{24})", async (req, res, err) => {
   let resultStatus;
   try
@@ -155,7 +158,7 @@ router.put("/comments/:id([0-9a-fA-F]{24})", async (req, res, err) => {
   
 });
 //delete comment by comment id
-//  curl -X DELETE http://localhost:5000/fires/comments/6303d66a816e5c3e74ac0980
+//  curl -X DELETE http://localhost:8000/fires/comments/6303d66a816e5c3e74ac0980
 router.delete("/comments/:commentId([0-9a-fA-F]{24})", async(req, res)=>{
   const result = await mongoConnection.deleteComment(req.params.commentId)
   if(result.error){
@@ -166,7 +169,7 @@ router.delete("/comments/:commentId([0-9a-fA-F]{24})", async(req, res)=>{
   res.status(resultStatus).send(result);
 })
 //get a bookmark by a bookmarkid
-//curl http://localhost:5000/fires/bookmarks/6303ec16a84112a7a4be6753
+//curl http://localhost:8000/fires/bookmarks/6303ec16a84112a7a4be6753
 router.get("/bookmarks/:id([0-9a-fA-F]{24})", async (req, res, next) => {
 
   const result = await mongoConnection.getBookmarkByBookmarkId(req.params.id);
@@ -180,8 +183,8 @@ router.get("/bookmarks/:id([0-9a-fA-F]{24})", async (req, res, next) => {
 });
 
 //get all bookmarks by a username
-//curl http://localhost:5000/fires/user/:username/bookmarks
-//curl http://localhost:5000/fires/user/User1/bookmarks
+//curl http://localhost:8000/fires/user/:username/bookmarks
+//curl http://localhost:8000/fires/user/User1/bookmarks
 router.get("/user/:username/bookmarks", async (req, res) => {
   let returnStatus
   const result = await mongoConnection.getBookmarkByUserName(req.params.username);
@@ -195,8 +198,8 @@ router.get("/user/:username/bookmarks", async (req, res) => {
 });
 
 //get all bookmarks by a fireid
-//curl http://localhost:5000/fires/:id/bookmarks
-//curl http://localhost:5000/fires/62fb42181c5b7ea309f7e0e8/bookmarks
+//curl http://localhost:8000/fires/:id/bookmarks
+//curl http://localhost:8000/fires/62fb42181c5b7ea309f7e0e8/bookmarks
 router.get("/:id/bookmarks", async (req, res, next) => {
   let returnStatus;
   const result = await mongoConnection.getAllBookmarksByFireId(req.params.id);
@@ -208,9 +211,23 @@ router.get("/:id/bookmarks", async (req, res, next) => {
     res.status(returnStatus).send(result);
   }
 });
+//get all bookmarks by a fireid and username
+//curl http://localhost:8000/fires/:id/user/:userName/bookmarks
+//curl http://localhost:8000/fires/62fb42181c5b7ea309f7e0e9/user/User1/bookmarks
+router.get("/:id/user/:username/bookmarks", async (req, res, next) => {
+  let returnStatus;
+  const result = await mongoConnection.getBookmarksByFireIdUserName(req.params.id, req.params.username);
+  if (!result){
+    returnStatus = 404
+    res.status(returnStatus).send({ error: "Failed to retrieve bookmark!" });
+  } else {
+    returnStatus = 200
+    res.status(returnStatus).send(result);
+  }
+});
 //create a bookmark by fireid and username
-// curl -X POST -H "Content-Type: application/json" -d '{}' http://localhost:5000/fires/:id/user/:userName/bookmarks
-// curl -X POST -H "Content-Type: application/json" -d '{}' http://localhost:5000/fires/62fb42131c5b7ea309f7e0e0/user/User1/bookmarks
+// curl -X POST -H "Content-Type: application/json" -d '{}' http://localhost:8000/fires/:id/user/:userName/bookmarks
+// curl -X POST -H "Content-Type: application/json" -d '{}' http://localhost:8000/fires/62fb42181c5b7ea309f7e0e9/user/User1/bookmarks
 router.post(
   "/:id([0-9a-fA-F]{24})/user/:userName/bookmarks",
   async (req, res) => {
@@ -220,22 +237,33 @@ router.post(
       res.status(resultStatus).send({ error: "UserName must not be blank." });
     }
     else {
-      const result = await mongoConnection.createBookmark(req.params);
-      if (result.error) {
-        resultStatus = 500;
+      //Check if bookmark exist for the fireid and username
+      const result = await mongoConnection.getBookmarksByFireIdUserName(req.params.id, req.params.userName)
+      //if no bookmark exist for fireid and username then create
+      if (!result) {
+      const  result = await mongoConnection.createBookmark(req.params);
+        if (result.error) {
+          resultStatus = 500;
+          res
+            .status(resultStatus)
+            .send({ error: "Something went wrong. Please try again." });
+        } else {
+          resultStatus = 200;
+          res.status(resultStatus).send(result);
+        }
+      } else
+      {
+        resultStatus = 400;
         res
-          .status(resultStatus)
-          .send({ error: "Something went wrong. Please try again." });
-      } else {
-        resultStatus = 200;
-        res.status(resultStatus).send(result);
-      }
+            .status(resultStatus)
+            .send({ error: "Bookmark already exist!" });
+      }  
     }
   }
 );
 //delete a bookmark by bookmarkid
-//  curl -X DELETE http://localhost:5000/fires/bookmarks/:id
-//  curl -X DELETE http://localhost:5000/fires/bookmarks/6303e187a84112a7a4be6752
+//  curl -X DELETE http://localhost:8000/fires/bookmarks/:id
+//  curl -X DELETE http://localhost:8000/fires/bookmarks/6303e187a84112a7a4be6752
 
 router.delete("/bookmarks/:id([0-9a-fA-F]{24})", async(req, res)=>{
   const result = await mongoConnection.deleteBookmark(req.params.id)
@@ -254,7 +282,7 @@ module.exports = router;
 
 //  ***ENSURE TO MOVE module.exports = router TO ENCAPSULATE THE CODE***
 
-// // curl http://localhost:5000/fires/comments/:id
+// // curl http://localhost:8000/fires/comments/:id
 // router.get('/comments/:id', async(req, res)=>{
 //   const result = await mongoConnection.getFireComments(req.params.id)
 //   if(result){
@@ -264,7 +292,7 @@ module.exports = router;
 //   }
 // }
 // )
-// // curl http://localhost:5000/fires/comments/user/:id
+// // curl http://localhost:8000/fires/comments/user/:id
 // router.get('/comments/user/:id', async(req, res)=>{
 //   const result = await mongoConnection.getFireCommentsByUser(req.params.id)
 //   if(result){
@@ -274,7 +302,7 @@ module.exports = router;
 //   }
 // }
 // )
-// // curl http://localhost:5000/fires/comments/fire/:id
+// // curl http://localhost:8000/fires/comments/fire/:id
 // router.get('/comments/fire/:id', async(req, res)=>{
 //   const result = await mongoConnection.getFireCommentsByFire(req.params.id)
 //   if(result){
