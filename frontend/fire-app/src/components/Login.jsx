@@ -48,7 +48,7 @@ function Login() {
           <form id='logInForm' onSubmit={handleLogin} >
             {/* Labels and inputs for form data */}
             <div className="form-container">
-              <label className="register-label">User Name or Email</label>
+              <label className="register-label">User Name / Email</label>
               <input className="register-input"
                 // onChange={(e) => setUsernameOrEmail(e.target.value)}
                 autoComplete="on"
