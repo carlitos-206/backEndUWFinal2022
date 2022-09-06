@@ -4,7 +4,7 @@ import "../App.css";
 const axios = require('axios')
 
 function Bookmark({fire_id}) {
-  let [bookMark, setBookMark] = useState(false)
+  let [bookMark, setBookMark] = useState(null)
   const navigate = useNavigate()
   let local = localStorage.getItem('loginData')
   let localObj = JSON.parse(local)
@@ -12,27 +12,20 @@ function Bookmark({fire_id}) {
   if(localObj){
     username = localObj.username
   }
-  // const bookmarkExist = () =>{
-  //   axios.get(`https://uw-api-2022.herokuapp.com/fires/${fire_id}/user/${username}/bookmarks`)
-  //   .then(res =>{
-  //     if(res.data._id){
-  //       console.log('here')
-  //       bookMark = true
-  //     }
-  //   })
-  // }
   useEffect(()=>{
     axios.get(`https://uw-api-2022.herokuapp.com/fires/${fire_id}/user/${username}/bookmarks`)
     .then(res =>{
       if(res.data._id){
         console.log('here usf')
-        setBookMark(true)
+        setBookMark(res.data._id)
+      }else{
+        setBookMark(null)
       }
     })
-  }, [])
+  }, [bookMark])
   // bookmarkExist()
   console.log(bookMark)
-  if(bookMark === true){
+  if(bookMark){
     let removeBtn = document.getElementById('removeBtn')
     removeBtn.setAttribute('style', 'display:block')
     let addBtn = document.getElementById('addBtn')
@@ -53,10 +46,20 @@ function Bookmark({fire_id}) {
   }
   function removeBookmark(e, id){
     e.preventDefault()
-    let removeBtn = document.getElementById('removeBtn')
-    removeBtn.setAttribute('style', 'display:none')
-    let addBtn = document.getElementById('addBtn')
-    addBtn.setAttribute('style', 'display:block')
+    if(username){
+      let removeBtn = document.getElementById('removeBtn')
+      removeBtn.setAttribute('style', 'display:none')
+      let addBtn = document.getElementById('addBtn')
+      addBtn.setAttribute('style', 'display:block')
+      axios.delete(`https://uw-api-2022.herokuapp.com/fires/bookmarks/${bookMark}`)
+      .then(res =>{
+        if(!res.data.error || !res.data.Error){
+          setBookMark(null)
+        }else{
+          alert('failed to remove bookmark')
+        }
+      })
+    }
   }
   if(username){
     return(

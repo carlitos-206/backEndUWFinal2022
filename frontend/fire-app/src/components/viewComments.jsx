@@ -13,9 +13,9 @@ export default function ViewComments({fire_id}){
       setData(response.data)
     )
     }
-  setTimeout(()=>{
-    refresh()
-  },8000)
+  // setTimeout(()=>{
+  //   refresh()
+  // },5000)
   useEffect(()=>{
       axios.get(`https://uw-api-2022.herokuapp.com/fires/${fire_id}/comments`)
       .then(response =>
@@ -36,12 +36,14 @@ const deleteComment = (e, comment_id, local_username, owner_username)=>{
     .then(res =>{ 
       if(res.data.Error){
         alert('Fail to delete')
+        refresh()
       }
     })
   }else{
     alert(`You aren't comment owner @${local_username}`)
+    refresh()
   }
-
+  refresh()
 }
   const closebox = (e) =>{
     // e.preventDefault()
@@ -60,8 +62,10 @@ const deleteComment = (e, comment_id, local_username, owner_username)=>{
       if(res.error){
         alert('Failed to update')
         closebox()
+        refresh()
       }else{
         closebox()
+        refresh()
       }
     })
   }
@@ -73,6 +77,7 @@ const updateComment = async (e, comment_id, local_username, owner_username, curr
     comment.value = current_comment
     let commentID = document.getElementById('commentID')
     commentID.value = comment_id
+    refresh()
   }
 }
 if(comments !== null){
