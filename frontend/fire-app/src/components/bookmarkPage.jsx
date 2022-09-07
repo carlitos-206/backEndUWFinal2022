@@ -56,7 +56,6 @@ export default function BookMarkPage(){
                 )
               })}
             </div>
-            <Footer />
           </main>
     )
   }else{
