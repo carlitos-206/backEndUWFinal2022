@@ -67,7 +67,6 @@ export default function BookMarkPage(){
             <div className='usersBookMark'>
                 <h1> Empty</h1>
             </div>
-            <Footer />
           </main>
   }
 }
