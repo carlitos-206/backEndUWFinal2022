@@ -65,7 +65,6 @@ function App() {
               <ViewBookMarks />
             </nav>
           <FireMapApp/>
-          <Footer />
         </main>
       </>
     )
@@ -169,6 +168,7 @@ function App() {
           element ={<BookmarkPage />}
           />
         </Routes>
+        <Footer />
       </div>
     );
   }
