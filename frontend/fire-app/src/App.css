@@ -148,6 +148,7 @@ div.container h1 {
 /* nav ///////////////////////////////////////////////////////////////////////*/
 
 nav {
+  gap: 1rem;
   display: flex;
   justify-content: flex-end;
   padding-top: 0.5rem;
