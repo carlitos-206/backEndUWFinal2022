@@ -46,10 +46,11 @@ export default function BookMarkPage(){
             </nav>
             <div className='usersBookMark'>
               {bookmarks.map((data, idx)=>{
+                console.log(data)
                 return(
                   <div key={idx}>
                     <br/>
-                    <button value={data._id} onClick={(e)=>{sendToDetails(e, data._id )}}>Bookmark {idx + 1}</button>
+                    <button value={data._id} onClick={(e)=>{sendToDetails(e, data.fire_id )}}>Bookmark {idx + 1}</button>
                     <br/>
                   </div>
                 )
