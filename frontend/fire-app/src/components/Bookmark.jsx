@@ -50,7 +50,6 @@ function Bookmark({fire_id}) {
       let removeBtn = document.getElementById('removeBtn')
       removeBtn.setAttribute('style', 'display:block')
       axios.post(`https://uw-api-2022.herokuapp.com/fires/${fire_id}/user/${username}/bookmarks`)
-      .then(res => alert(res.data))
     }else{
       navigate('/login')
     }

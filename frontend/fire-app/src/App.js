@@ -15,6 +15,8 @@ import Register from './components/Register';
 import { Link } from 'react-router-dom';
 import Hamburger from './components/Hamburger';
 import Bookmark from './components/Bookmark';
+import ViewBookMarks from './components/viewBookMarks';
+import BookmarkPage from './components/bookmarkPage'
 
 function App() {
   const Home = () => {
@@ -60,6 +62,7 @@ function App() {
             </div>
             <nav id="navbar" className="navigation" role="navigation">
               {UserLogin()}
+              <ViewBookMarks />
             </nav>
           <FireMapApp/>
           <Footer />
@@ -161,8 +164,11 @@ function App() {
           path="/register"
           element={<RegisterPage />}
         />
+        <Route
+          path ="/myBookmarks"
+          element ={<BookmarkPage />}
+          />
         </Routes>
-  
       </div>
     );
   }
