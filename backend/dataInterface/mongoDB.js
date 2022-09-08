@@ -85,6 +85,23 @@ module.exports.getFireById = async (id) => {
     await client.close();
   }
 };
+//get fire by incident name
+module.exports.getFireByIncidentName = async (name) => {
+  try {
+    await client.connect();
+    const db = client.db(databaseName);
+    const collection = db.collection(fire_Collection);
+    const result = await collection.find({ incident_name: name })
+    return result
+    ? result.toArray()
+    : {
+      error: `We've encountered an error. Please try again later.`,
+    };
+  } catch (err) {
+    return {error: 'Something is wrong. Not able to retrieve fire data.'}
+  }
+};
+
 //get fire comment by fire id
 module.exports.getFireComments = async (id) => {
   try {
