@@ -55,6 +55,21 @@ router.get("/:id([0-9a-fA-F]{24})", async (req, res, next) => {
   }
 });
 
+// get all fires by incident name
+// curl http://localhost:8000/fires/name/:name
+//curl http://localhost:8000/fires/name/JOHNSON%20CANYON
+router.get("/name/:name", async (req, res) => {
+  let statusCode
+  const result = await mongoConnection.getFireByIncidentName(req.params.name);
+  if (result) {
+    statusCode = 200
+    res.status(statusCode).send(result);
+  } else {
+    statusCode = 404
+    res.status(statusCode).send({ error: "Failed to retrieve fire data." });
+  }
+});
+
 // get all comments by fire id
 // curl http://localhost:8000/fires/:id/comments
 // curl http://localhost:8000/fires/62fb42131c5b7ea309f7e0e0/comments
@@ -228,7 +243,7 @@ router.post(
       //Check if bookmark exist for the fireid and username
       const result = await mongoConnection.getBookmarksByFireIdUserName(req.params.id, req.params.userName)
       //if no bookmark exist for fireid and username then create
-      if (result.error) {
+      if (!result) {
       const  result = await mongoConnection.createBookmark(req.params);
         if (result.error) {
           resultStatus = 500;
