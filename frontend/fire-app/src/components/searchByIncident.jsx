@@ -1,60 +1,34 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 const axios = require('axios');
-
+import {useNavigate} from 'react-router-dom';
 
 export default function SearchIncidentName(){
-  const [data, setData] = useState(null)
-  let response;
-  const searchAllUperCase = (searchCase) =>{
-    let query = encodeURI(searchCase)
-      axios.get(`https://uw-api-2022.herokuapp.com/fires/name/${query}`)
-      .then(res => {
-        if(res.data !== []){
-          response= res.data
-          
-        }
-        return response
-      })
-  }
-  const searchAllLowerCase = (searchCase) =>{
-    let query = encodeURI(searchCase)
-      axios.get(`https://uw-api-2022.herokuapp.com/fires/name/${query}`)
-      .then(res => {
-        if(res.data !== []){
-          response= res.data
-          
-        }
-        return response
-      })
-    
-  }
-
-  const search = (searchCase) =>{
-    let query = encodeURI(searchCase)
-      axios.get(`https://uw-api-2022.herokuapp.com/fires/name/${query}`)
-      .then(res => {
-        if(res.data !== []){
-          response= res.data
-          
-        }
-        return response
-      })
-  }
-  
-  const multipleQ = (searchCase) =>{
-    if(data === null){
-      search(searchCase)
-      searchAllUperCase(searchCase.toUpperCase())
-      searchAllLowerCase(searchCase.toLowerCase())
-    }else{
-    }
+  const navigate = useNavigate()
+  const search = async(query) =>{
+    let response = await axios.get(`https://uw-api-2022.herokuapp.com/fires/name/${query}`)
+      return response.data
   }
 
   const searchByName = async(e) =>{
     e.preventDefault()
     const searchCase = document.getElementById('searchInput').value
-    multipleQ(searchCase)
-    console.log(response)
+    let query = encodeURIComponent(searchCase)
+    let info = await search(query)
+    if(info.length === 0){
+      let lowerCase = await search(encodeURI(searchCase.toLowerCase()))
+      if(lowerCase.length === 0){
+        let upperCase = await search(encodeURI(searchCase.toUpperCase()))
+        if(upperCase.length === 0){
+          alert('Incident does not exist')
+        }else{
+          navigate(`/map/${info[0]._id}`)
+        }
+      }else{
+        navigate(`/map/${info[0]._id}`)
+      }
+    }else{
+      navigate(`/map/${info[0]._id}`)
+    }
   }
   return(
     <div className="searchContainer">
