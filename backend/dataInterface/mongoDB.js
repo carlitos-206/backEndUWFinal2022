@@ -3,8 +3,7 @@ const ObjectId = require("mongodb").ObjectId;
 const bcrypt = require("bcryptjs");
 //const { use } = require("../routes");
 const auth = require('../auth')
-const uri =
-  "mongodb+srv://carlitos206:SharedFakePass123@cluster0.lshmeod.mongodb.net/?retryWrites=true&w=majority";
+const uri = process.env.MONGO_URI
 
 const client = new MongoClient(uri);
 

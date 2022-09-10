@@ -4,6 +4,7 @@ import {useNavigate} from 'react-router-dom';
 
 export default function SearchIncidentName(){
   const navigate = useNavigate()
+  
   const search = async(query) =>{
     let response = await axios.get(`https://uw-api-2022.herokuapp.com/fires/name/${query}`)
       return response.data
