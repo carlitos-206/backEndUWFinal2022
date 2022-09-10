@@ -1,7 +1,5 @@
 import React from 'react';
 import './App.css';
-import DeletePost from './components/DeletePost';
-import EditPost from './components/EditPost';
 import FireMapApp from './components/FireMapApp';
 // import FireMapAppData from './components/FireMapAppData';
 import FireDetails from './components/FireDetails';
@@ -10,14 +8,12 @@ import Footer from './components/Footer'
 import { Route, Routes, useParams } from 'react-router-dom';
 import SigninButton from './components/SignInButton';
 import Login from './components/Login';
-import logOut from './components/logOut';
 import Register from './components/Register';
-import { Link } from 'react-router-dom';
 import Hamburger from './components/Hamburger';
 import Bookmark from './components/Bookmark';
 import ViewBookMarks from './components/viewBookMarks';
 import BookmarkPage from './components/bookmarkPage'
-
+import SearchIncidentName from './components/searchByIncident';
 function App() {
   const Home = () => {
     const isLoggin = () =>{
@@ -56,15 +52,16 @@ function App() {
     return (
       <>
         <main>
-            <Banner />
-            <div className='burger' style={isLoggin()} >
-              <Hamburger/>
-            </div>
-            <nav id="navbar" className="navigation" role="navigation">
-              {UserLogin()}
-              <ViewBookMarks />
-            </nav>
-          <FireMapApp/>
+          <Banner />
+          <div className='burger' style={isLoggin()} >
+            <Hamburger/>
+          </div>
+          <nav id="navbar" className="navigation" role="navigation">
+            {UserLogin()}
+            <ViewBookMarks />
+          </nav>
+            <SearchIncidentName />
+            <FireMapApp/>
         </main>
       </>
     )
@@ -86,35 +83,6 @@ function App() {
     );
   }
 
-  // const DeletePostPage = () => {
-  //   const { id} = useParams();
-  //   return (
-  //     <>
-  //       <main>
-  //         <div >
-  //           <DeletePost
-  //             id={id}
-  //           />
-  //         </div>
-  //       </main>
-  //     </>
-  //   );
-  // }
-
-  // const EditPostPage = () => {
-  //   const { postId } = useParams();
-  //   return (
-  //     <>
-  //       <main>
-  //         <div >
-  //           <EditPost
-  //             postId={postId}
-  //           />
-  //         </div>
-  //       </main>
-  //     </>
-  //   );
-  // }
 
   const LoginPage = () => {
     return (

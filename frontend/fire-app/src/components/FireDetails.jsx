@@ -4,11 +4,8 @@ import PropTypes from 'prop-types'
 import checkVal from './logic/checkVal';
 import readTheDate from './logic/readTheDate';
 import totalAcres from './logic/totalAcres';
-import DeletePost from './DeletePost';
-import EditPost from './EditPost';
 // import FireMapAppData from './components/FireMapAppData';
 import Banner from './Banner'
-import Footer from './Footer'
 import SigninButton from './SignInButton';
 import ViewComments from './viewComments';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

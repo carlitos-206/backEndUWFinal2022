@@ -20,12 +20,12 @@ function Hamburger() {
         <section className="p-menu1">
         {/* <nav id="navbar" className="navigation" role="navigation"> */}
           <input id="toggle1" type="checkbox" />
-          <label className="hamburger1" for="toggle1">
+          <label className="hamburger1" htmlFor="toggle1">
             <div className="top"></div>
             <div className="meat"></div>
             <div className="bottom"></div>
           </label>
-          <div class="menu1">
+          <div className="menu1">
             <button onClick={(e) => handleClick(e)} className="link1"> Delete Account</button>
           </div>
       {/* </nav> */}
