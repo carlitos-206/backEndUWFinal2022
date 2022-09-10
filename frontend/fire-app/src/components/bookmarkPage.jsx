@@ -1,16 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types'
-import checkVal from './logic/checkVal';
-import readTheDate from './logic/readTheDate';
-import totalAcres from './logic/totalAcres';
-import DeletePost from './DeletePost';
-import EditPost from './EditPost';
-// import FireMapAppData from './components/FireMapAppData';
 import Banner from './Banner'
-import Footer from './Footer'
-import SigninButton from './SignInButton';
-import ViewComments from './viewComments';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { solid } from '@fortawesome/fontawesome-svg-core/import.macro';
 import { useNavigate } from "react-router-dom";
